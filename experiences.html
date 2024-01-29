@@ -1,0 +1,400 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+  <title>COMBIGS | Experience</title>
+  <link rel="icon" href="images/sastra.png" />
+  <link rel="stylesheet" href="layout/styles/framework.css">
+  <link rel="stylesheet" href="layout/styles/layout.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <style>
+    /* Add this CSS to your existing styles or adjust accordingly */
+    body {
+      background-color: #fff;
+      /* Set the default background color for the body */
+    }
+
+    .image-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .image-container a {
+      flex: 1 1 50%;
+      /* makes each link take up 50% of the width */
+      max-width: 100%;
+      /* ensures images don't exceed their container */
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      /* removes extra space below the image */
+    }
+
+    #alumni-section {
+      background-color: #fcfcfc;
+      /* Set the background color for the alumni section */
+      color: #000;
+      /* Set the text color to black */
+      padding: 50px 0;
+      /* Add some padding to the section */
+    }
+
+    .alumni-item {
+      display: flex;
+      align-items: center;
+      /* Center the items vertically */
+      margin: 0 auto 20px;
+      /* Auto margin on left and right to center the items */
+      justify-content: center;
+      background-color: #fff;
+      /* Set the background color for each alumni item */
+      padding: 20px;
+      /* Add padding to each alumni item */
+      border-radius: 10px;
+      /* Add border-radius for a rounded appearance */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      /* Add a subtle box shadow for depth */
+      max-width: 950px;
+      /* Set a maximum width for the box */
+    }
+
+    .alumni-image {
+      height: 200px;
+      /* Set a fixed height for the images */
+      width: auto;
+      /* Let the width adjust automatically to maintain aspect ratio */
+      max-width: 100%;
+      /* Set a maximum width to ensure the images don't exceed a certain width */
+      margin-right: 20px;
+      /* Adjust spacing between image and text */
+    }
+
+    .alumni-text {
+      flex: 1;
+      /* Take up the remaining space in the flex container */
+      max-width: 600px;
+      /* Limit the width of the text */
+      margin-left: 60px;
+      /* Adjust the margin to add more space between image and text */
+    }
+
+    .alumni-name {
+      font-size: 18px;
+      /* Set a smaller font size for the alumni name */
+    }
+
+    .alumni-experience {
+      text-align: justify;
+    }
+
+    .one_quarter {
+      width: calc(33.33% - 100px);
+      /* Subtracting the total horizontal margin from one-third of the container */
+      margin: 0px 50px;
+      /* 50px margin on each side */
+      box-sizing: border-box;
+      /* To include padding and borders in the width calculation */
+      float: left;
+      /* To align the boxes side by side */
+    }
+
+    @media (max-width: 768px) {
+      .image-container a {
+        flex: 1 1 100%;
+        /* each link takes full width on smaller screens */
+      }
+
+      .one_quarter {
+        width: 100%;
+        /* Full width on smaller screens */
+        margin: 30px 0;
+        /* Adjusted margin for mobile devices */
+        float: none;
+        /* Clear float for mobile layout */
+      }
+    }
+
+
+    /* Adjustments for responsiveness */
+    @media screen and (max-width: 768px) {
+      #mainav {
+				padding: 10px 0;
+			}
+      
+      .alumni-item {
+        flex-direction: column;
+        /* Stack items vertically on smaller screens */
+      }
+
+      .alumni-image {
+        margin-right: 0;
+        /* Remove margin between image and text on smaller screens */
+        margin-bottom: 10px;
+        /* Adjust spacing between items on smaller screens */
+        align-self: center;
+        /* Center the image horizontally on smaller screens */
+      }
+
+      .alumni-text {
+        max-width: none;
+        /* Remove max-width on smaller screens */
+        margin-left: 0px;
+      }
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      user-select: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      #mainav ul {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+        cursor: pointer;
+      }
+    }
+
+    .scrollable {
+      overflow-x: auto;
+    }
+
+    @media screen and (max-width: 768px) {
+
+      .internships-table th,
+      .internships-table td {
+        padding: 8px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- SASTRA & COMBIGS Logo -->
+  <div class="wrapper row0">
+    <header id="header" class="hoc clear">
+      <div class="image-container">
+        <!-- Image Links -->
+        <a href="index.html"><img src="images/combigs-part-1.png" alt="" /></a>
+        <a href="index.html"><img src="images/combigs-part-2.png" alt="" /></a>
+      </div>
+    </header>
+  </div>
+
+  <!-- Main Navbar / Hamburger Menu -->
+  <div class="wrapper row1">
+    <div class="hoc clear">
+      <!-- Hamburger Icon -->
+      <div class="hamburger fl_right" onclick="toggleNav()">☰</div>
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="magazine.html">Magazine</a></li>
+          <li><a href="event.html">Event Archives</a></li>
+          <li class="active"><a href="experiences.html">Experience</a></li>
+          <li><a href="intern.html">Internships</a></li>
+          <li><a href="dbtools.html">Databases and Tools</a></li>
+          <li><a href="members.html">Members</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="wrapper bgded"
+    style="background-image:url('./images/exp-banner.jpg'); background-size:cover; background-position:center center;">
+    <section id="pageintro" class="hoc clear" style="padding: 20px 0;">
+      <div
+        style="background-color: rgba(255, 255, 255, 0.7); display: inline-block; padding: 10px; border-radius: 5px;">
+        <h2 class="heading" style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">Experiences</h2>
+        <p style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">
+          See what the alumni of this department have to say about their experiences!
+        </p>
+      </div>
+    </section>
+  </div><br><br>
+
+  <section id="alumni-section" class="scrollable">
+    <div class="alumni">
+      <!-- Alumni 1 -->
+      <div class="alumni-item">
+        <img src="images/exp/exp1.jpg" alt="Alumni 1" class="alumni-image">
+        <div class="alumni-text">
+          <p class="alumni-name">Sai Rohith Kavuru</p>
+          <p class="alumni-experience">
+            Sai Rohith, B.Tech Bioinformatics Grad from SASTRA deemed University. I'm interested in full stack web
+            development and Statistics. I am good with Origami and paper arts, and acted as the Head of university and
+            department arts teams. I am currently working at Zifo technologies, Chennai as Associate analyst with 1 year
+            experience. My job description includes development and configuration of the tools to assist the small
+            molecule research of clients. I have been experienced in SQL and python as part of my job to develop
+            automated assay data storage and analysis, and visualization workflows.
+          </p>
+        </div>
+      </div>
+
+      <!-- Alumni 2 -->
+      <div class="alumni-item">
+        <img src="images/exp/exp2.jpg" alt="Alumni 2" class="alumni-image">
+        <div class="alumni-text">
+          <p class="alumni-name">Akshaya R</p>
+          <p class="alumni-experience">
+            Present designation: SAP Analytics Cloud Developer in Tata Consultancy Services, Bangalore. It was an
+            incredible experience as being a Chairperson of COMBIGS and learnt many valuable ethics and values. Now as a
+            bioinformatics graduate I have learnt many computational studies that help me in core IT knowledge and now
+            I’m SAP Analytics Cloud Developer in Tata Consultancy Services and currently working for my respective
+            client (Pharma company) (confidential info). Really happy and feeling great for the knowledge that I gained
+            during my undergrad. Thank you COMBIGS!
+          </p>
+        </div>
+      </div>
+
+      <!-- Alumni 3 -->
+      <div class="alumni-item">
+        <img src="images/exp/exp3.jpeg" alt="Alumni 3" class="alumni-image">
+        <div class="alumni-text">
+          <p class="alumni-name">Vijayalakshmi A. B.</p>
+          <p class="alumni-experience">
+            I had the privilege of a remarkable learning opportunity during my final semester project as an intern at
+            "qBiome Research Private Limited, Chennai." The co-founders and research scientists of the organization
+            provided invaluable support, sharing their knowledge and ideas in developing the project. My work involved
+            analyzing waste from prominent industrial sectors, studying microbes, pathways, and various factors in the
+            microbial degradation of industrial waste. With a focus on integrating different disciplines of
+            bioinformatics, including Biological Sciences, Database Management Systems, and Website Development, this
+            internship enhanced my skills and provided extensive exposure to industrial research.
+          </p>
+        </div>
+      </div>
+
+
+      <!-- Alumni 4 -->
+      <div class="alumni-item">
+        <img src="images/exp/exp4.jpg" alt="Alumni 4" class="alumni-image">
+        <div class="alumni-text">
+          <p class="alumni-name">Shashank R</p>
+          <p class="alumni-experience">
+            I had the opportunity to present my work titled "Generating a Fungal Knowledge-Base and Ontology Terms by
+            Integrating Multi-omics data and Natural Language Processing for LPMO-specific Lignocellulosic
+            Deconstruction" as a poster at the Indian Biophysical Society's national conference (IBS 2022) under the
+            guidance of Dr. Ragothaman Yennamalli. Despite initial nervousness, the event was successful, receiving
+            appreciation for the work. Furthermore, I am scheduled to present progress and results as a poster at
+            ISMB2022 (July 10 - 14, 2022). This experience taught me that presenting and receiving reviews from
+            experienced professionals at conferences opens new perspectives on problem-solving. I encourage everyone to
+            attend and present their work at national and international conferences.
+          </p>
+        </div>
+      </div>
+
+
+      <!-- Alumni 5 -->
+      <div class="alumni-item">
+        <img src="images/exp/exp5.jpeg" alt="Alumni 5" class="alumni-image">
+        <div class="alumni-text">
+          <p class="alumni-name">Aparna V</p>
+          <p class="alumni-experience">
+            My internship provided a comprehensive learning experience in sarcoma (cancer). I explored Next-Generation
+            Sequencing (NGS) and its applications, focusing on "Finding the link between sarcomas and human genes and
+            validating it using bioinformatics tools." It was a challenging task to connect human genes with sarcomas,
+            involving research on the causes and writing a blog. I also worked on 3D printing implants for orthopedic
+            surgery, gaining insights into the work of architects and doctors researching sarcomas and implant
+            technologies. The experience culminated in publishing a journal.
+          </p>
+        </div>
+      </div>
+
+    </div>
+    </div>
+  </section>
+
+  <!-- `Above Footer` Section -->
+  <div class="wrapper row4">
+    <footer id="footer" class="hoc clear">
+      <!-- Combigs -->
+      <div class="one_quarter first">
+        <h1 class="logoname clear"><a href="https://www.sastra.edu/combigs/"><span>COMBIGS</span></a></h1>
+        <p class="btmspace-30" style="text-align:left;">
+          COMBIGS at SASTRA University is a renowned Computational Biology Group, fostering collaboration and
+          innovation in bioinformatics through conferences, workshops, and an e-magazine.
+        </p>
+        <ul class="faico clear">
+          <li><a class="faicon-instagram" href="https://www.instagram.com/combigs_sastra/" target="_blank"><i
+                class="fab fa-instagram"></i></a></li>
+          <li><a class="faicon-spotify" href="https://open.spotify.com/show/0AN2PXlU15ROhDfLxdfb9e?si=b96cc943c5214824"
+              target="_blank"><i class="fab fa-spotify"></i></a></li>
+          <!-- Add or remove social media links as necessary -->
+        </ul>
+      </div>
+      <!-- Contact Information -->
+      <div class="one_quarter">
+        <h6 class="heading">Contact Information</h6>
+        <ul class="nospace linklist contact">
+          <li><i class="fas fa-map-marker-alt"></i>
+            <address>
+              <strong>SCBT</strong>,<br>
+              SASTRA DEEMED UNIVERSITY,<br>
+              Tirumalaisamudram,<br>
+              Thanjavur - 613401,<br>
+              Tamilnadu, India
+            </address>
+          </li>
+        </ul>
+      </div>
+      <!-- Quick Links -->
+      <div class="one_quarter">
+        <h6 class="heading">Quick Links</h6>
+        <ul class="nospace linklist">
+          <li><a href="members.html">Members of COMBIGS</a></li>
+          <li><a href="https://www.sastra.edu/staffprofiles/schools/scbt.php" target="_blank">SCBT Faculties</a></li>
+          <li><a href="https://forms.gle/esHizEVcAW9cZScw8" target="_blank">Feedback Form for Website Improvement</a>
+          </li>
+        </ul>
+
+      </div>
+    </footer>
+  </div>
+
+  <!-- Footer -->
+  <div class="wrapper row5">
+    <div id="copyright" class="hoc clear">
+      <p class="fl_left">Copyright &copy; 2023-2024 - All Rights Reserved - <a
+          href="https://www.sastra.edu/combigs/">COMBIGS,
+          SASTRA Deemed to be University</a></p>
+      <p class="fl_right">Template by <a target="_blank" rel="noopener" href="http://www.os-templates.com/"
+          title="Free Website Templates">OS Templates</a></p>
+    </div>
+
+    <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+  </div>
+
+  <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+
+  <script>
+    function toggleNav() {
+      var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];
+      if (nav.style.display === "block") {
+        nav.style.display = "none";
+      } else {
+        nav.style.display = "block";
+      }
+    }
+
+    window.addEventListener('resize', function () {
+      var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];
+      if (window.innerWidth > 768) {
+        nav.removeAttribute('style');
+      }
+    });
+  </script>
+</body>
+
+</html>

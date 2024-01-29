@@ -1,0 +1,437 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+    <title>COMBIGS | Conference'16 :: SASTRA Deemed to be University</title>
+    <link rel="icon" href="images/sastra.png" />
+    <link rel="stylesheet" href="layout/styles/framework.css">
+    <link rel="stylesheet" href="layout/styles/layout.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <style>
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .image-grid img {
+            width: 18%; /* Adjust the width as needed */
+            margin-bottom: 10px;
+        }
+
+        body {
+            background-color: #fff;
+            /* Set the default background color for the body */
+        }
+
+        #event-archives-section {
+            padding: 50px 0;
+            background: #BFC9CA;
+            text-align: center;
+        }
+
+        .event-info {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.85);
+            color: #333;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            /* Removed 'display: none;' */
+        }
+
+        .event-image {
+            width: 150px;
+            /* Set a fixed width for the images */
+            height: auto;
+            /* Let the height adjust automatically */
+            margin-right: 20px;
+            /* Adjust spacing between image and link */
+        }
+
+        /* Adjustments for responsiveness */
+        @media screen and (max-width: 768px) {
+            .event-item {
+                flex-direction: column;
+                /* Stack items vertically on smaller screens */
+            }
+
+            .event-image {
+                margin-right: 0;
+                /* Remove margin between image and link on smaller screens */
+                margin-bottom: 10px;
+                /* Adjust spacing between items on smaller screens */
+                align-self: center;
+                /* Center the image horizontally on smaller screens */
+            }
+
+            .event-link {
+                max-width: none;
+                /* Remove max-width on smaller screens */
+            }
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 18px;
+            user-select: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            #mainav ul {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        .scrollable {
+            overflow-x: auto;
+        }
+
+        @media screen and (max-width: 768px) {
+            .events-table th,
+            .events-table td {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+
+        /* Style for buttons */
+        .toggle-button {
+            background-color: #4CAF50; /* Green background */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Initially hide speaker list */
+        #speaker-list {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper row1">
+        <header id="header" class="hoc clear">
+            <div id="logo" class="fl_left">
+                <a href="index.html"><img src="images/combigs.png" alt="" /></a>
+            </div>
+            <!-- Hamburger Icon -->
+            <div class="hamburger fl_right" onclick="toggleNav()">☰</div>
+            <nav id="mainav" class="fl_right">
+                <ul class="clear">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="magazine.html">Magazine</a></li>
+                    <li class="active"><a href="event.html">Event Archives</a></li>
+                    <li><a href="experiences.html">Experience</a></li>
+                    <li><a href="intern.html">Internships</a></li>
+                    <li><a href="dbtools.html">Databases and Tools</a></li>
+                    <li><a href="members.html">Members</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="wrapper bgded" style="background-image:url('./images/event-archives-banner.png'); background-size:cover; background-position:center center;">
+        <section id="pageintro" class="hoc clear" style="padding: 20px 0;">
+            <div style="background-color: rgba(255, 255, 255, 0.7); display: inline-block; padding: 10px; border-radius: 5px;">
+                <h2 class="heading" style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">Conference '16</h2>
+                <p style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">
+                   19-20 August, 2016
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Section for event information (replace placeholder text with actual details) -->
+    <section id="event-archives-section" style="text-align: center;">
+        <div class="events" style="margin: 0 auto; max-width: 1000px;">
+            <!-- Event details go here -->
+            <div class="event-info" style="text-align: left; margin-bottom: 30px;">
+                <button class="toggle-button" onclick="toggleSpeakers()">Show Speakers List</button>
+                <button class="toggle-button" onclick="toggleImages()">Show Event Pictures</button>
+                <br><br><h3><u>2nd International Conference on Structural and Functional Genomics</u></h3>
+                <p style="text-align: justify">
+                    In biology, a key idea is that structure determines function. In other words, the way something is arranged enables it to play its role, fulfill its job, within an organism. Structure-function relationships arise through the process of natural selection. But before explaining how that process works, let’s get our heads around the structure-function connection.Structure determines function is also a key idea in engineering. In this human realm, structure/function relationships are often more obvious and easier to grasp than they are in the biological realm.
+                </p>
+				<div id="speaker-list">
+				<p style="font-size: 18px;">
+                    <strong>SPEAKERS:</strong><br><br>
+                </p>
+				<p style="font-size:18px;"><b>DAY 1 (19th August):</p></b>
+                <!-- Speaker 1 -->
+                <div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+                    <div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+                        <img src="images/speakers/conf'16/sp1.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+                    </div>
+                    <div class="speaker-details" style="flex: 2;">
+                        <div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"Structure based functional annotation of proteins</u>"</p></b><b><br>Prof. M R N Murthy</b></font><br>Molecular Biophysics Unit, Indian Institute Of Science, Bangalore-560012
+                        </div>
+                        <p style="text-align: justify; font-size: 14px;">
+                            <font size="3">
+                                Pathogenic microorganisms express universal stress proteins (USPs) when they encounter unfavorable conditions while infecting susceptible cells. Studies were carried out towards functional annotation of two USPs, YnaF (UspF) and YdaA (UspE), from Salmonella typhimurium. The USP domain (PFAM PF00582) consists of a ﬁve stranded parallel β-sheet ﬂanked by two α-helices on each face resembling nucleotide binding Rossmann-fold. YnaF is a single domain USP while YdaA consists of two tandem USP domains. The N- and C- terminal domains of YdaA are structurally similar in spite of low sequence identity. YdaA was found to exhibit ATPase activity and an ATP binding motif G-2X-G-9X-G could be identiﬁed in its C terminal domain. YnaF was inactive as an ATPase but surprisingly crystallized with a tightly bound ATP and chloride ions at the tetrameric interface. Mutation of residues involved in chloride binding made the protein active as an ATPase. Thus, chloride binding appears to be coupled to inhibition of ATPase activity. This is suggestive of the role of YnaF as an ion sensor mediating cell signaling. A large ligand, probably bound to the N-terminal domain, was co-puriﬁed with YdaA. The ligand was tentatively identiﬁed as UDP-(3-O-(R-3-hydroxymyristoyl))-Nacetylglucosamine,which is an intermediate in the lipid A biosynthetic pathway. Lipid A is important for the outer membrane of Gram negative bacteria suggesting that YdaA may provide cellular protection by altering membrane properties during conditions of stress. The structure of a serendipitously crystallized protein was determined using a wide-search molecular replacement protocol and based on the sequence deduced from the electron density map, the protein was identiﬁed as that of a phosphate binding protein from Stenotrophomonas maltophilia. The protein is likely to exhibit high selectivity for phosphate over arsenate and along with ABC transporter might be involved in phosphate uptake. A few similar examples of structure based functional annotation will be described.
+                            </font>
+                        </p>
+                    </div>
+                </div>
+				<hr>
+                <!-- Speaker 2 -->
+                <div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+                    <div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+                        <img src="images/speakers/conf'16/sp2.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+                    </div>
+                    <div class="speaker-details" style="flex: 2;">
+                        <div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"Bridging the gap from genotype to phenotype: Challenges and the way ahead</u>"</p></b><b><br>Dr. Mitali Mukerji</b></font><br>Institute Of Genomics And Integrative Biology, Csir, Mall Road, New Delhi-110007
+						</div>
+                        <p style="text-align: justify; font-size: 14px;">
+                            <font size="3">
+                                Humans have successfully colonized diverse geographical locations, adapted to various climatic conditions, dietary habits and resisted many pests and parasitic infections after their initial movement out of Africa. This has been possible due to a continuous evolution of our genomes - a process that has also lead to accumulation of millions of single nucleotide variations as well as structural variations. Identifying which of the variations amongst these are meaningful for phenotypes and disease association is the next challenge. There are a number of challenges in genotype-phenotype correlations which needs to be dissected in a systematic manner prior to our embarking ongenetic association studies. This includes a careful systematization of phenotypes even within a seemingly homogenous population, understanding population structure and patterns of variations,careful selection of populations for discovery and also ways to dissect inter-individual variability even amongst healthy individuals of a genetically homogeneous population. The Indian Genome Variation project which has provided the ﬁrst comprehensive genetic map of Indian populations in conjunction with other global variation data has provided a basal framework for addressing these issues. This in conjunction with novel integrative approaches has also provided a direction to bridging the gap between phenotype to genotype studies. The applicability and utility of a basal Indian Genome variation data would be demonstrated with a few examples.
+                            </font>
+                        </p>
+                    </div>
+                </div>
+				<hr>
+				<!-- Speaker 3 -->
+                <div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+					<div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+						<img src="images/speakers/conf'16/sp3.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+					</div>
+                    <div class="speaker-details" style="flex: 2;">
+						<div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"Chiral proof reading during translation of the genetic code</u>"</p></b><b><br>Dr. RajanSankaranarayanan</b></font><br>CSIR-Centre For Cellular And Molecular Biology, Hyderabad
+						</div>
+						<p style="text-align: justify; font-size: 14px;">
+                        <font size="3">
+                            The biological world is homochiral in nature with proteins having L-aminoacids,except glycine,and nucleic acids having D-sugars. Mixing of opposite chiral entities in proteins result in misfolding. Protein misfolding has been associated with many disease conditions. D-aminoacyl-tRNA deacylases (DTDs)remove D-amino acids mischarged on tRNA and therefore are implicated in enforcing homochirality in proteins. We have shown using crystal structures and biochemical work that DTD-folddoes not use speciﬁc sidechains either for catalysis or for substrate speciﬁcity. However,it differentially remodels the RNA-protein interface for both activities suggesting a possible mode of evolution of protein based enzymes from peptide-RNA hybrids. We also elucidated the crucial ’chiral proofreading’ mechanism of DTD by which D-amino acids are prevented from inﬁltrating the translational machinery . Recently, we showed that DTD´s mechanistic design principle is based only on L-amino acid rejection and hence, besides acting on D-aminoacyl-tRNA, DTD also efﬁciently hydrolyses glycyl-tRNA(Gly). The functional implications of proofreading in biological systems, in general, and chiral proofreading, in particular, was discussed during the talk.
+                        </font>
+                    </p>
+					</div>
+                </div>
+				<hr>
+				<!-- Speaker 4 -->
+				<div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+					<div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+						<img src="images/speakers/conf'16/sp4.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+					</div>
+                    <div class="speaker-details" style="flex: 2;">
+						<div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"Understanding the accessory gene regulator(agr) based phenotype switch in Staphylococcus aureus</u>"</p></b><b><br>Prof. B.Gopal</b></font><br>Molecular Biophysics Unit, Indian Institute Of Science, Bangalore
+                    </div>
+                    <p style="text-align: justify; font-size: 14px;">
+                        <font size="3">
+                            The intracellular trigger for the quorum sensing response mechanism in Staphylococcus aureus involves the phosphorylation of the response regulator AgrA by the membrane anchored histidine kinase AgrC. AgrA activates transcription from three promoter sequences (P1-P3). The promoter strength, conditional association of AgrA with these promoter elements and temporal delay in AgrA mediated changes in gene expression contribute to the diversity of the quorum sensing response in different S.aureus strains. AgrA promoters comprise of imperfect direct repeats of DNA with a consensus sequence- [TA][AC][CA]GTTN[AG][TG]. Here we describe crystal structures of the DNA-binding (LytTR) domain of AgrA with different cognate DNA sequences that reveal a hitherto unanticipated feature of AgrA-DNA interactions. AgrA promoter interactions are asymmetric with fewer interactions at the binding site proximal to the -35 promoter element. Biochemical assays to evaluate AgrA-promoter interactions suggests that phosphorylation induced dimerization of AgrA can compensate for the asymmetry in AgrA-DNA interactions. The structures also provide a basis to rationalize mutations that were noted to alter AgrA activity without affecting protein-DNA interactions. Put together,the structural data, gene expression and mutational analysis reveal that promoter strength and AgrA phosphorylation enable quorum-sensing triggered transcriptional changes leading to a transition from the persistent to virulent phenotype.
+                        </font>
+                    </p>
+					</div>
+                </div>
+				<hr>
+				<!-- Speaker 5 -->
+                <div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+					<div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+						<img src="images/speakers/conf'16/sp5.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+					</div>	
+					<div class="speaker-details" style="flex: 2;">
+                        <font color="black" size="4"><b><p>"Single Particle Cryo Electron Microscopy: the recent revolution in structural biology</u>"</p></b><b><br>Dr. Ramanathan Natesh</b></font><br>School Of Biology, Indian Institute Of Science Education And Research Thiruvananthapuram
+						<div class="p" style="text-align: left; font-size: 16px;">
+                    </div>
+                    <p style="text-align: justify; font-size: 14px;">
+                        <font size="3">
+                            Recent advances in the last few years are revolutionizing the ﬁeld of structural biology using cryo Transmission Electron Microscopy (cryoTEM, usually called cryoEM). The bold prediction of Professor Richard Henderson in 1995 that “using electron cryomicroscopy, it should be possible to calculate the near atomic resolution structure of proteins (better than 3 Å)” is a reality since the year 2015. Nature Methods journal described “single-particle cryo-electron microscopy” as the method of the Year 2015. Someofthehighlightsofthisrevolutionare: cryoEMsingle-particle analysis reaches near-atomic resolution for a wide variety of specimens thus enabling localization of small-molecule inhibitors bound to metabolic protein complexes; direct electron detectors yield images of unprecedented quality; new movie-processing methods correct for beam-induced sample movements; new classiﬁcation methods separate images of different structures thus opening the window to study dynamic conformational states in structural biology . This talk will focus mainly on introduction to this new and exciting ﬁeld of single particle cryoEM, image processing and 3D reconstruction; also touch upon other structural biology methods using negative stain and cryoelectron microscopy. I will also present my work on single particle cryoEM in handling orientation and heterogenity of the particles,inorder to visualise non-native protein bound to chaperonin complexes. I will discuss why people call TEM as a phase measuring diffractometer and also howcryo EM and crystallography can beused asa hybrid methods to solve larger structural biology problems. Finally I will conclude with a brief note on how in-situ structural biology is taking shape for more exciting new things to come in the future.
+                        </font>
+                    </p>
+					</div>
+                </div>
+				<hr>
+				<!-- Speaker 6 -->
+                <div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+					<div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+						<img src="images/speakers/conf'16/sp6.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+					</div>	
+					<div class="speaker-details" style="flex: 2;">
+						<div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"Novel functions of Piwi-interacting RNAs (piRNA) and PIWI proteins in somatic cells PIWI</u>"</p></b><b><br>Dr. Subbulakshmi Chidambaram</b></font><br>Department Of Biochemistry And Molecular Biology, Pondicherry University, Puducherry
+                    </div>
+                    <p style="text-align: justify; font-size: 14px;">
+                        <font size="3">
+                            PIWI -interacting RNAs (piRNAs) are small non-coding RNA which maintain genomic integrity in germline cells. Along with PIWI proteins, piRNAs silence the transposable elements. Their presence were thought to be restricted to germ cells but recent studies have indicated the elevated levels of piRNAs and PIWI proteins in cancerous conditions. To analyse whether piRNAs are present in retinal cells,small RNA sequencing dataset of(GSE55376)mouse retinal samples were downloaded from Gene Expression Omnibus. Interestingly, three mouse piRNAs matched with the human piRNA sequences, hsa_piR_001184, hsa_piR_021063 and hsa_piR_015254 which should be further validated in human retina. Intriguingly, we detected all four members of PIWI-like proteins in human ocular tissues and somatic cell lines, which are important for piRNA function. Although the role of PIWI proteins in germ cells has been documented, their presence and function in somatic cells remains unclear. When HIWI2 was silenced in retinal pigment epithelial cells, the typical honeycomb morphology was affected. Further analysis showed that the expression of tight junction(TJ) proteins,CLDN1 and TJP1 were altered in HIWI2 knockdown. Moreover, confocal imaging revealed disrupted TJP1 assembly at the TJ. Previous studies report the role of GSK3α in regulating TJ proteins. Accordingly, phospho-kinase proteome proﬁler array indicated increased phosphorylation of Akt and GSK3α/β in HIWI2 knockdown, suggesting that HIWI2 might affect TJ proteins through Akt-GSK3α/β signaling axis. Taken together, our study demonstrates the presence of PIWI-like proteins in somatic cells and the signiﬁcant role of HIWI2 in preserving the functional integrity of epithelial cells possibly by modulating the phosphorylation status of Akt and GSK3α/β.
+                        </font>
+                    </p>
+					</div>
+                </div>
+				<hr>
+				<p style="font-size:18px;"><b>DAY 2 (20th August):</p></b>
+				<!-- Speaker 7 -->
+                <div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+					<div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+						<img src="images/speakers/conf'16/sp7.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+					</div>	
+					<div class="speaker-details" style="flex: 2;">
+						<div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"The amazing diversity of allosteric regulation in ribonucleotide reductases</u>"</p></b><b><br>Dr. Derek T Logan</b></font><br>Dept. Of Biochemistry And Structural Biology, Centre For Molecular Protein Science, Lund University, Sweden
+                    </div>
+                    <p style="text-align: justify; font-size: 14px;">
+                        <font size="3">
+                            Ribonucleotide reductases (RNRs) are among the most important enzymes for almost all living organisms by virtue of their central role in generating deoxyribonucleotide triphosphates(dNTPs), the building blocks for DNA synthesis and repair. Their catalytic mechanisms and regulation have been the subject of over half a century of study. Ribonucleotide reductases are subject to complex allosteric regulation, both with regard to their overall activity and their substrate speciﬁcity. Each RNR can reduce four different NDP or NTP substrates, and regulation is critical to maintain correct overall levels of dNTPs as well as maintain balanced dNTP pools. Imbalances in the latter lead to increased rates of mutation and are associated with cancer. I will provide a historical background to structural work in the ﬁeld of RNR allosteric regulation then focus on recent work on the role of dATP-induced oligomerization in the overall activity regulation of class I, aerobic RNRs, in particular our recent work revealing a third mode of oligomerization involving the small, evolutionarily mobile domain known as the ATP cone, using crystallography, small angle Xray scattering, biophysical and biochemical methods. We have identiﬁed a new subclass of dATP cone that binds two dATP molecules in close proximity and the sequence motifs required for binding of the second dATP, enabling bioinformatic identiﬁcation of RNRs that contain the novel domain.
+                        </font>
+                    </p>
+					</div>
+                </div><hr>
+				<!-- Speaker 8 -->
+                <div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+					<div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+						<img src="images/speakers/conf'16/sp8.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+					</div>	
+					<div class="speaker-details" style="flex: 2;">
+						<div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"Next Generation Sequencing for New Born Screening and Diagnosis</u>"</p></b><b><br>Dr. Rajgopal Srinivasan</b></font><br>Head-Bio It, Tata Innovation Labs, Tata Consultancy Services, Hyderabad
+                    </div>
+                    <p style="text-align: justify; font-size: 14px;">
+                        <font size="3">
+                            Whole exome and genome sequencing is increasingly being used to identify variants that correlate to rare disorders. However, establishing proof of a causative mutation can be challenging. In my talk I will present two case studies that implicated new roles for two genes (ZAP70 and BCL11b) in immune related disorders, and our approach to establish a causative role for variants in these genes. I will also touch upon the feasibility of using genome/exome sequencing as the single diagnostic for screening newborns for a variety of disorders.
+                        </font>
+                    </p>
+					</div>
+                </div>
+				<hr>
+				<!-- Speaker 9 -->
+                <div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+					<div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+						<img src="images/speakers/conf'16/sp9.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+					</div>	
+					<div class="speaker-details" style="flex: 2;">
+						<div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"Network reconstruction and systems analysis of the plant cell wall deconstruction by Neurosporacrassa</u>"</p></b><b><br>Dr. Areejit Samal</b></font><br>Computational Biology, The Institute Of Mathematical Sciences (IMSc), CIT Campus, Taramani, Chennai-600113, India
+                    </div>
+                    <p style="text-align: justify; font-size: 14px;">
+                        <font size="3">
+                            A principal barrier in economical production of lignocellulosic biofuel is the enzyme costs required for conversion of plant biomass polysaccharides into simple fermentable sugars. Filamentous fungi are an excellent source of hydrolytic enzymes degrading lignocellulose. Neurospora crassa is a model ﬁlamentous fungus that can degrade and grow on lignocellulosic plant biomass. A system level understanding of the mechanisms employed by Neurospora to degrade plant cell wall and the regulation of associated genes can guide the rational design of hypersecretion strains. Towards this goal, we have reconstructed the ﬁrst comprehensive network of biochemical reactions in Neurospora for plant cell wall deconstruction. Our reconstruction effort involved the integration of ﬁve heterogeneous data types to generate a feature matrix capturing the combined information. Using the feature matrix, we have devised a simple method for assigning annotation conﬁdence scores to genes in the network. Experiments were performed to generate RNAseq data for Neurospora grown in different nutrient conditions. Biclustering of RNAseq data in different nutrient conditions revealed environment-speciﬁc gene modules. Subsequent analysis of RNAseq and ChIPseq data within the network context shed new insights on regulation of genes coding for plant cell wall degrading enzymes in Neurospora.
+                        </font>
+                    </p>
+					</div>
+                </div>
+				<hr>
+				<!-- Speaker 10 -->
+                <div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+					<div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+						<img src="images/speakers/conf'16/sp10.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+					</div>	
+					<div class="speaker-details" style="flex: 2;">
+						<div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"Structure of pilus protein SpaA provides insights into SpaCBA pilus formation in probiotic Lactobacillus rhamnosus GG</u>"</p></b><b><br>Dr. Vengadesan Krishnan</b></font><br>Regional Centre For Biotechnology, NCR Biotech Science Cluster, Faridabad, India
+                    </div>
+                    <p style="text-align: justify; font-size: 14px;">
+                        <font size="3">
+                            Many Gram-positive bacteria assemble sortase-mediated pili on their cell surface for adhesion, colonization and bioﬁlm formation. These cell surface features, known as virulence factor in pathogenic bacteria also recently identiﬁed in beneﬁcial microbes including probiotic Lactobacillus rhamnosus GG that has received a great attention. To date, all solved structures of pilus proteins comprising Gram-positive sortase-assembled pili are from pathogenic genera and species. Now, for the ﬁrst time, we solved the crystal structure of SpaA, the backbone pilin in the SpaCBA-called pilus of non-pathogenic L. rhamnosus GG. The SpaA consists of two tandem CnaB-type domains, each with an isopeptide bond and E-box motif. While the isopeptide bond in the N-terminal domain forms between lysine and asparagine, it atypically involves aspartate in the C-terminal domain. The molecular packing in the crystal reveals the native-like pilus ﬁber and provides insights into SpaCBA pilus assembly. Mutation of glutamate in the E-box of both N-terminal (E139A) and C-terminal domain (E239A) that may prevent the isopeptide bond formation affects the proteolytic and thermal stability of SpaA. Intriguingly, for the E269A substitution, the N-terminal isopeptide bond is initially absent, but reappears over time. From E239A mutant, we also captured crystal structure of labile N-terminal domain, which was not previously reported from any Gram-positive pilin.
+                        </font>
+                    </p>
+					</div>
+                </div>
+				<hr>
+				<!-- Speaker 11 -->
+                <div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+					<div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+						<img src="images/speakers/conf'16/sp11.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+					</div>	
+					<div class="speaker-details" style="flex: 2;">
+						<div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"Bioinformatics in NGSomics: Application in Eye diseases</u>"</p></b><b><br>Dr. D Bharanidharan</b></font><br>Department Of Bioinformatics, Aravind Medical Research Foundation, Madurai, India
+                    </div>
+                    <p style="text-align: justify; font-size: 14px;">
+                        <font size="3">
+                            The rapid advancement and adoption of 'omics' technologies have progressed to address complex molecular mechanisms that underlie various eye diseases thereby producing massive and complex of data from individual laboratories. The omics analysis incorporated with widerange of technologies to analyze DNA sequences(genomics),transcribed RNA(transcriptomics),the regulatory mechanisms underlying control of transcription including the microRNA (microRNAomics), the methylated cytosines within the genome (epigenomics) and regulatory regions within the genome to which the transcription factors bind (cistromics), focusing on protein abundance (proteomics) and metabolites and metabolic networks (metabolomics). However, the major challenge still remains as how to analyze, explore and integrate and how to delineate and understand the pathways and biological processes that are interacting within and between cells that are disrupted in eye diseases. We provide an overview, focusing on next-generation sequencing (NGS) omics data, and spotlight speciﬁc examples on targeted/exomic and microRNAomic data sets in eye diseases. Our efforts have provided the methodology and pipeline to diagnose eye disease, and to provide candidate genes, for further clinical use.
+                        </font>
+                    </p>
+					</div>
+                </div>
+            </div>
+			<div id="speaker-images" style="display: none;">
+			<p style="font-size: 18px;">
+				<strong>Images:</strong><br><br>
+            </p>
+			<div class="image-grid">
+        <!-- Replace the image URLs with your actual image URLs -->
+        <img src="images/Gallery/conf'16/c1.jpg" alt="Image 1">
+        <img src="images/Gallery/conf'16/c2.jpg" alt="Image 2">
+        <img src="images/Gallery/conf'16/c3.jpg" alt="Image 3">
+        <img src="images/Gallery/conf'16/c4.jpg" alt="Image 4">
+        <img src="images/Gallery/conf'16/c5.jpg" alt="Image 5">
+        <img src="images/Gallery/conf'16/c6.jpg" alt="Image 6">
+        <img src="images/Gallery/conf'16/c7.jpg" alt="Image 7">
+        <img src="images/Gallery/conf'16/c8.jpg" alt="Image 8">
+        <img src="images/Gallery/conf'16/c9.jpg" alt="Image 9">
+        <img src="images/Gallery/conf'16/c10.jpg" alt="Image 10">
+        <img src="images/Gallery/conf'16/c11.jpg" alt="Image 11">
+        <img src="images/Gallery/conf'16/c12.jpg" alt="Image 12">
+        <img src="images/Gallery/conf'16/c13.jpg" alt="Image 13">
+        <img src="images/Gallery/conf'16/c14.jpg" alt="Image 14">
+        <img src="images/Gallery/conf'16/c15.jpg" alt="Image 15">
+        <img src="images/Gallery/conf'16/c16.jpg" alt="Image 16">
+        <img src="images/Gallery/conf'16/c17.jpg" alt="Image 17">
+        <img src="images/Gallery/conf'16/c18.jpg" alt="Image 18">
+        <img src="images/Gallery/conf'16/c19.jpg" alt="Image 19">
+        <img src="images/Gallery/conf'16/c20.jpg" alt="Image 20">
+        <!-- Add more images as needed -->
+    </div>
+	</div>
+        </div>
+		</div>
+    </section>
+
+    <div class="wrapper row5">
+        <footer id="footer" class="hoc clear">
+            <p class="fl_left">COMBIGS, SASTRA Deemed to be University, All rights Reserved. 2023</p>
+            <p class="fl_right">Developed by <a target="_blank" href="https://www.sastra.edu/">SASTRA Web Team</a></p>
+        </footer>
+    </div>
+
+    <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+
+    <script>
+        function toggleNav() {
+            var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];
+            if (nav.style.display === "block") {
+                nav.style.display = "none";
+            } else {
+                nav.style.display = "block";
+            }
+        }
+
+        window.addEventListener('resize', function () {
+            var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];
+            if (window.innerWidth > 768) {
+                nav.removeAttribute('style');
+            }
+        });
+		
+		// Function to toggle visibility of speaker list
+		function toggleSpeakers() {
+			var speakers = document.getElementById("speaker-list");
+			speakers.style.display = (speakers.style.display === "none" || speakers.style.display === "") ? "block" : "none";
+		}
+
+		// Function to toggle visibility of speaker images
+		function toggleImages() {
+			var images = document.getElementById("speaker-images");
+			images.style.display = (images.style.display === "none" || images.style.display === "") ? "block" : "none";
+		}
+    </script>
+</body>
+
+</html>

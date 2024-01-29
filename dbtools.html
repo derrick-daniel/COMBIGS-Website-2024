@@ -1,0 +1,558 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+  <title>COMBIGS | Database and tools</title>
+  <link rel="icon" href="images/sastra.png" />
+  <link rel="stylesheet" href="layout/styles/framework.css">
+  <link rel="stylesheet" href="layout/styles/layout.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <!-- <script src="path/to/js/disable.js"></script> -->
+  <style>
+    .row3 {
+			background-color: #fcfcfc;
+		}
+
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      user-select: none;
+    }
+
+    .image-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		.image-container a {
+			flex: 1 1 50%;
+			/* makes each link take up 50% of the width */
+			max-width: 100%;
+			/* ensures images don't exceed their container */
+		}
+
+		.image-container img {
+			width: 100%;
+			height: auto;
+			display: block;
+			/* removes extra space below the image */
+		}
+
+        .one_quarter {
+			width: calc(33.33% - 100px);
+			/* Subtracting the total horizontal margin from one-third of the container */
+			margin: 0px 50px;
+			/* 50px margin on each side */
+			box-sizing: border-box;
+			/* To include padding and borders in the width calculation */
+			float: left;
+			/* To align the boxes side by side */
+		}
+
+		@media (max-width: 768px) {
+			.image-container a {
+				flex: 1 1 100%;
+				/* each link takes full width on smaller screens */
+			}
+			
+			.one_quarter {
+				width: 100%;
+				/* Full width on smaller screens */
+				margin: 30px 0;
+				/* Adjusted margin for mobile devices */
+				float: none;
+				/* Clear float for mobile layout */
+			}
+		}
+
+    @media screen and (max-width: 768px) {
+      .hamburger {
+        display: block;
+        cursor: pointer;
+      }
+
+      #mainav {
+				padding: 10px 0;
+			}
+
+      #mainav ul {
+        display: none;
+      }
+    }
+    .table-img {
+      width: 100px;
+      height: auto;
+      object-fit: contain;
+    }
+    .database-tools-table td {
+      text-align: left;
+      padding: 8px;
+    }
+    .database-tools-table tr:hover {
+      background-color: #9ADCFF;
+    }
+    .database-tools-table thead tr {
+      background-color: transparent; /* Or any color you want for the header */
+    }
+    .btn {
+      display: inline-block;
+      padding: 12px 20px; 
+      font-size: 18px; 
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease; 
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
+    }
+    .btn:hover, .btn:focus { /* Focus state added */
+      background-color: #0056b3;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
+    }
+    .btn:focus {
+      outline: none; /* Removes the default focus outline */
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5); 
+    }
+  </style>
+</head>
+
+<body id="top">
+
+	<!-- SASTRA & COMBIGS Logo -->
+	<div class="wrapper row0">
+		<header id="header" class="hoc clear">
+			<div class="image-container">
+				<!-- Image Links -->
+				<a href="index.html"><img src="images/combigs-part-1.png" alt="" /></a>
+				<a href="index.html"><img src="images/combigs-part-2.png" alt="" /></a>
+			</div>
+		</header>
+	</div>
+
+	<!-- Main Navbar / Hamburger Menu -->
+	<div class="wrapper row1">
+		<div class="hoc clear">
+			<!-- Hamburger Icon -->
+			<div class="hamburger fl_right" onclick="toggleNav()">☰</div>
+			<nav id="mainav" class="fl_right">
+				<ul class="clear">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="magazine.html">Magazine</a></li>
+					<li><a href="event.html">Event Archives</a></li>
+					<li><a href="experiences.html">Experience</a></li>
+					<li><a href="intern.html">Internships</a></li>
+					<li class="active"><a href="dbtools.html">Databases and Tools</a></li>
+					<li><a href="members.html">Members</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+  
+  <div class="wrapper bgded" style="background-image:url('./images/dbtools-web-banner.png'); background-size:cover; background-position:center center;"> 
+    <section id="pageintro" class="hoc clear" style="padding: 20px 0;">
+      <div style="background-color: rgba(255, 255, 255, 0.7); display: inline-block; padding: 10px; border-radius: 5px;">
+        <h2 class="heading" style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">Databases and Tools</h2>
+        <p style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">
+          Bridging computational techniques with biological insights to advance scientific discovery.
+        </p>
+      </div>
+    </section>
+  </div>   
+  
+  <div class="wrapper row3">
+    <main class="hoc container clear">
+      <div class="content">
+        <h1>Databases and Access Links</h1>
+        <div class="scrollable">
+          <table class="database-tools-table">
+            <thead>
+              <tr>
+                <th>Name of the Database</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td align="center">
+                  <a href="https://www.ncbi.nlm.nih.gov/" target="_blank">
+                    <img src="images/NCBI.jpg" class="table-img">
+                  </a>
+                </td>
+                <td>
+                  <a href="https://www.ncbi.nlm.nih.gov/" target="_blank">NCBI</a> is a source for public biomedical databases and has software tools for analyzing molecular and genomic data.
+                </td>
+              </tr>
+              <tr>
+                <td align=center> 
+                  <a  href="http://www.uniprot.org/" target="_blank">  
+                      <img src="images/UNIPROT.png" class="table-img">
+                  </a>
+                </td>
+                <td>The Universal Protein Resource (<a class="l" href="http://www.uniprot.org/" target="_blank">UniProt</a>) is a comprehensive resource for protein sequence and annotation data.</td>
+              </tr>
+              <tr>
+                <td align=center> 
+                  <a  href="http://trace.ddbj.nig.ac.jp/dra/index_e.html" target="_blank">
+                    <img src="images/DDBJ.png" class="table-img">  
+                  </a>
+                </td>
+                <td>
+                  The DNA Data Bank of Japan (<a class="l" href="http://trace.ddbj.nig.ac.jp/dra/index_e.html" target="_blank">DDBJ</a>) provides freely available nucleotide sequence data.</td>
+              </tr>
+              <tr>
+                <td align=center> 
+                  <a  href="https://www.ebi.ac.uk/chembl/" target="_blank">
+                    <img src="images/CHEMBL.png" class="table-img">
+                  </a>
+                </td>
+                <td>
+                  <a class="l" href="http://www.uniprot.org/" target="_blank">ChEMBL</a> is a manually curated database of bioactive molecules with drug-like properties. It brings together chemical, bioactivity and genomic data to aid the translation of genomic information into effective new drugs.
+                </td>
+              </tr>
+            
+              <tr>
+                <td align=center> 
+                  <a  href="http://www.treefam.org/search" target="_blank">
+                    <img src="http://www.treefam.org/static/images/treefam_logo.png" class="table-img">
+                  </a>
+                </td>
+                <td>
+                  <a class="l" href="http://www.treefam.org/search" target="_blank">TreeFam</a> (Tree families database) is a database of phylogenetic trees of animal genes. It provides information about ortholog and paralog assignments and evolutionary history of gene families.
+                </td>
+              </tr>
+            
+              <tr>
+                <td align=center>
+                  <a  href="https://www.rcsb.org/pdb/home/home.do" target="_blank">
+                    <img src="https://cdn.rcsb.org/rcsb-pdb/v2/common/images/rcsb_logo.png" class="table-img">
+                  </a>
+                </td>
+                <td>
+                  The Protein Data Bank (<a class="l" href="https://www.rcsb.org/pdb/home/home.do" target="_blank">PDB</a>) is a crystallographic database for the three-dimensional structural data of large biological molecules, such as proteins and nucleic acids. The data, typically obtained by X-ray crystallography, NMR spectroscopy, or, increasingly, cryo-electron microscopy.The PDB is a key resource in areas of structural biology, such as structural genomics. </td>
+                </tr>
+              <tr>
+                <td align=center>
+                  <a  href="http://www.cathdb.info/" target="_blank">
+                    <img src="images/CATH_-_Protein_Structure_Classification_Database.png" class="table-img">
+                  </a>
+                </td>
+                <td>The <a class="l" href="http://www.cathdb.info/" target="_blank">CATH</a> database provides hierarchical classification of protein domains based on their folding patterns. Domains are obtained from protein structures deposited in the Protein Data Bank and both domain identification and subsequent classification use manual as well as automated procedures.</td>
+              </tr>
+              <tr>
+                <td align=center>  
+                  <a  href="http://scop.berkeley.edu/" target="_blank">
+                    <img src="https://scop.mrc-lmb.cam.ac.uk/static/media/scop_logo.358e74fa.png" class="table-img">
+                  </a>
+                </td>
+                <td>The Structural Classification of Proteins (<a class="l" href="http://scop.berkeley.edu/" target="_blank">SCOP</a>) database is a largely manual classification of protein structural domains based on similarities of their structures and amino acid sequences. A motivation for this classification is to determine the evolutionary relationship between proteins.The shapes of domains are called "folds" in SCOP. Domains belonging to the same fold have the same major secondary structures in the same arrangement with the same topological connections</td>
+              </tr>
+              <tr>
+                <td align=center>
+                  <a  href="https://www.expasy.org/" target="_blank">
+                    <img src="https://www.expasy.org/images/expasy-homepage.png" class="table-img">
+                  </a>
+                </td>
+                <td><a class="l" href="https://www.expasy.org/" target="_blank">Expasy</a> is an integrated database containing information about genomes, proteomes, evolution and structural biology.</td>
+              </tr>
+              <tr>
+                <td align=center>
+                  <a  href="https://www.genome.jp/kegg/" target="_blank">
+                    <img src="https://www.genome.jp/Fig/kegg128.gif" class="table-img">
+                  </a>
+                </td>
+                <td>
+                  <a class="l" href="https://www.genome.jp/kegg/" target="_blank">KEGG</a> (Kyoto Encyclopedia of Genes and Genomes) is a collection of databases dealing with genomes, biological pathways, diseases, drugs, and chemical substances.</td>
+               </tr>
+              <tr>
+                <td align=center> 
+                  <a  href="https://prosite.expasy.org/" target="_blank">
+                    <img src="https://prosite.expasy.org/images/prosite/prosite.gif" class="table-img">
+                  </a>
+                </td>
+                <td>
+                  <a class="l" href="https://prosite.expasy.org/" target="_blank">PROSITE</a> is a protein database. It consists of entries describing the protein families, domains and functional sites as well as amino acid patterns and profiles in them.</td>
+              </tr>
+              <tr>
+                <td align=center>
+                  <a  href="https://www.ncbi.nlm.nih.gov/genbank/" target="_blank">
+                    <img src="images/GenBank.png" class="table-img">
+                  </a>
+                </td>
+                <td>
+                  The <a class="l" href="https://www.ncbi.nlm.nih.gov/genbank/" target="_blank">GenBank</a> sequence database is an open access, annotated collection of all publicly available nucleotide sequences and their protein translations. It is a comprehensive source of stable automatic annotation of individual genomes, and of the synteny and orthology relationships between them.
+                </td>
+              </tr>
+              <tr>
+                <td align=center> 
+                  <a  href="https://www.ensembl.org/index.html" target="_blank"><img src="images/ensembl_logo.png" class="table-img"></a></td>
+                <td><a class="l" href="https://www.ensembl.org/index.html" target="_blank">Ensembl</a> is a bioinformatics project to organize biological information around the sequences of large genomes.
+                </td>
+              </tr>
+              <tr>
+                <td align=center>
+                  <a  href="https://www.ebi.ac.uk/interpro/" target="_blank">
+                    <img src="images/INTERPRO.jpg" class="table-img">
+                  </a>
+                </td>
+                <td>
+                  <a class="l" href="https://www.ebi.ac.uk/interpro/" target="_blank">InterPro</a> is a database of protein families, domains and functional sites in which identifiable features found in known proteins can be applied to new protein sequences in order to functionally characterize them.
+                </td>
+              </tr>
+              <tr>
+                <td align=center>
+                  <a href="https://string-db.org/" target="_blank"><img src="images/STRING&#32;DATABASE.png" class="table-img"></a></td>
+                <td>
+                  <a class="l" href="https://string-db.org/" target="_blank">STRING</a> is a database of known and predicted protein-protein interactions.
+                </td>
+              </tr>
+              <tr>
+                <td align=center>
+                  <a href="http://www.bioinfo.pte.hu/more/TrEMBL.htm" target="_blank">
+                    <img src="images/TrEMBL.png" style="width: 100px; height: 50px;">
+                  </a>
+                </td>
+                <td>
+                  <a class="l" href="http://www.bioinfo.pte.hu/more/TrEMBL.htm" target="_blank">TrEMBL</a> is a computer-annotated protein sequence database supplementing the SWISS-PROT Protein Sequence Data Bank.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- New Tab Link Section -->
+        <div class="download-section" style="text-align: center; margin-top: 20px;">
+          <a href="./dbtools-misc-DBs.html" class="btn">
+            Explore Full List of Databases (New Tab)
+          </a>
+        </div>
+
+        <br>
+
+        <h1>Tools and Access Links</h1>
+        <div class="scrollable">
+          <table class="database-tools-table">
+            <thead>
+              <tr>
+                <th>Name of the Tool</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td align="center">
+                  <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi" target="_blank">
+                    <img src="images/blast-logo.jpg" class="table-img">
+                  </a>
+                </td>
+                <td>
+                  <a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi" target="_blank">BLAST</a> finds regions of similarity between biological sequences.
+                </td>
+              </tr>
+              <tr>
+                <td align=center> 
+                  <a  href="http://www.genome.jp/tools-bin/clustalw" target="_blank">
+                    <img src="images/clustalo_title.png" class="table-img">
+                  </a>
+                </td>
+                <td>
+                  <a class="l" href="http://www.genome.jp/tools-bin/clustalw" target="_blank">Clustal</a> is a series of widely used computer programs used in Bioinformatics for multiple sequence alignment.In many cases, the input set of query sequences are assumed to have an evolutionary relationship by which they share a lineage and are descended from a common ancestor. From the resulting MSA, sequence homology can be inferred and phylogenetic analysis can be conducted to assess the sequences' shared evolutionary origins.</td>
+              </tr>
+              <tr>
+                <td align=center> 
+                  <a  href="https://swissmodel.expasy.org/" target="_blank">
+                    <img src="https://swissmodel.expasy.org/static/images/sib_logo_small.svg" class="table-img">
+                  </a>
+                </td>
+                <td>
+                  <a class="l" href="https://swissmodel.expasy.org/" target="_blank">SWISS-MODEL</a> is a structural bioinformatics web-server dedicated to homology modeling of protein 3D structures.
+                </td>
+              </tr>
+              <tr>
+                <td align=center>
+                  <a href="https://saves.mbi.ucla.edu/" target="_blank">
+                    <img src="images/saves.png" class="table-img">
+                  </a>
+                </td>
+                <td><a class="l" href="https://saves.mbi.ucla.edu/" target="_blank">SAVES</a> tools consist of many protein varification tools. The input structure should be in pdb format.</td>
+              </tr>
+              
+              <tr>
+                <td align=center>
+                  <a  href="https://www.ebi.ac.uk/Tools/emboss/" target="_blank">
+                    <img src="images/EMBOSS&#32;DATABASE.jpg" class="table-img">
+                  </a>
+                </td>
+                <td><a class="l" href="https://www.ebi.ac.uk/Tools/emboss/" target="_blank">EMBOSS</a> is the European Molecular Biology Open Software Suite. EMBOSS programs contains collection of tools for sequence analysis.</td>
+              </tr>
+            
+              <tr>
+                <td align=center>
+                  <a class="l" href="https://www.ebi.ac.uk/Tools/msa/muscle/" target="_blank">
+                    <img src="images/muscle.png" class="table-img">
+                  </a>
+                </td>
+                <td><a class="l" href="https://www.ebi.ac.uk/Tools/msa/muscle/" target="_blank">MUSCLE</a> stands for MUltiple Sequence Comparison by Log Expectation. It is used for multiple sequence alignment of protein and nucleotide sequences.</td>
+              </tr>
+              <tr>
+                <td align=center>
+                  <a class="l" href="https://www.compbio.dundee.ac.uk/jpred/" target="_blank">
+                    <img src="https://www.compbio.dundee.ac.uk/jpred/myimages/Jpred4_logo8_3.svg" class="table-img">
+                  </a>
+                </td>
+                <td><a class="l" href="https://www.compbio.dundee.ac.uk/jpred/" target="_blank">JPred</a> is a Protein Secondary Structure Prediction server and has been in operation since approximately 1998.</td>
+              </tr>
+             
+              <tr>
+                <td align=center>  
+                  <a href="https://proteininformationresource.org/" target="_blank">
+                    <img src="https://proteininformationresource.org/pirwww/images/temp/PIRBanner.png" class="table-img">
+                  </a>
+                </td>
+                <td>The Protein Information Resource (<a class="l" href="https://proteininformationresource.org/" target="_blank">PIR</a>) is an integrated public resource of protein informatics that supports genomic and proteomic research and scientific discovery.</td>
+              </tr>
+            
+              <tr>
+                <td align=center>
+                  <a class="l" href="https://pymol.org/2/#download" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/8/87/PyMOL_logo.svg" class="table-img">
+                  </a>
+                </td>
+                <td>
+                  <a class="l" href="https://pymol.org/2/#download" target="_blank">PyMOL</a> is a molecular visualization system used to view and ivestigate atoms and molecules.
+                </td>
+              </tr>
+              <tr>
+                <td align=center> 
+                  <a class="l" href="https://avogadro.cc/" target="_blank">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Avogadro.png" class="table-img">
+                  </a>
+                </td>
+                <td><a class="l" href="https://avogadro.cc/" target="_blank">Avagadro</a> is a molecular editor sued in computational chemistry, molecular modelling to inverstigate and alter molecules and atoms.</td>
+              </tr>
+              <tr>
+                <td align=center>
+                  <a href="https://usegalaxy.org/" target="_blank">
+                    <img src="images/GALAXY.jpg" class="table-img">
+                  </a>
+                </td>
+                <td><a class="l" href="https://usegalaxy.org/" target="_blank">GALAXY</a> is a next generation Scientific workflow, data integration and data analysis publishing platform which aims to make computational biology accessible to research Scientists</td>
+              </tr>
+              <tr>
+                <td align=center>
+                  <a href="https://www.gromacs.org/" target="_blank">
+                  <img src="https://www.gromacs.org/_static/gmx_logo_blue.png" class="table-img">
+                </a>
+              </td>
+                <td><a class="l" href="https://www.gromacs.org/" target="_blank">Gromacs</a> is a molecular dynamic package designed for simulations of protein, lipids and nucleic acid. </td>
+              </tr>
+              <tr>
+                <td align=center> 
+                  <a class="l" href="https://bernhardcl.github.io/coot/wincoot-download.html" target="_blank">
+                    <img src="images/WINCOOT.png" class="table-img">
+                  </a>
+                </td>
+                <td>Crystallographic Object-Orinted Toolkit(<a class="l" href="https://bernhardcl.github.io/coot/wincoot-download.html" target="_blank">COOT</a>) used to display and manipulate atomic models of macromolecules like proteins and nucleic acids using 3D computer graphics. </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Download Link Section -->
+        <div class="download-section" style="text-align: center; margin-top: 20px;">
+          <a href="./Additional-dbtools.pdf" download="Full_Tools_List_From_COMBIGS.pdf" class="btn">
+            Download the Full Tools List (PDF)
+          </a>
+        </div>
+
+      </div>
+      <div class="clear"></div>
+    </main>
+  </div>
+  
+  
+	<!-- `Above Footer` Section -->
+	<div class="wrapper row4">
+		<footer id="footer" class="hoc clear">
+			<!-- Combigs -->
+			<div class="one_quarter first">
+				<h1 class="logoname clear"><a href="https://www.sastra.edu/combigs/"><span>COMBIGS</span></a></h1>
+				<p class="btmspace-30" style="text-align:left;">
+					COMBIGS at SASTRA University is a renowned Computational Biology Group, fostering collaboration and
+					innovation in bioinformatics through conferences, workshops, and an e-magazine.
+				</p>
+				<ul class="faico clear">
+					<li><a class="faicon-instagram" href="https://www.instagram.com/combigs_sastra/" target="_blank"><i
+								class="fab fa-instagram"></i></a></li>
+					<li><a class="faicon-spotify"
+							href="https://open.spotify.com/show/0AN2PXlU15ROhDfLxdfb9e?si=b96cc943c5214824"
+							target="_blank"><i class="fab fa-spotify"></i></a></li>
+					<!-- Add or remove social media links as necessary -->
+				</ul>
+			</div>
+			<!-- Contact Information -->
+			<div class="one_quarter">
+				<h6 class="heading">Contact Information</h6>
+				<ul class="nospace linklist contact">
+					<li><i class="fas fa-map-marker-alt"></i>
+						<address>
+							<strong>SCBT</strong>,<br>
+							SASTRA DEEMED UNIVERSITY,<br>
+							Tirumalaisamudram,<br>
+							Thanjavur - 613401,<br>
+							Tamilnadu, India
+						</address>
+					</li>
+				</ul>
+			</div>
+			<!-- Quick Links -->
+			<div class="one_quarter">
+				<h6 class="heading">Quick Links</h6>
+				<ul class="nospace linklist">
+					<li><a href="members.html">Members of COMBIGS</a></li>
+					<li><a href="https://www.sastra.edu/staffprofiles/schools/scbt.php" target="_blank">SCBT Faculties</a></li>
+					<li><a href="https://forms.gle/esHizEVcAW9cZScw8" target="_blank">Feedback Form for Website Improvement</a></li>
+				</ul>
+
+			</div>
+		</footer>
+	</div>
+
+	<!-- Footer -->
+	<div class="wrapper row5">
+		<div id="copyright" class="hoc clear">
+			<p class="fl_left">Copyright &copy; 2023-2024 - All Rights Reserved - <a
+					href="https://www.sastra.edu/combigs/">COMBIGS,
+					SASTRA Deemed to be University</a></p>
+			<p class="fl_right">Template by <a target="_blank" rel="noopener" href="http://www.os-templates.com/"
+					title="Free Website Templates">OS Templates</a></p>
+		</div>
+
+		<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+	</div>
+  
+  <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+
+  <script>
+    function toggleNav() {
+      var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];
+      if (nav.style.display === "block") {
+        nav.style.display = "none";
+      } else {
+        nav.style.display = "block";
+      }
+    }
+  
+    // Remove inline styles on window resize
+    window.addEventListener('resize', function() {
+      var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];
+      if (window.innerWidth > 768) {
+        nav.removeAttribute('style');
+      }
+    });
+  </script>
+  
+</body>
+</html>

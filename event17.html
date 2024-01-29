@@ -1,0 +1,245 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+    <title>COMBIGS | Pratyarth'23 :: SASTRA Deemed to be University</title>
+    <link rel="icon" href="images/sastra.png" />
+    <link rel="stylesheet" href="layout/styles/framework.css">
+    <link rel="stylesheet" href="layout/styles/layout.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <style>
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .image-grid img {
+            width: 19%; /* Adjust the width as needed */
+            margin-bottom: 10px;
+        }
+
+        body {
+            background-color: #fff;
+            /* Set the default background color for the body */
+        }
+
+        #event-archives-section {
+            padding: 50px 0;
+            background: #BFC9CA;
+            text-align: center;
+        }
+
+        .event-info {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.85);
+            color: #333;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            /* Removed 'display: none;' */
+        }
+
+        .event-image {
+            width: 150px;
+            /* Set a fixed width for the images */
+            height: auto;
+            /* Let the height adjust automatically */
+            margin-right: 20px;
+            /* Adjust spacing between image and link */
+        }
+
+        /* Adjustments for responsiveness */
+        @media screen and (max-width: 768px) {
+            .event-item {
+                flex-direction: column;
+                /* Stack items vertically on smaller screens */
+            }
+
+            .event-image {
+                margin-right: 0;
+                /* Remove margin between image and link on smaller screens */
+                margin-bottom: 10px;
+                /* Adjust spacing between items on smaller screens */
+                align-self: center;
+                /* Center the image horizontally on smaller screens */
+            }
+
+            .event-link {
+                max-width: none;
+                /* Remove max-width on smaller screens */
+            }
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 18px;
+            user-select: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            #mainav ul {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        .scrollable {
+            overflow-x: auto;
+        }
+
+        @media screen and (max-width: 768px) {
+            .events-table th,
+            .events-table td {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+
+        /* Style for buttons */
+        .toggle-button {
+            background-color: #4CAF50; /* Green background */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Initially hide speaker list */
+        #speaker-list {
+            display: none;
+        }
+		#pdf-object {
+			display: none; /* Initially hide the PDF object */
+		}
+    </style>
+</head>
+
+<body>
+    <div class="wrapper row1">
+        <header id="header" class="hoc clear">
+            <div id="logo" class="fl_left">
+                <a href="index.html"><img src="images/combigs.png" alt="" /></a>
+            </div>
+            <!-- Hamburger Icon -->
+            <div class="hamburger fl_right" onclick="toggleNav()">☰</div>
+            <nav id="mainav" class="fl_right">
+                <ul class="clear">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="magazine.html">Magazine</a></li>
+                    <li class="active"><a href="event.html">Event Archives</a></li>
+                    <li><a href="experiences.html">Experience</a></li>
+                    <li><a href="intern.html">Internships</a></li>
+                    <li><a href="dbtools.html">Databases and Tools</a></li>
+                    <li><a href="members.html">Members</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="wrapper bgded" style="background-image:url('./images/event-archives-banner.png'); background-size:cover; background-position:center center;">
+        <section id="pageintro" class="hoc clear" style="padding: 20px 0;">
+            <div style="background-color: rgba(255, 255, 255, 0.7); display: inline-block; padding: 10px; border-radius: 5px;">
+                <h2 class="heading" style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">Pratyarth'23</h2>
+                <p style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">
+                    18th March, 2023
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Section for event information (replace placeholder text with actual details) -->
+    <section id="event-archives-section" style="text-align: center;">
+        <div class="events" style="margin: 0 auto; max-width: 1500px;">
+            <!-- Event details go here -->
+			
+            <div class="event-info" style="text-align: left; margin-bottom: 30px;">
+                <button class="toggle-button" onclick="toggleImages()">Show Event Pictures</button>
+				<button class="toggle-button" onclick="togglePDF()">Show PDF</button>
+				<br><br>
+                <p style="text-align: justify">
+                    Pratyath, held on 18th March 2023, marked the launch of the GEN(E)IUS Magazine's 2022-2023 edition. The event, filled with anticipation and excitement, showcased the culmination of creative efforts and intellectual endeavors. There also was a very informative talk, that broadened the students' knowledge and also inspired them to explore new frontiers in bioinfo.
+                </p>
+            
+			<div id="speaker-images" style="display: none;">
+			<p style="font-size: 18px;">
+				<strong>Images:</strong><br><br>
+            </p>
+			
+			<center><video width="800" height="450" controls="play">
+	<source src="images/Gallery/pratyarth'23/vid.mp4" type="video/mp4">
+	Your browser does not support the video tag.
+	</video><br><br>
+		<img src="images/Gallery/pratyarth'23/p1.jpg" alt="Image 1" style="width:350px;height:225px;">&nbsp;&nbsp;
+        <img src="images/Gallery/pratyarth'23/p2.jpg" alt="Image 2" style="width:350px;height:225px;"><br><br>
+        <img src="images/Gallery/pratyarth'23/p3.jpg" alt="Image 3" style="width:350px;height:225px;">&nbsp;&nbsp;
+        <img src="images/Gallery/pratyarth'23/p4.jpg" alt="Image 4" style="width:350px;height:225px;"><br><br>
+        <img src="images/Gallery/pratyarth'23/p5.jpg" alt="Image 5" style="width:350px;height:225px;">&nbsp;&nbsp;
+        <img src="images/Gallery/pratyarth'23/p6.jpg" alt="Image 6" style="width:350px;height:225px;"><br><br>
+        <img src="images/Gallery/pratyarth'23/p7.jpg" alt="Image 7" style="width:350px;height:225px;">&nbsp;&nbsp;
+        <img src="images/Gallery/pratyarth'23/p8.jpg" alt="Image 8" style="width:350px;height:225px;"></center>
+			<div class="image-grid">
+        <!-- Replace the image URLs with your actual image URLs -->
+		<!--  -->
+        <!-- Add more images as needed -->
+    </div>
+	</div>
+	<br><br><br><center><object id=pdf-object  width="850" height="600" data="pdf/Articles-23.pdf"></center></object>
+        </div>
+		</div>
+    </section>
+
+    <div class="wrapper row5">
+        <footer id="footer" class="hoc clear">
+            <p class="fl_left">COMBIGS, SASTRA Deemed to be University, All rights Reserved. 2023</p>
+            <p class="fl_right">Developed by <a target="_blank" href="https://www.sastra.edu/">SASTRA Web Team</a></p>
+        </footer>
+    </div>
+
+    <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+
+    <script>
+        function toggleNav() {
+            var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];
+            if (nav.style.display === "block") {
+                nav.style.display = "none";
+            } else {
+                nav.style.display = "block";
+            }
+        }
+
+        window.addEventListener('resize', function () {
+            var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];
+            if (window.innerWidth > 768) {
+                nav.removeAttribute('style');
+            }
+        });
+
+		// Function to toggle visibility of speaker images
+		function toggleImages() {
+			var images = document.getElementById("speaker-images");
+			images.style.display = (images.style.display === "none" || images.style.display === "") ? "block" : "none";
+		}
+		
+		// Function to toggle visibility of PDF
+		function togglePDF() {
+			var pdf = document.querySelector("object[data='pdf/Articles-23.pdf']");
+			pdf.style.display = (pdf.style.display === "none" || pdf.style.display === "") ? "block" : "none";
+		}
+    </script>
+</body>
+
+</html>

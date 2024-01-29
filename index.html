@@ -1,0 +1,490 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>COMBIGS | Home</title>
+	<link rel="icon" href="images/sastra.png" />
+	<link rel="stylesheet" href="layout/styles/framework.css">
+	<link rel="stylesheet" href="layout/styles/layout.css">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!-- Updated Style -->
+	<style>
+		.row3 {
+			background-color: #fcfcfc;
+		}
+
+		body {
+			background-color: #fff;
+			/* Light beige color */
+		}
+
+		.card {
+			background: #fff;
+			border-radius: 10px;
+			box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+			padding: 20px;
+			margin-bottom: 20px;
+		}
+
+		.card-content {
+			color: #666;
+		}
+
+		.container {
+			padding-top: 80px;
+			padding-right: 0px;
+			padding-bottom: 10px;
+			padding-left: 0px;
+		}
+
+		.video-container {
+			position: relative;
+			padding-bottom: 56.25%;
+			/* 16:9 Aspect Ratio */
+			padding-top: 25px;
+			height: 0;
+		}
+
+		.video-container video {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+
+		.hamburger {
+			display: none;
+			font-size: 24px;
+			user-select: none;
+		}
+
+		.image-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		.image-container a {
+			flex: 1 1 50%;
+			/* makes each link take up 50% of the width */
+			max-width: 100%;
+			/* ensures images don't exceed their container */
+		}
+
+		.image-container img {
+			width: 100%;
+			height: auto;
+			display: block;
+			/* removes extra space below the image */
+		}
+
+		.btmspace-80 {
+			margin-bottom: 0;
+		}
+
+		.one_quarter {
+			width: calc(33.33% - 100px);
+			/* Subtracting the total horizontal margin from one-third of the container */
+			margin: 0px 50px;
+			/* 50px margin on each side */
+			box-sizing: border-box;
+			/* To include padding and borders in the width calculation */
+			float: left;
+			/* To align the boxes side by side */
+		}
+
+
+		@media (max-width: 768px) {
+			.image-container a {
+				flex: 1 1 100%;
+				/* each link takes full width on smaller screens */
+			}
+
+			.one_quarter {
+				width: 100%;
+				/* Full width on smaller screens */
+				margin: 30px 0;
+				/* Adjusted margin for mobile devices */
+				float: none;
+				/* Clear float for mobile layout */
+			}
+		}
+
+		@media screen and (max-width: 768px) {
+			.hamburger {
+				display: block;
+				cursor: pointer;
+			}
+
+			.three_quarter {
+				margin: 0
+			}
+
+			.wrapper {
+				position: inherit;
+			}
+
+			#mainav {
+				padding: 10px 0;
+			}
+
+			#mainav ul {
+				display: none;
+			}
+
+			/* Adjust the layout of the Twitter feed container */
+			.twitter-feed-container {
+				flex-direction: column;
+				align-items: center;
+				gap: 20px;
+				/* This adds space between the tweet containers */
+			}
+
+			/* Adjust the individual Twitter feed elements */
+			.twitter-timeline {
+				width: 100%;
+				/* Full width of the screen */
+				height: auto;
+				/* Smaller height for mobile */
+				margin-bottom: 10px;
+				/* Adds a margin to the bottom of each feed */
+			}
+
+			/* Ensure videos are responsive and fit within the container */
+			.video-container video {
+				width: 100%;
+				height: auto;
+			}
+
+		}
+
+		.content {
+			text-align: left;
+			font-size: 16px;
+			color: #333;
+		}
+
+		.content h2,
+		.content p {
+			color: #000;
+		}
+
+		.spotify-container {
+			padding: 20px 0;
+			justify-content: space-around;
+		}
+
+		.twitter-feed-container {
+			display: flex;
+			justify-content: space-around;
+		}
+
+		.twitter-placeholder {
+			width: 300px;
+			/* Same as your data-width */
+			height: 500px;
+			/* Same as your data-height */
+			position: relative;
+		}
+
+		.loader {
+			border: 5px solid #f3f3f3;
+			/* Light grey */
+			border-top: 5px solid #3498db;
+			/* Blue */
+			border-radius: 50%;
+			width: 50px;
+			height: 50px;
+			animation: spin 2s linear infinite;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin: -25px 0 0 -25px;
+			/* Centers the loader */
+		}
+
+		@keyframes spin {
+			0% {
+				transform: rotate(0deg);
+			}
+
+			100% {
+				transform: rotate(360deg);
+			}
+		}
+
+		/* Hide the loader once the Twitter script replaces the content */
+		.twitter-timeline {
+			visibility: visible;
+		}
+
+		.twitter-timeline:empty+.loader {
+			visibility: visible;
+		}
+
+		.twitter-timeline:not(:empty)+.loader {
+			display: none;
+		}
+	</style>
+</head>
+
+
+<body id="top">
+
+	<!-- SASTRA & COMBIGS Logo -->
+	<div class="wrapper row0">
+		<header id="header" class="hoc clear">
+			<div class="image-container">
+				<!-- Image Links -->
+				<a href="index.html"><img src="images/combigs-part-1.png" alt="" /></a>
+				<a href="index.html"><img src="images/combigs-part-2.png" alt="" /></a>
+			</div>
+		</header>
+	</div>
+
+	<!-- Main Navbar / Hamburger Menu -->
+	<div class="wrapper row1">
+		<div class="hoc clear">
+			<!-- Hamburger Icon -->
+			<div class="hamburger fl_right" onclick="toggleNav()">☰</div>
+			<nav id="mainav" class="fl_right">
+				<ul class="clear">
+					<li class="active"><a href="index.html">Home</a></li>
+					<li><a href="magazine.html">Magazine</a></li>
+					<li><a href="event.html">Event Archives</a></li>
+					<li><a href="experiences.html">Experience</a></li>
+					<li><a href="intern.html">Internships</a></li>
+					<li><a href="dbtools.html">Databases and Tools</a></li>
+					<li><a href="members.html">Members</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+	<!-- `Welcome to COMBIGS` Section -->
+	<div class="wrapper bgded"
+		style="background-image:url('./images/mainpage-web-banner-full.png'); background-size:cover; background-position:center center;">
+		<section id="pageintro" class="hoc clear" style="padding: 20px 0;">
+			<div
+				style="background-color: rgba(255, 255, 255, 0.7); display: inline-block; padding: 10px; border-radius: 5px;">
+				<h2 class="heading" style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">Welcome to
+					COMBIGS
+				</h2>
+				<p style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">
+					At the forefront of computational biology and tech, deciphering biological data to pioneer
+					scientific breakthroughs.
+				</p>
+
+			</div>
+		</section>
+	</div>
+
+	<!-- `About COMBIGS` Section -->
+	<div class="wrapper row3">
+		<section id="services" class="hoc container clear">
+			<div class="center btmspace-80">
+				<h6 class="heading underline font-x2">About COMBIGS</h6>
+			</div>
+
+			<!-- About COMBIGS Content -->
+			<div class="content">
+				<div class="card">
+					<p class="card-content" style="text-align: justify;">
+						<strong>Established in 2005</strong> by the Bioinformatics department, <strong>COMBIGS
+							(Computational Biology Group at SASTRA)</strong> has become a beacon for computational
+						biology enthusiasts. With a membership exceeding <strong>250</strong>, it stands as a vibrant
+						community keen on the exploration and advancement of computational biology. The group's
+						initiatives include a variety of technical forums, coding events, and intellectually stimulating
+						quizzes, each designed to ignite curiosity and encourage innovative thinking.
+					</p>
+
+					<p class="card-content" style="text-align: justify;">
+						COMBIGS' milestones are marked by notable events such as the organization of the <strong>1st
+							International Conference on Structural and Functional Genomics in 2012</strong> and the
+						launch of its pioneering e-magazine at the <strong>2nd International Conference in
+							2016</strong>. The <strong>2018 International Conference on Genome Biology and Health
+							Sciences</strong> further cemented its reputation as a hub for scholarly exchange. Adding to
+						its impressive roster of contributions is the establishment of a <strong>bioinformatics
+							library</strong>, a treasure trove of journals, magazines, reference books, and a wealth of
+						online resources, all catering to the ever-growing needs of bioinformatics researchers and
+						aficionados.
+					</p>
+				</div>
+			</div>
+		</section>
+	</div>
+
+	<!-- `Spotlight Video` Section -->
+	<div class="wrapper row3">
+		<section id="services" class="hoc container clear" style="padding-top: 20px;">
+			<div class="center btmspace-80">
+				<h6 class="heading underline font-x2">Spotlight Video</h6>
+			</div>
+		</section>
+		<main class="hoc container clear" style="padding-top: 0px;">
+			<div class="content">
+				<!-- Video Card -->
+				<div class="card">
+					<p class="card-content" style="text-align: justify;">
+						Explore cutting-edge insights and stories through our handpicked video selection. Each feature
+						dives into intriguing topics, breakthroughs, and narratives that illuminate the dynamic world of
+						bioinformatics, offering you a visual journey through the advancements and key discussions in
+						the field.
+					</p>
+					<div class="video-container">
+						<video controls muted autoplay loop>
+							<!-- <source src="images/bioin_forum_2022.mp4" type="video/mp4"> -->
+							<source src="images/spotlight_video_2023-24.mp4" type="video/mp4">
+							<track src="./video-caption.vtt" kind="captions" srclang="en" label="English">
+							Your browser does not support this video.
+						</video>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<!-- `Bioinformatics Buzz` Section -->
+	<div class="wrapper row3">
+		<section id="services" class="hoc container clear" style="padding-top: 20px;">
+			<div class="center btmspace-80">
+				<h6 class="heading underline font-x2">Bioinformatics Buzz</h6>
+			</div>
+		</section>
+		<main class="hoc container clear" style="padding-top: 0px;">
+			<div class="content">
+				<div class="card">
+					<p style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5); text-align: justify;">
+						Stay updated with the pulse of bioinformatics. This section curates the most recent
+						and
+						impactful conversations from industry leaders, researchers, and enthusiasts in the
+						field of
+						bioinformatics. Dive into the latest trends, breakthroughs, and discussions that are
+						shaping the
+						future of biological data analysis.
+					</p>
+
+					<!-- Spotify Embed -->
+					<div class="spotify-container">
+						<iframe style="border-radius:12px"
+							src="https://open.spotify.com/embed/show/0AN2PXlU15ROhDfLxdfb9e?utm_source=generator"
+							width="100%" height="352" frameBorder="0"
+							allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+							loading="lazy">
+						</iframe>
+					</div>
+
+					<!-- Twitter Feed Container -->
+					<div class="twitter-feed-container">
+						<div class="twitter-placeholder">
+							<a class="twitter-timeline" href="https://twitter.com/BiotechSASTRA1?ref_src=twsrc%5Etfw"
+								data-width="300" data-height="500">
+								Tweets by BiotechSASTRA1 (Official)
+								<div class="loader"></div>
+							</a>
+						</div>
+						<div class="twitter-placeholder">
+							<a class="twitter-timeline" href="https://twitter.com/NIAIDBioIT?ref_src=twsrc%5Etfw"
+								data-width="300" data-height="500">
+								Tweets by NIAIDBioIT
+								<div class="loader"></div>
+							</a>
+						</div>
+						<div class="twitter-placeholder">
+							<a class="twitter-timeline" href="https://twitter.com/NatureRevGenet?ref_src=twsrc%5Etfw"
+								data-width="300" data-height="500">
+								Tweets by Nature Reviews Genetics
+								<div class="loader"></div>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+	</div>
+
+	<!-- `Above Footer` Section -->
+	<div class="wrapper row4">
+		<footer id="footer" class="hoc clear">
+			<!-- Combigs -->
+			<div class="one_quarter first">
+				<h1 class="logoname clear"><a href="https://www.sastra.edu/combigs/"><span>COMBIGS</span></a></h1>
+				<p class="btmspace-30" style="text-align:left;">
+					COMBIGS at SASTRA University is a renowned Computational Biology Group, fostering collaboration and
+					innovation in bioinformatics through conferences, workshops, and an e-magazine.
+				</p>
+				<ul class="faico clear">
+					<li><a class="faicon-instagram" href="https://www.instagram.com/combigs_sastra/" target="_blank"><i
+								class="fab fa-instagram"></i></a></li>
+					<li><a class="faicon-spotify"
+							href="https://open.spotify.com/show/0AN2PXlU15ROhDfLxdfb9e?si=b96cc943c5214824"
+							target="_blank"><i class="fab fa-spotify"></i></a></li>
+					<!-- Add or remove social media links as necessary -->
+				</ul>
+			</div>
+			<!-- Contact Information -->
+			<div class="one_quarter">
+				<h6 class="heading">Contact Information</h6>
+				<ul class="nospace linklist contact">
+					<li><i class="fas fa-map-marker-alt"></i>
+						<address>
+							<strong>SCBT</strong>,<br>
+							SASTRA DEEMED UNIVERSITY,<br>
+							Tirumalaisamudram,<br>
+							Thanjavur - 613401,<br>
+							Tamilnadu, India
+						</address>
+					</li>
+				</ul>
+			</div>
+			<!-- Quick Links -->
+			<div class="one_quarter">
+				<h6 class="heading">Quick Links</h6>
+				<ul class="nospace linklist">
+					<li><a href="members.html">Members of COMBIGS</a></li>
+					<li><a href="https://www.sastra.edu/staffprofiles/schools/scbt.php" target="_blank">SCBT Faculties</a></li>
+					<li><a href="https://forms.gle/esHizEVcAW9cZScw8" target="_blank">Feedback Form for Website Improvement</a></li>
+				</ul>
+
+			</div>
+		</footer>
+	</div>
+
+	<!-- Footer -->
+	<div class="wrapper row5">
+		<div id="copyright" class="hoc clear">
+			<p class="fl_left">Copyright &copy; 2023-2024 - All Rights Reserved - <a
+					href="https://www.sastra.edu/combigs/">COMBIGS,
+					SASTRA Deemed to be University</a></p>
+			<p class="fl_right">Template by <a target="_blank" rel="noopener" href="http://www.os-templates.com/"
+					title="Free Website Templates">OS Templates</a></p>
+		</div>
+
+		<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+	</div>
+
+	<!-- `Hamburger Menu` Scripts -->
+	<script>
+		function toggleNav() {
+			var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];
+			if (nav.style.display === "block") {
+				nav.style.display = "none";
+			} else {
+				nav.style.display = "block";
+			}
+		}
+
+		// Remove inline styles on window resize
+		window.addEventListener('resize', function () {
+			var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];
+			if (window.innerWidth > 768) {
+				nav.removeAttribute('style');
+			}
+		});
+	</script>
+</body>
+
+</html>

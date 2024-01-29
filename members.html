@@ -1,0 +1,354 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+  <title>COMBIGS | Database and tools (extras)</title>
+  <link rel="icon" href="images/sastra.png" />
+  <link rel="stylesheet" href="layout/styles/framework.css">
+  <link rel="stylesheet" href="layout/styles/layout.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+  <style>
+
+    .row3 {
+			background-color: #fcfcfc;
+		}
+
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      user-select: none;
+    }
+
+    .image-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .image-container a {
+      flex: 1 1 50%;
+      /* makes each link take up 50% of the width */
+      max-width: 100%;
+      /* ensures images don't exceed their container */
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      /* removes extra space below the image */
+    }
+
+    .one_quarter[data-type="footer"] {
+      width: calc(33.33% - 100px);
+      /* Subtracting the total horizontal margin from one-third of the container */
+      margin: 0px 50px;
+      /* 50px margin on each side */
+      box-sizing: border-box;
+      /* To include padding and borders in the width calculation */
+      float: left;
+      /* To align the boxes side by side */
+    }
+
+    @media (max-width: 768px) {
+      .image-container a {
+        flex: 1 1 100%;
+        /* each link takes full width on smaller screens */
+      }
+
+      .one_quarter[data-type="footer"] {
+        width: 100%;
+        /* Full width on smaller screens */
+        margin: 30px 0;
+        /* Adjusted margin for mobile devices */
+        float: none;
+        /* Clear float for mobile layout */
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      #mainav {
+        padding: 10px 0;
+      }
+
+      .hamburger {
+        display: block;
+        cursor: pointer;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- SASTRA & COMBIGS Logo -->
+  <div class="wrapper row0">
+    <header id="header" class="hoc clear">
+      <div class="image-container">
+        <!-- Image Links -->
+        <a href="index.html"><img src="images/combigs-part-1.png" alt="" /></a>
+        <a href="index.html"><img src="images/combigs-part-2.png" alt="" /></a>
+      </div>
+    </header>
+  </div>
+
+  <!-- Main Navbar / Hamburger Menu -->
+  <div class="wrapper row1">
+    <div class="hoc clear">
+      <!-- Hamburger Icon -->
+      <div class="hamburger fl_right" onclick="toggleNav()">☰</div>
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="magazine.html">Magazine</a></li>
+          <li><a href="event.html">Event Archives</a></li>
+          <li><a href="experiences.html">Experience</a></li>
+          <li><a href="intern.html">Internships</a></li>
+          <li><a href="dbtools.html">Databases and Tools</a></li>
+          <li class="active"><a href="members.html">Members</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="wrapper bgded"
+    style="background-image:url('./images/members-web-banner.png'); background-size:cover; background-position:center center;">
+    <section id="pageintro" class="hoc clear" style="padding: 20px 0;">
+      <div
+        style="background-color: rgba(255, 255, 255, 0.7); display: inline-block; padding: 10px; border-radius: 5px;">
+        <h2 class="heading" style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">Members</h2>
+        <p style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">
+          Exploring bioinformatics, bridging computation with biology at SASTRA.
+        </p>
+      </div>
+    </section>
+  </div>
+
+  <!-- `Office Bearers` Section -->
+  <div class="wrapper row3">
+    <section id="team" class="hoc container clear">
+      <div class="center btmspace-80">
+        <h6 class="heading underline font-x2">Office Bearers</h6>
+      </div>
+      <ul class="nospace group">
+        <!-- Krithika -->
+        <li class="one_quarter first">
+          <article>
+            <figure><a class="imgover" href="https://www.linkedin.com/in/krithika-ck-11n02/" target="_blank"><img src="images/Krithika.jpg" alt=""></a>
+              <figcaption class="heading">Krithika C K</figcaption>
+            </figure>
+            <em>Chairperson</em>
+            <footer>
+              <ul class="faico clear">
+                <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/krithika-ck-11n02/" target="_blank"><i
+                      class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </footer>
+          </article>
+        </li>
+        <!-- Abzar -->
+        <li class="one_quarter">
+          <article>
+            <figure><a class="imgover" href="https://www.linkedin.com/in/mohamedabzar" target="_blank"><img src="images/Abzar.jpg" alt=""></a>
+              <figcaption class="heading">Mohamed Abzar A R</figcaption>
+            </figure>
+            <em>Treasurer</em>
+            <footer>
+              <ul class="faico clear">
+                <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/mohamedabzar" target="_blank"><i
+                      class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </footer>
+          </article>
+        </li>
+        <!-- Gayathri -->
+        <li class="one_quarter">
+          <article>
+            <figure><a class="imgover" href="https://www.linkedin.com/in/gayathri-srinivasan-a75836249" target="_blank"><img src="images/Gayathri.jpg" alt=""></a>
+              <figcaption class="heading">Srinivasan Gayathri</figcaption>
+            </figure>
+            <em>Vice Chairperson</em>
+            <footer>
+              <ul class="faico clear">
+                <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/gayathri-srinivasan-a75836249" target="_blank"><i
+                      class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </footer>
+          </article>
+        </li>
+        <!-- Indhuja -->
+        <li class="one_quarter">
+          <article>
+            <figure><a class="imgover" href="https://www.linkedin.com/in/indhuja-b-01950a291" target="_blank"><img src="images/Indhuja.jpg" alt=""></a>
+              <figcaption class="heading">Indhuja B</figcaption>
+            </figure>
+            <em>Joint Secretary</em>
+            <footer>
+              <ul class="faico clear">
+                <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/indhuja-b-01950a291" target="_blank"><i
+                      class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </footer>
+          </article>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+    <!-- `Cluster heads` Section -->
+    <div class="wrapper row3">
+      <section id="team" class="hoc container clear">
+        <div class="center btmspace-80">
+          <h6 class="heading underline font-x2">Cluster Heads</h6>
+        </div>
+        <ul class="nospace group">
+          <!-- Kaushik -->
+          <li class="one_quarter first">
+            <article>
+              <figure><a class="imgover" href="https://www.linkedin.com/in/kaushik-p-28a0b5285/" target="_blank"><img src="images/kausi.jpg" alt=""></a>
+                <figcaption class="heading">Kaushik P</figcaption>
+              </figure>
+              <em>Hospitality</em>
+              <footer>
+                <ul class="faico clear">
+                  <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/kaushik-p-28a0b5285/" target="_blank"><i
+                        class="fab fa-linkedin"></i></a></li>
+                </ul>
+              </footer>
+            </article>
+          </li>
+          <!-- Derrick -->
+          <li class="one_quarter">
+            <article>
+              <figure><a class="imgover" href="https://www.linkedin.com/in/derrick-daniel/" target="_blank"><img src="images/derrick-2.JPG" alt=""></a>
+                <figcaption class="heading">Derrick Daniel P</figcaption>
+              </figure>
+              <em>Web Development</em>
+              <footer>
+                <ul class="faico clear">
+                  <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/derrick-daniel/" target="_blank"><i
+                        class="fab fa-linkedin"></i></a></li>
+                </ul>
+              </footer>
+            </article>
+          </li>
+          <!-- Deepak -->
+          <li class="one_quarter">
+            <article>
+              <figure><a class="imgover" href="https://www.linkedin.com/in/deepak-k-ab3136247/" target="_blank"><img src="images/deepak.jpg" alt=""></a>
+                <figcaption class="heading">Deepak K</figcaption>
+              </figure>
+              <em>Photography</em>
+              <footer>
+                <ul class="faico clear">
+                  <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/deepak-k-ab3136247/" target="_blank"><i
+                        class="fab fa-linkedin"></i></a></li>
+                </ul>
+              </footer>
+            </article>
+          </li>
+          <!-- Vishnu Priya -->
+          <li class="one_quarter">
+            <article>
+              <figure><a class="imgover" href="https://www.linkedin.com/in/vishnupriya-b-499513260/" target="_blank"><img src="images/vishnupriya.jpeg" alt=""></a>
+                <figcaption class="heading">Vishnu Priya B</figcaption>
+              </figure>
+              <em>Arts</em>
+              <footer>
+                <ul class="faico clear">
+                  <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/vishnupriya-b-499513260/" target="_blank"><i
+                        class="fab fa-linkedin"></i></a></li>
+                </ul>
+              </footer>
+            </article>
+          </li>
+        </ul>
+      </section>
+    </div>
+
+  <!-- `Above Footer` Section -->
+  <div class="wrapper row4">
+    <footer id="footer" class="hoc clear">
+      <!-- Combigs -->
+      <div class="one_quarter first" data-type="footer">
+        <h1 class="logoname clear"><a href="https://www.sastra.edu/combigs/"><span>COMBIGS</span></a></h1>
+        <p class="btmspace-30" style="text-align:left;">
+          COMBIGS at SASTRA University is a renowned Computational Biology Group, fostering collaboration and
+          innovation in bioinformatics through conferences, workshops, and an e-magazine.
+        </p>
+        <ul class="faico clear">
+          <li><a class="faicon-instagram" href="https://www.instagram.com/combigs_sastra/" target="_blank"><i
+                class="fab fa-instagram"></i></a></li>
+          <li><a class="faicon-spotify" href="https://open.spotify.com/show/0AN2PXlU15ROhDfLxdfb9e?si=b96cc943c5214824"
+              target="_blank"><i class="fab fa-spotify"></i></a></li>
+          <!-- Add or remove social media links as necessary -->
+        </ul>
+      </div>
+      <!-- Contact Information -->
+      <div class="one_quarter" data-type="footer">
+        <h6 class="heading">Contact Information</h6>
+        <ul class="nospace linklist contact">
+          <li><i class="fas fa-map-marker-alt"></i>
+            <address>
+              <strong>SCBT</strong>,<br>
+              SASTRA DEEMED UNIVERSITY,<br>
+              Tirumalaisamudram,<br>
+              Thanjavur - 613401,<br>
+              Tamilnadu, India
+            </address>
+          </li>
+        </ul>
+      </div>
+      <!-- Quick Links -->
+      <div class="one_quarter" data-type="footer">
+        <h6 class="heading">Quick Links</h6>
+        <ul class="nospace linklist">
+          <li><a href="members.html">Members of COMBIGS</a></li>
+          <li><a href="https://www.sastra.edu/staffprofiles/schools/scbt.php" target="_blank">SCBT Faculties</a></li>
+          <li><a href="https://forms.gle/esHizEVcAW9cZScw8" target="_blank">Feedback Form for Website Improvement</a>
+          </li>
+        </ul>
+
+      </div>
+    </footer>
+  </div>
+
+  <!-- Footer -->
+  <div class="wrapper row5">
+    <div id="copyright" class="hoc clear">
+      <p class="fl_left">Copyright &copy; 2023-2024 - All Rights Reserved - <a
+          href="https://www.sastra.edu/combigs/">COMBIGS,
+          SASTRA Deemed to be University</a></p>
+      <p class="fl_right">Template by <a target="_blank" rel="noopener" href="http://www.os-templates.com/"
+          title="Free Website Templates">OS Templates</a></p>
+    </div>
+
+    <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+  </div>
+
+  <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+
+  <script>
+    function toggleNav() {
+      var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];
+      if (nav.style.display === "block") {
+        nav.style.display = "none";
+      } else {
+        nav.style.display = "block";
+      }
+    }
+
+    // Remove inline styles on window resize
+    window.addEventListener('resize', function () {
+      var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];
+      if (window.innerWidth > 768) {
+        nav.removeAttribute('style');
+      }
+    });
+  </script>
+
+</body>
+
+</html>

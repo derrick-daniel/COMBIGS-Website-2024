@@ -1,0 +1,467 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+    <title>COMBIGS | Conference'18 :: SASTRA Deemed to be University</title>
+    <link rel="icon" href="images/sastra.png" />
+    <link rel="stylesheet" href="layout/styles/framework.css">
+    <link rel="stylesheet" href="layout/styles/layout.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <style>
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .image-grid img {
+            width: 18%; /* Adjust the width as needed */
+            margin-bottom: 10px;
+        }
+
+        body {
+            background-color: #fff;
+            /* Set the default background color for the body */
+        }
+
+        #event-archives-section {
+            padding: 50px 0;
+            background: #BFC9CA;
+            text-align: center;
+        }
+
+        .event-info {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.85);
+            color: #333;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            /* Removed 'display: none;' */
+        }
+
+        .event-image {
+            width: 150px;
+            /* Set a fixed width for the images */
+            height: auto;
+            /* Let the height adjust automatically */
+            margin-right: 20px;
+            /* Adjust spacing between image and link */
+        }
+
+        /* Adjustments for responsiveness */
+        @media screen and (max-width: 768px) {
+            .event-item {
+                flex-direction: column;
+                /* Stack items vertically on smaller screens */
+            }
+
+            .event-image {
+                margin-right: 0;
+                /* Remove margin between image and link on smaller screens */
+                margin-bottom: 10px;
+                /* Adjust spacing between items on smaller screens */
+                align-self: center;
+                /* Center the image horizontally on smaller screens */
+            }
+
+            .event-link {
+                max-width: none;
+                /* Remove max-width on smaller screens */
+            }
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 18px;
+            user-select: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            #mainav ul {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        .scrollable {
+            overflow-x: auto;
+        }
+
+        @media screen and (max-width: 768px) {
+            .events-table th,
+            .events-table td {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+
+        /* Style for buttons */
+        .toggle-button {
+            background-color: #4CAF50; /* Green background */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Initially hide speaker list */
+        #speaker-list {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper row1">
+        <header id="header" class="hoc clear">
+            <div id="logo" class="fl_left">
+                <a href="index.html"><img src="images/combigs.png" alt="" /></a>
+            </div>
+            <!-- Hamburger Icon -->
+            <div class="hamburger fl_right" onclick="toggleNav()">☰</div>
+            <nav id="mainav" class="fl_right">
+                <ul class="clear">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="magazine.html">Magazine</a></li>
+                    <li class="active"><a href="event.html">Event Archives</a></li>
+                    <li><a href="experiences.html">Experience</a></li>
+                    <li><a href="intern.html">Internships</a></li>
+                    <li><a href="dbtools.html">Databases and Tools</a></li>
+                    <li><a href="members.html">Members</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="wrapper bgded" style="background-image:url('./images/event-archives-banner.png'); background-size:cover; background-position:center center;">
+        <section id="pageintro" class="hoc clear" style="padding: 20px 0;">
+            <div style="background-color: rgba(255, 255, 255, 0.7); display: inline-block; padding: 10px; border-radius: 5px;">
+                <h2 class="heading" style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">International Conference on Genome Biology and Informatics In Health Sciences</h2>
+                <p style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">
+                    6-7 April, 2018
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Section for event information (replace placeholder text with actual details) -->
+    <section id="event-archives-section" style="text-align: center;">
+        <div class="events" style="margin: 0 auto; max-width: 1000px;">
+            <!-- Event details go here -->
+            <div class="event-info" style="text-align: left; margin-bottom: 30px;">
+                <button class="toggle-button" onclick="toggleSpeakers()">Show Speakers List</button>
+                <button class="toggle-button" onclick="toggleImages()">Show Event Pictures</button>
+                <div id="speaker-list">
+				<p style="font-size: 18px;">
+                    <strong>SPEAKERS:</strong><br><br>
+                </p>
+				<p style="font-size:18px;"><b> DAY 1 (6th April):</p></b>
+                <!-- Speaker 1 -->
+                <div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+                    <div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+                        <img src="images/speakers/conf'18/sp1.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+                    </div>
+                    <div class="speaker-details" style="flex: 2;">
+                        <div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"India, Immunogenetics & Genomics</u>"</p></b><b><br>Prof. RM. Pitchappan</b></font><br>Professor of Immunology, Madurai Kamaraj University
+                        </div>
+                        <p style="text-align: justify; font-size: 14px;">
+                            <font size="3">
+                                The immunogenetic principle "Not all the infected develop the disease" holds true in various infectious diseases. Infections are distinct from diseases, with most infections controlled by innate/genetic immunity, leaving adaptive immunity to handle the rest. Non-endemic areas differ from endemic ones, as some hosts in non-endemic areas remain unexposed and disease-free. Vaccine development should focus on endemic areas, studying endemic controls. The complex immunogenomic landscape, including factors like KIR, TAP, MIC, Toll, HLA, and their diversity, poses challenges in vaccine development. India, rich in genetic diversity, offers valuable insights through stratified societies with founder gene pools. Genomic tools play a crucial role in unraveling the molecular basis of prevalent diseases. However, interdisciplinary research, collaboration, and concerted efforts are essential in India, where this field is still in its early stages.
+                            </font>
+                        </p>
+                    </div>
+                </div>
+				<hr>
+                <!-- Speaker 2 -->
+                <div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+                    <div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+                        <img src="images/speakers/conf'18/sp2.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+                    </div>
+                    <div class="speaker-details" style="flex: 2;">
+                        <div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"Transcriptome variation across tumors confer avenues for targeted cancer therapeutics</u>"</p></b><b><br>Dr. G. Kumaresan</b></font><br>Head - Department of Genetics , Madurai Kamaraj University, Madurai
+						</div>
+                        <p style="text-align: justify; font-size: 14px;">
+                            <font size="3">
+                                In cancer research, despite advancements, issues like recurrence and drug resistance persist. Targeted therapies are essential, and leveraging genomics data allows for unconventional analysis and modeling, aiding in identifying novel diagnostic and therapeutic methods. Efforts focus on developing genomics-guided sub-types and drug combinations, revealing tumor heterogeneity and enabling targeted therapeutics. Ongoing research, particularly in gastric, liver, and breast cancers, aims to identify sub-type-specific therapeutic agents for personalized treatments, contributing to next-gen diagnostics and therapies.
+                            </font>
+                        </p>
+                    </div>
+                </div>
+				<hr>
+				<!-- Speaker 3 -->
+                <div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+					<div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+						<img src="images/speakers/conf'18/sp3.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+					</div>
+                    <div class="speaker-details" style="flex: 2;">
+						<div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"Ancient DNA sheds light on human history and changes in diet and lifestyle</u>"</p></b><b><br>Dr. Tatiana V. Tatarinova</b></font><br>University of La Verne, USA
+						</div>
+						<p style="text-align: justify; font-size: 14px;">
+                        <font size="3">
+                            The term ‘ancient DNA’ (aDNA) is coming of age, with over 1,200 hits in the PubMed database, beginning in the early 1980s with the studies of ‘molecular paleontology’. Rooted in cloning and limited sequencing of DNA from ancient remains during the pre-PCR era, the field has made incredible progress since the introduction of PCR and next-generation sequencing. Over the last decade, aDNA analysis ushered in a new era in genomics and became the method of choice for reconstructing the history of organisms, their biogeography, and migration routes, with applications in evolutionary biology, population genetics, archaeogenetics, paleo-epidemiology, and many other areas. This change was brought by development of new strategies for coping with the challenges in studying aDNA due to damage and fragmentation, scarce samples, significant historical gaps, and limited applicability of population genetics methods. In this review, we describe the state-of-the-art achievements in aDNA studies, with particular focus on human evolution and demographic history. We present an overview of advancement of aDNA tools and methods and their impact on opening a new era in population genetics and evolutionary medicine research.
+                        </font>
+                    </p>
+					</div>
+                </div>
+				<hr>
+				<!-- Speaker 4 -->
+				<div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+					<div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+						<img src="images/speakers/conf'18/sp4.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+					</div>
+                    <div class="speaker-details" style="flex: 2;">
+						<div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"Ayurgenomics for stratified medicine</u>"</p></b><b><br>Dr. Mitali Mukerji</b></font><br>CSIR-Institute of Genomics and Integrative Biology, New Delhi
+                    </div>
+                    <p style="text-align: justify; font-size: 14px;">
+                        <font size="3">
+                            An individual's phenome, shaped by diverse factors, poses challenges in defining a reference genome of healthy humans. Genomic variations influenced by ancestry, lifestyle, and environmental factors contribute to this complexity. Ayurveda, an ancient Indian medical system, categorizes individuals into constitution types (Prakriti), influencing disease susceptibility and management. Ayurgenomics integrates Ayurvedic phenotypic classification with genomics and modern medicine, offering a stratified approach for predictive marker discovery and advancing precision medicine.
+                        </font>
+                    </p>
+					</div>
+                </div>
+				<hr>
+				<!-- Speaker 5 -->
+                <div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+					<div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+						<img src="images/speakers/conf'18/sp5.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+					</div>	
+					<div class="speaker-details" style="flex: 2;">
+						<div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"Rare metabolic disorders and precision medicine</u>"</p></b><b><br>Dr. Sudha Srinivasan</b></font><br>Center for Human Genetics, Bangalore
+                    </div>
+                    <p style="text-align: justify; font-size: 14px;">
+                        <font size="3">
+                            Mucopolysaccharidosis MPS IVA (MPS IVA; OMIM: 253000) is a rare disease. It is an autosomal recessive lysosomal storage disorder caused by mutations in the GALNS gene that result in deficient activity of the GALNS enzyme (E.C. 3.1.6.4). The enzyme catalyses a critical step in the break down of keratan sulfate in lysosomes. Deficient activity of GALNS results in the accumulation of keratan sulfate in lysosomes, leading to the clinical symptoms of the disease. Symptoms first occur in early childhood and progress with age. Symptoms include short trunk dwarfism, progressive of coarsening of face, tendency for atlantoaxial subluxation, short thorax, kyphoscoliosis, hypermobility of wrist joints, genu valgum ("knock-knee”), corneal clouding, impairment of hearing, and defects in heart valves. Symptoms, severity of disease and life expectancy vary from patient to patient. Enzyme replacement therapy for MPS IVA became available recently. The prevalence of MPS IVA in India has not been determined. MPS IVA was not found to be the most prevalent type of MPS in any region for which prevalence estimates are available. However, out of a total of 274 MPS patients who presented themselves in one particular clinic in South India (FCRF, Chennai) over a period of thirteen years, MPS IVA patients formed the largest number (99/274 = 36%). A study of MPS patients from another clinic (AIMS, Kochi) in South India showed similar findings.
+                        </font>
+                    </p>
+					</div>
+                </div>
+				<hr>
+				<!-- Speaker 6 -->
+                <div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+					<div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+						<img src="images/speakers/conf'18/sp6.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+					</div>	
+					<div class="speaker-details" style="flex: 2;">
+						<div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"Rare disorder analysis, and applications</u>"</p></b><b><br>Dr. Asif Javed	</b></font><br>Research Scientist, Genome Institute of Singapore, A*STAR, Singapore
+                    </div>
+                    <p style="text-align: justify; font-size: 14px;">
+                        <font size="3">
+                            Rare disease analysis is an area of intense focus in both clinical and research domains. On clinical side, the societal impact can be immediate in bringing the diagnostic odyssey of a family to its conclusion. On the research side, these extreme phenotypes provide key insight to better understanding disease biology; even for their more common counterparts. An analysis challenge remains in the small sample size (often <10 families). The case-control framework used in common diseases (with sample size in 1000s) lacks sufficient statistical power to work in this scenario. In this talk, I will present our effort to help improve on the analytics (Nature Methods 14) and two of our recent success stories; BAMS characterised by congenital absence of nose (Nature Genetics 17) and ROSAH an early onset progressive condition (unpublished). Time permitting I will venture into other ongoing efforts as well.
+                        </font>
+                    </p>
+					</div>
+                </div>
+				<hr>
+				<!-- Speaker 7 -->
+                <div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+					<div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+						<img src="images/speakers/conf'18/sp7.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+					</div>	
+					<div class="speaker-details" style="flex: 2;">
+						<div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"Genomic Approaches to Distil Pathogenic Variants for Eye Diseases</u>"</p></b><b><br>Dr. D Bharanidharan</b></font><br>Aravind Medical Research Foundation, Madurai
+                    </div>
+                    <p style="text-align: justify; font-size: 14px;">
+                        <font size="3">
+                            Recent advances in genomic technologies, particularly next generation sequencing (NGS) methods, have brought a paradigm shift in discovering eye disease-associated genetic variants from linkage and genome-wide association studies to NGS-based genome/exome studies. Whole/Targeted exome refers to sequencing only gene-coding portions (the exons) of the whole genome or region of interest. Whole genome sequencing (WGS) remains prohibitively expensive for most applications and requires concurrent development of bioinformatics approaches to expeditiously analyze the large data sets. WES is now made as a viable approach to uncover the unknown etiology with a limited number of probands with eye disease. WES, is become a powerful tool with many advantages in the research setting, and moreover is now being implemented into the clinical diagnostic arena. However, the major challenge still remains as how to analyze and interpret data and how to distill pathogenic variants in eye diseases, particularly in complex disease such as glaucoma. Herein, we have demonstrated that targeted NGS is an efficient approach for the identification of wide spectrum of pathogenic variants in retinoblastoma (RB) patients, which is helpful for the molecular diagnosis of RB in a comprehensive and time-efficient manner. We also provide how WES helps to identify pathogenic variants from glaucoma patients and address difficulties and limitations to the WES data interpretation. Our efforts have provided the methodology and pipeline to provide potential targets, for further clinical use.
+                        </font>
+                    </p>
+					</div>
+                </div><hr>
+				<p style="font-size:18px;"><b>DAY 2 (7th April):</p></b>
+				<!-- Speaker 8 -->
+                <div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+					<div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+						<img src="images/speakers/conf'18/sp8.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+					</div>	
+					<div class="speaker-details" style="flex: 2;">
+						<div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"Personal Genomes to Precision Medicine</u>"</p></b><b><br>Dr. Vinod Scaria</b></font><br>CSIR-Institute of Genomics and Integrative Biology, New Delhi
+                    </div>
+                    <p style="text-align: justify; font-size: 14px;">
+                        <font size="3">
+                            One of the major advances that happened in the last decade has been the availability of fast, efficient and cost-effective DNA sequencing which has seen tremendous applications in healthcare and research. This has been largely possible with the advent of newer sequencing approaches which offer a higher throughput, lower cost and faster turnaround times, and appropriate computational tools to enable the handling, processing and mining of information from them. On one end, this technology enables to elucidate the genomes of individuals and how genomic variations could influence the life of the individual, while on the other side, it enables one to peek into the pathophysiology of diseases and have a mechanistic view of the disease processes. It is widely believed that these advances would be immensely useful in healthcare through Predictive, Preventive, Precise, Personalised and Participatory Medicine. In the present talk, we would describe our experiences with personal genome sequencing and use of genomics approaches and model systems towards this end. We have employed a number of novel approaches towards harnessing the BigData challenge including involvement of students towards analysis and model-building. Systematic annotation of datasets for personalised genomics for the OpenPGx consortium and analytical tasks through the 2C4C programme for Cheminformatics could be crowdsourced through the platform. The talk would also discuss the way forward, detailing the ongoing initiatives including the GUaRDIAN Consortium involving a large clinical network towards realising the dream.
+                        </font>
+                    </p>
+					</div>
+                </div>
+				<hr>
+				<!-- Speaker 9 -->
+                <div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+					<div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+						<img src="images/speakers/conf'18/sp9.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+					</div>	
+					<div class="speaker-details" style="flex: 2;">
+						<div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"Computational drug target mining in Ocular infective Chalmydial serovars through integrative multiomics approach</u>"</p></b><b><br>Dr. V. Uma Shankar</b></font><br>Sankara Nethralaya, Chennai
+                    </div>
+                    <p style="text-align: justify; font-size: 14px;">
+                        <font size="3">
+                            Chlamydia trachomatis (C.t) is a gram-negative obligate intracellular bacteria, a major causative of infectious blindness and sexually transmitted diseases. Earlier C.t was assumed to be virus, later it was classified under bacteria due to the presence of active translational machinery and cell division. Chlamydia trachomatis include three human biovars, which are further classified into 17 serovars, among which A, B, and C serovars cause eye infection called trachoma. Negligence of C.t infection leads to scarring of conjunctiva and entropion-trichiasis resulting in inturned eyelids and vision loss. World Health Organization estimates that 41 million people worldwide, mostly women and children, have active trachoma infection. In General, C.t infections are treated with Azithromycin or Doxycycline which are generic to many microbes. Recent reports infer the gain of resistance in C.t towards azithromycin and doxycycline. Next Generation sequencing has enabled rapid availability of complete genome sequences of Chlamydial strains, thereby facilitating the mining of novel and potential drug targets to combat its antibiotic resistance. Hence, my lecture will focus on the holistic and integrative approaches for effective drug target mining in C.t through integration of genomic, proteomic and structural data towards prioritization of highly viable targets.
+                        </font>
+                    </p>
+					</div>
+                </div>
+				<hr>
+				<!-- Speaker 10 -->
+                <div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+					<div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+						<img src="images/speakers/conf'18/sp10.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+					</div>	
+					<div class="speaker-details" style="flex: 2;">
+						<div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"The chronicle of Indian subcontinent: origin, health and disease perspectives</u>"</p></b><b><br>Dr. K. Thangaraj</b></font><br>Centre for Cellular and Molecular Biology, Hyderabad
+                    </div>
+                    <p style="text-align: justify; font-size: 14px;">
+                        <font size="3">
+                            Indian subcontinent is inhabited by about 5,000 anthropologically well-defined populations, many of which are endogamous communities with significant barriers to gene flow due to sociological, linguistic and cultural factors that restrict inter-population marriage. To assess the impact of endogamy, we have analysed samples from more than 2,800 individuals from over 275 distinct South Asian groups from India, Pakistan, Nepal, Sri Lanka, and Bangladesh using about 600,000 genome-wide markers. We found that 81 out of 263 unique South Asian groups, including 14 groups with estimated census sizes of over a million, have a strong founder event than the one that occurred in both Finns and Ashkenazi Jews in the West – these are founder groups known to have large numbers of recessive diseases. We identified multiple examples of recessive diseases in Indian subcontinent that are the result of such founder events. Our study provides opportunity for discovering population-specific disease causing genes in communities known to have strong founder events. Mapping of mutations that are responsible for population-specific disease would help in developing strategies for diagnosis, counseling, management and modifying the clinical course of these disorders and to reduce the disease burden among South Asians.
+                        </font>
+                    </p>
+					</div>
+                </div>
+				<hr>
+				<!-- Speaker 11 -->
+                <div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+					<div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+						<img src="images/speakers/conf'18/sp11.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+					</div>	
+					<div class="speaker-details" style="flex: 2;">
+						<div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"Applications of the Nanopore sequencing in ultra fast metagenomics, plant, insect, fungal, bacterial and viral sequencing and diagnostics</u>"</p></b><b><br>Dr.C. Raja Mugasimangalam</b></font><br>Founder and CEO, Genotypic Technology, Bengaluru
+                    </div>
+                    <p style="text-align: justify; font-size: 14px;">
+                        <font size="3">
+                            Genotypic is developing various applications under make in India concept applying the 4th generation sequencer from Oxford Nanopore technology. The Nanopore sequencer can be run in a conference room or in field conditions. It is capable of generating ultra-long reads of up to 300 kb and provides a rapid, cheap and portable real-time sequencing solution. Even though the base calling accuracy is 97%+ similar to Pacbio there are many applications in strain identification, small genome sequencing, composition of microbiomes and diagnostics. Steps to setup a Low cost Nanopore sequencing Lab will be explained. I will show results from it on Testing fungal / bacterial composition of raw and processed food, Metagenomics of soil gut and milk products and honey and processed foods. It also has a lot of other applications including viral genome sequencing, targeted long range sequencing /(regions of interest in a genome) and recombinant insert location identification and gap closures in genomes (combining with illumina contigs, in one day it can make a full circle bacterial genome in a day). The read lengths are from 3 KB to 150KB with a mean of 10 to 20 kb and can replace sanger sequencing - the flow cell can be reused many times within 2 months and can be stopped and restarted with the same or new samples. As a part of the presentation, the Nanopore sequencer will be run live at the conference room on a metagenomic sample and analyze data live.
+                        </font>
+                    </p>
+					</div>
+                </div>
+				<hr>
+				<!-- Speaker 12 -->
+                <div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+					<div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+						<img src="images/speakers/conf'18/sp12.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+					</div>	
+					<div class="speaker-details" style="flex: 2;">
+						<div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"The shift from genetics to genomics: are we using the right tools?</u>"</p></b><b><br>Dr. Harpreet Kaur</b></font><br>Sri Ramachandra University, Chennai
+                    </div>
+                    <p style="text-align: justify; font-size: 14px;">
+                        <font size="3">
+                            Cytogenetic and molecular genetic diagnostics are invaluable additions to laboratory testing and clinical evaluation, providing diagnostic, therapeutic and prognostic information. While the advent of genetic analysis was with the study of chromosomal disorders (cytogenetics), it soon became clear that variations in genes also contribute to development of genetic disorders (molecular genetics). The human genome project brought in a whole new perspective on predictive genetic testing and genomics. The race is on and with the invention of newer technologies, there seems to be a paradigm shift, with more labs focusing on molecular diagnostics than conventional cytogenetics. One of the hidden dangers of this shift is that the competency of laboratories offering cytogenetic services may fade away. The commonly used conventional and cutting edge genetic techniques and their clinical applications with advances and drawbacks of each technique, and how to pick the right test(s) for a specific patient in order to achieve a proper diagnosis efficiently and economically will be discussed.
+                        </font>
+                    </p>
+					</div>
+                </div>
+				<hr>
+				<!-- Speaker 13 -->
+                <div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+					<div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+						<img src="images/speakers/conf'18/sp13.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+					</div>	
+					<div class="speaker-details" style="flex: 2;">
+						<div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"Role of RT PCR in academic and emerging clinical sectors-an evaluation</u>"</p></b><b><br>Dr. Ponnappa</b></font><br>Life Tech, Bengaluru
+                    </div>
+                    <p style="text-align: justify; font-size: 14px;">
+                        <font size="3">
+                            Real Time PCR has fast emerged from academic setup to clinical evaluation. The assays on Real Time PCR use fluorescence detection methods- such as FRET technology, to achieve a very high level of accuracy and specificity of detection. The Ease of use and High sensitivity offered by Real Time PCR in small volume reactions- using miniscule amounts of starting material, has made the technique an extremely popular one in different areas of research as well as in clinical sectors. Different chemistries are used to detect targets in any organism/ species where the adequate DNA sequence information is available- for Gene Expression or identification of SNPs /detection and Quantitation of target DNA- whether GMO or microbial contaminant. The Biopharma industry has many applications of the platforms for residual DNA and in other areas of QA/ QC in bioproduction. The Validation of the technology for clinical applications has led to development of several important diagnostic tools. Quick evaluation of patient/commercial samples -leading to fast turnaround time helps the clinicians/industries to take a well informed decision. The technique has far reaching implication in different areas of academics, plant science and breeding as well as clinical sectors and has evolved in several ways in the last few years.
+                        </font>
+                    </p>
+					</div>
+                </div>
+            </div>
+			<div id="speaker-images" style="display: none;">
+			<p style="font-size: 18px;">
+				<strong>Images:</strong><br><br>
+            </p>
+			<div class="image-grid">
+        <!-- Replace the image URLs with your actual image URLs -->
+        <img src="images/Gallery/conf'18/c1.jpg" alt="Image 1">
+        <img src="images/Gallery/conf'18/c2.jpg" alt="Image 2">
+        <img src="images/Gallery/conf'18/c3.jpg" alt="Image 3">
+        <img src="images/Gallery/conf'18/c4.jpg" alt="Image 4">
+        <img src="images/Gallery/conf'18/c5.jpg" alt="Image 5">
+        <img src="images/Gallery/conf'18/c6.jpg" alt="Image 6">
+        <img src="images/Gallery/conf'18/c7.jpg" alt="Image 7">
+        <img src="images/Gallery/conf'18/c8.jpg" alt="Image 8">
+        <img src="images/Gallery/conf'18/c9.jpg" alt="Image 9">
+        <img src="images/Gallery/conf'18/c10.jpg" alt="Image 10">
+        <img src="images/Gallery/conf'18/c11.jpg" alt="Image 11">
+        <img src="images/Gallery/conf'18/c12.jpg" alt="Image 12">
+        <img src="images/Gallery/conf'18/c13.jpg" alt="Image 13">
+        <img src="images/Gallery/conf'18/c14.jpg" alt="Image 14">
+        <img src="images/Gallery/conf'18/c15.jpg" alt="Image 15">
+        <img src="images/Gallery/conf'18/c16.jpg" alt="Image 16">
+        <img src="images/Gallery/conf'18/c17.jpg" alt="Image 17">
+        <img src="images/Gallery/conf'18/c18.jpg" alt="Image 18">
+        <img src="images/Gallery/conf'18/c19.jpg" alt="Image 19">
+        <img src="images/Gallery/conf'18/c20.jpg" alt="Image 20">
+        <!-- Add more images as needed -->
+    </div>
+	</div>
+        </div>
+		</div>
+    </section>
+
+    <div class="wrapper row5">
+        <footer id="footer" class="hoc clear">
+            <p class="fl_left">COMBIGS, SASTRA Deemed to be University, All rights Reserved. 2023</p>
+            <p class="fl_right">Developed by <a target="_blank" href="https://www.sastra.edu/">SASTRA Web Team</a></p>
+        </footer>
+    </div>
+
+    <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+
+    <script>
+        function toggleNav() {
+            var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];
+            if (nav.style.display === "block") {
+                nav.style.display = "none";
+            } else {
+                nav.style.display = "block";
+            }
+        }
+
+        window.addEventListener('resize', function () {
+            var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];
+            if (window.innerWidth > 768) {
+                nav.removeAttribute('style');
+            }
+        });
+		
+		// Function to toggle visibility of speaker list
+		function toggleSpeakers() {
+			var speakers = document.getElementById("speaker-list");
+			speakers.style.display = (speakers.style.display === "none" || speakers.style.display === "") ? "block" : "none";
+		}
+
+		// Function to toggle visibility of speaker images
+		function toggleImages() {
+			var images = document.getElementById("speaker-images");
+			images.style.display = (images.style.display === "none" || images.style.display === "") ? "block" : "none";
+		}
+    </script>
+</body>
+
+</html>

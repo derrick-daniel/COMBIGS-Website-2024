@@ -1,0 +1,480 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+  <title>COMBIGS | Internships</title>
+  <link rel="icon" href="images/sastra.png" />
+  <link rel="stylesheet" href="layout/styles/framework.css">
+  <link rel="stylesheet" href="layout/styles/layout.css">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <!-- <script src="path/to/js/disable.js"></script>  -->
+  <style>
+    .row3 {
+      background-color: #fcfcfc;
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 24px;
+      user-select: none;
+    }
+
+    a {
+      color: rgb(6, 81, 243);
+    }
+
+    .image-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .image-container a {
+      flex: 1 1 50%;
+      /* makes each link take up 50% of the width */
+      max-width: 100%;
+      /* ensures images don't exceed their container */
+    }
+
+    .image-container img {
+      width: 100%;
+      height: auto;
+      display: block;
+      /* removes extra space below the image */
+    }
+
+    .one_quarter {
+      width: calc(33.33% - 100px);
+      /* Subtracting the total horizontal margin from one-third of the container */
+      margin: 0px 50px;
+      /* 50px margin on each side */
+      box-sizing: border-box;
+      /* To include padding and borders in the width calculation */
+      float: left;
+      /* To align the boxes side by side */
+    }
+
+    @media (max-width: 768px) {
+      .image-container a {
+        flex: 1 1 100%;
+        /* each link takes full width on smaller screens */
+      }
+
+      .one_quarter {
+        width: 100%;
+        /* Full width on smaller screens */
+        margin: 30px 0;
+        /* Adjusted margin for mobile devices */
+        float: none;
+        /* Clear float for mobile layout */
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      #mainav {
+        padding: 10px 0;
+      }
+
+      #mainav ul {
+        display: none;
+      }
+
+      .hamburger {
+        display: block;
+        cursor: pointer;
+      }
+    }
+
+    .scrollable {
+      overflow-x: auto;
+    }
+
+    .internships-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .internships-table th,
+    .internships-table td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    .internships-table tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    @media screen and (max-width: 768px) {
+
+      .internships-table th,
+      .internships-table td {
+        padding: 8px;
+        font-size: 14px;
+      }
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 20px;
+      font-size: 18px;
+      color: #fff;
+      background-color: #007bff;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    }
+
+    .btn:hover,
+    .btn:focus {
+      /* Focus state added */
+      background-color: #0056b3;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .btn:focus {
+      outline: none;
+      /* Removes the default focus outline */
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- SASTRA & COMBIGS Logo -->
+  <div class="wrapper row0">
+    <header id="header" class="hoc clear">
+      <div class="image-container">
+        <!-- Image Links -->
+        <a href="index.html"><img src="images/combigs-part-1.png" alt="" /></a>
+        <a href="index.html"><img src="images/combigs-part-2.png" alt="" /></a>
+      </div>
+    </header>
+  </div>
+
+  <!-- Main Navbar / Hamburger Menu -->
+  <div class="wrapper row1">
+    <div class="hoc clear">
+      <!-- Hamburger Icon -->
+      <div class="hamburger fl_right" onclick="toggleNav()">☰</div>
+      <nav id="mainav" class="fl_right">
+        <ul class="clear">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="magazine.html">Magazine</a></li>
+          <li><a href="event.html">Event Archives</a></li>
+          <li><a href="experiences.html">Experience</a></li>
+          <li class="active"><a href="intern.html">Internships</a></li>
+          <li><a href="dbtools.html">Databases and Tools</a></li>
+          <li><a href="members.html">Members</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="wrapper bgded"
+    style="background-image:url('./images/intern-web-banner.png'); background-size:cover; background-position:center center;">
+    <section id="pageintro" class="hoc clear" style="padding: 20px 0;">
+      <div
+        style="background-color: rgba(255, 255, 255, 0.7); display: inline-block; padding: 10px; border-radius: 5px;">
+        <h2 class="heading" style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">Internship
+          Opportunities</h2>
+        <p style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">
+          Explore hands-on experiences in the field of Bioinformatics and build a strong foundation for your career.
+        </p>
+      </div>
+    </section>
+  </div>
+
+
+  <div class="wrapper row3">
+    <main class="hoc container clear">
+      <div class="content">
+        <!-- Table Starts Here -->
+        <div class="scrollable">
+          <table class="internships-table">
+            <thead>
+              <tr>
+                <th>S.No</th>
+                <th>Institutes</th>
+                <th>Programmes</th>
+                <th>Announcement</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Row 1 -->
+              <tr>
+                <td>1</td>
+                <td>BIODIVERSITY LAB</td>
+                <td>
+                  <a href='https://www.ncbs.res.in/' target="_blank">
+                    The National Centre for Biological Sciences (NCBS)
+                  </a>
+                </td>
+                <td>
+                  <a href='https://www.ncbs.res.in/' target="_blank">Announcement Info</a>
+                </td>
+              </tr>
+              <!-- Row 2 -->
+              <tr>
+                <td>2</td>
+                <td>IISER Kolkata</td>
+                <td>
+                  <a href="http://www.iiserkol.ac.in/" target="_blank">
+                    IISER Kolkata Summer Internship
+                  </a>
+                </td>
+                <td>
+                  <a href="https://www.iiserkol.ac.in/web/en/announcements/" target="_blank">Announcement Info</a>
+                </td>
+              </tr>
+              <!-- Row 3 -->
+              <tr>
+                <td>3</td>
+                <td>IIT-Delhi</td>
+                <td>
+                  <a href="https://academics.iitd.ac.in/srf/" target="_blank">IIT Delhi Summer Internship</a>
+                </td>
+                <td>
+                  <a href="https://academics.iitd.ac.in/srf/" target="_blank">Announcement Info</a>
+                </td>
+              </tr>
+              <!-- Row 4 -->
+              <tr>
+                <td>4</td>
+                <td>IAS</td>
+                <td>
+                  <a href="https://webjapps.ias.ac.in/fellowship2023/application_instructions.jsp"
+                    target="_blank">Indian Academy of Sciences</a>
+                </td>
+                <td>
+                  <a href="https://webjapps.ias.ac.in/fellowship2023/index.html" target="_blank">Announcement Info</a>
+                </td>
+              </tr>
+              <!-- Row 5 -->
+              <tr>
+                <td>5</td>
+                <td>IBAB</td>
+                <td>
+                  <a href="https://www.ibab.ac.in/research/internship/" target="_blank">Institute of Bioinformatics and
+                    Applied Biotechnology</a>
+                </td>
+                <td>
+                  <a href="https://www.ibab.ac.in/research/internship/" target="_blank">Announcement Info</a>
+                </td>
+              </tr>
+              <!-- Row 6 -->
+              <tr>
+                <td>6</td>
+                <td>MITACS</td>
+                <td>
+                  <a href="https://globalink.mitacs.ca/globalink/index.html" target="_blank">Global Research Internship
+                    by MITACS</a>
+                </td>
+                <td>
+                  <a href="https://globalink.mitacs.ca/#/student/application/welcome" target="_blank">Announcement
+                    Info</a>
+                </td>
+              </tr>
+              <!-- Row 7 -->
+              <tr>
+                <td>7</td>
+                <td>Biotecnika</td>
+                <td>
+                  <a href="https://stores.biotecnika.org/products/bioinformatics-advanced-online-internship-program"
+                    target="_blank">Bioinformatics Advanced Internship Program</a>
+                </td>
+                <td>
+                  <a href="https://stores.biotecnika.org/products/bioinformatics-advanced-online-internship-program"
+                    target="_blank">Announcement Info</a>
+                </td>
+              </tr>
+              <!-- Row 8 -->
+              <tr>
+                <td>8</td>
+                <td>Institute Name</td>
+                <td>
+                  <a href="https://www.rasalsi.com/training-details/bioinformatics-training-courses/"
+                    target="_blank">Bioinformatics Training Courses</a>
+                </td>
+                <td>
+                  <a href="https://www.rasalsi.com/training-details/bioinformatics-training-courses/"
+                    target="_blank">Announcement Info</a>
+                </td>
+              </tr>
+              <!-- Row 9 -->
+              <tr>
+                <td>9</td>
+                <td>IMSC</td>
+                <td>
+                  <a href="https://www.imsc.res.in/visiting_summer_student_program_tcs" target="_blank">IMSC Summer
+                    Student Program</a>
+                </td>
+                <td>
+                  <a href="https://www.imsc.res.in/visiting_summer_student_program_tcs" target="_blank">Announcement
+                    Info</a>
+                </td>
+              </tr>
+              <!-- Row 10 -->
+              <tr>
+                <td>10</td>
+                <td>Biolim</td>
+                <td>
+                  <a href="https://www.biolim.org/programmes/internship-programmes/regular/" target="_blank">
+                    Bioinformatics Internship Program by Biolim</a>
+                </td>
+                <td>
+                  <a href="https://www.biolim.org/programmes/internship-programmes/regular/"
+                    target="_blank">Announcement Info</a>
+                </td>
+              </tr>
+              <!-- Row 11 -->
+              <tr>
+                <td>11</td>
+                <td>ArrayGen</td>
+                <td>
+                  <a href="https://www.arraygen.com/Bioinformatics_Internship.php" target="_blank">Bioinformatics
+                    Internship by ArrayGen</a>
+                </td>
+                <td>
+                  <a href="https://www.arraygen.com/Bioinformatics_Internship.php" target="_blank">Announcement Info</a>
+                </td>
+              </tr>
+              <!-- Row 12 -->
+              <tr>
+                <td>12</td>
+                <td>Genomiki</td>
+                <td>
+                  <a href="https://www.linkedin.com/posts/genomiki_beginners-analysis-tools-activity-6939047414121009152-OFYx?utm_source=linkedin_share&utm_medium=android_app"
+                    target="_blank">Bioinformatics for Beginners Online Internship</a>
+                </td>
+                <td>
+                  <a href="https://www.linkedin.com/posts/genomiki_beginners-analysis-tools-activity-6939047414121009152-OFYx?utm_source=linkedin_share&utm_medium=android_app"
+                    target="_blank">Announcement Info</a>
+                </td>
+              </tr>
+              <!-- Row 13 -->
+              <tr>
+                <td>13</td>
+                <td>Omicslogic</td>
+                <td>
+                  <a href="https://learn.omicslogic.com/programs" target="_blank">Research Fellowship Programs</a>
+                </td>
+                <td>
+                  <a href="https://learn.omicslogic.com/programs" target="_blank">Announcement Info</a>
+                </td>
+              </tr>
+              <!-- Row 14 -->
+              <tr>
+                <td>14</td>
+                <td>Biocode</td>
+                <td>
+                  <a href="https://www.biocode.ltd/internship" target="_blank">Bioinformatics Internship</a>
+                </td>
+                <td>
+                  <a href="https://www.biocode.ltd/internship" target="_blank">Announcement Info</a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- New Tab Link Section -->
+        <div class="download-section" style="text-align: center; margin-top: 20px;">
+          <a href="https://www.linkedin.com/jobs/search/?currentJobId=3811723481&f_E=1&geoId=102713980&keywords=biotechnology&location=India&origin=JOB_SEARCH_PAGE_KEYWORD_AUTOCOMPLETE&refresh=true"
+            target="_blank" class="btn">
+            Search on Linkedin
+          </a>
+        </div>
+      </div>
+    </main>
+  </div>
+
+
+  <!-- `Above Footer` Section -->
+  <div class="wrapper row4">
+    <footer id="footer" class="hoc clear">
+      <!-- Combigs -->
+      <div class="one_quarter first">
+        <h1 class="logoname clear"><a href="https://www.sastra.edu/combigs/"><span>COMBIGS</span></a></h1>
+        <p class="btmspace-30" style="text-align:left;">
+          COMBIGS at SASTRA University is a renowned Computational Biology Group, fostering collaboration and
+          innovation in bioinformatics through conferences, workshops, and an e-magazine.
+        </p>
+        <ul class="faico clear">
+          <li><a class="faicon-instagram" href="https://www.instagram.com/combigs_sastra/" target="_blank"><i
+                class="fab fa-instagram"></i></a></li>
+          <li><a class="faicon-spotify" href="https://open.spotify.com/show/0AN2PXlU15ROhDfLxdfb9e?si=b96cc943c5214824"
+              target="_blank"><i class="fab fa-spotify"></i></a></li>
+          <!-- Add or remove social media links as necessary -->
+        </ul>
+      </div>
+      <!-- Contact Information -->
+      <div class="one_quarter">
+        <h6 class="heading">Contact Information</h6>
+        <ul class="nospace linklist contact">
+          <li><i class="fas fa-map-marker-alt"></i>
+            <address>
+              <strong>SCBT</strong>,<br>
+              SASTRA DEEMED UNIVERSITY,<br>
+              Tirumalaisamudram,<br>
+              Thanjavur - 613401,<br>
+              Tamilnadu, India
+            </address>
+          </li>
+        </ul>
+      </div>
+      <!-- Quick Links -->
+      <div class="one_quarter">
+        <h6 class="heading">Quick Links</h6>
+        <ul class="nospace linklist">
+          <li><a href="members.html">Members of COMBIGS</a></li>
+          <li><a href="https://www.sastra.edu/staffprofiles/schools/scbt.php" target="_blank">SCBT Faculties</a></li>
+          <li><a href="https://forms.gle/esHizEVcAW9cZScw8" target="_blank">Feedback Form for Website Improvement</a>
+          </li>
+        </ul>
+
+      </div>
+    </footer>
+  </div>
+
+  <!-- Footer -->
+  <div class="wrapper row5">
+    <div id="copyright" class="hoc clear">
+      <p class="fl_left">Copyright &copy; 2023-2024 - All Rights Reserved - <a
+          href="https://www.sastra.edu/combigs/">COMBIGS,
+          SASTRA Deemed to be University</a></p>
+      <p class="fl_right">Template by <a target="_blank" rel="noopener" href="http://www.os-templates.com/"
+          title="Free Website Templates">OS Templates</a></p>
+    </div>
+
+    <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+  </div>
+
+  <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+
+  <script>
+    function toggleNav() {
+      var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];
+      if (nav.style.display === "block") {
+        nav.style.display = "none";
+      } else {
+        nav.style.display = "block";
+      }
+    }
+
+    window.addEventListener('resize', function () {
+      var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];
+      if (window.innerWidth > 768) {
+        nav.removeAttribute('style');
+      }
+    });
+  </script>
+
+</body>
+
+</html>

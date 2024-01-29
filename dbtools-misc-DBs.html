@@ -1,0 +1,823 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+    <title>COMBIGS | Database and tools (extras)</title>
+    <link rel="icon" href="images/sastra.png" />
+    <link rel="stylesheet" href="layout/styles/framework.css">
+    <link rel="stylesheet" href="layout/styles/layout.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!-- <script src="path/to/js/disable.js"></script> -->
+    <style>
+        .row3 {
+			background-color: #fcfcfc;
+		}
+
+        .hamburger {
+            display: none;
+            font-size: 24px;
+            user-select: none;
+        }
+
+        .image-container {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: center;
+		}
+
+		.image-container a {
+			flex: 1 1 50%;
+			/* makes each link take up 50% of the width */
+			max-width: 100%;
+			/* ensures images don't exceed their container */
+		}
+
+		.image-container img {
+			width: 100%;
+			height: auto;
+			display: block;
+			/* removes extra space below the image */
+		}
+
+        .one_quarter {
+			width: calc(33.33% - 100px);
+			/* Subtracting the total horizontal margin from one-third of the container */
+			margin: 0px 50px;
+			/* 50px margin on each side */
+			box-sizing: border-box;
+			/* To include padding and borders in the width calculation */
+			float: left;
+			/* To align the boxes side by side */
+		}
+
+		@media (max-width: 768px) {
+			.image-container a {
+				flex: 1 1 100%;
+				/* each link takes full width on smaller screens */
+			}
+			
+			.one_quarter {
+				width: 100%;
+				/* Full width on smaller screens */
+				margin: 30px 0;
+				/* Adjusted margin for mobile devices */
+				float: none;
+				/* Clear float for mobile layout */
+			}
+		}
+
+        @media screen and (max-width: 768px) {
+            #mainav {
+				padding: 10px 0;
+			}
+            
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+
+            #mainav ul {
+                display: none;
+            }
+        }
+
+        .table-img {
+            width: 100px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        .database-tools-table td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        .database-tools-table tr:hover {
+            background-color: #9ADCFF;
+        }
+
+        .database-tools-table thead tr {
+            background-color: transparent;
+            /* Or any color you want for the header */
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 20px;
+            font-size: 18px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            /* Added transition for box-shadow */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.5);
+        }
+
+        .btn:hover,
+        .btn:focus {
+            /* Focus state added */
+            background-color: #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn:focus {
+            outline: none;
+            /* Removes the default focus outline */
+            box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
+        }
+    </style>
+</head>
+
+<body id="top">
+
+	<!-- SASTRA & COMBIGS Logo -->
+	<div class="wrapper row0">
+		<header id="header" class="hoc clear">
+			<div class="image-container">
+				<!-- Image Links -->
+				<a href="index.html"><img src="images/combigs-part-1.png" alt="" /></a>
+				<a href="index.html"><img src="images/combigs-part-2.png" alt="" /></a>
+			</div>
+		</header>
+	</div>
+
+	<!-- Main Navbar / Hamburger Menu -->
+	<div class="wrapper row1">
+		<div class="hoc clear">
+			<!-- Hamburger Icon -->
+			<div class="hamburger fl_right" onclick="toggleNav()">☰</div>
+			<nav id="mainav" class="fl_right">
+				<ul class="clear">
+					<li><a href="index.html">Home</a></li>
+					<li><a href="magazine.html">Magazine</a></li>
+					<li><a href="event.html">Event Archives</a></li>
+					<li><a href="experiences.html">Experience</a></li>
+					<li><a href="intern.html">Internships</a></li>
+					<li class="active"><a href="dbtools.html">Databases and Tools</a></li>
+					<li><a href="members.html">Members</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+
+    <div class="wrapper bgded"
+        style="background-image:url('./images/dbtools-web-banner.png'); background-size:cover; background-position:center center;">
+        <section id="pageintro" class="hoc clear" style="padding: 20px 0;">
+            <div
+                style="background-color: rgba(255, 255, 255, 0.7); display: inline-block; padding: 10px; border-radius: 5px;">
+                <h2 class="heading" style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">Databases and
+                    Tools</h2>
+                <p style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">
+                    Bridging computational techniques with biological insights to advance scientific discovery.
+                </p>
+            </div>
+        </section>
+    </div>
+    
+    <div class="wrapper row3">
+        <main class="hoc container clear">
+            <div class="content">
+                <h1>2023 NAR Database Issue: New Databases Overview</h1>
+                <p>Explore the latest additions to the NAR Database collection in 2023. This table provides a quick overview of each new database, including names, URLs, and brief descriptions. Discover new resources for model organism proteomes, and other scientific data.</p>
+                <div class="scrollable">
+                    <table class="database-tools-table">
+                        <thead>
+                            <tr>
+                                <th>Database name</th>
+                                <th>URL</th>
+                                <th>Short description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>A3D Model Organism Database</td>
+                                <td>
+                                    <a href="http://biocomp.chem.uw.edu.pl/A3D2/MODB"
+                                        target="_blank">http://biocomp.chem.uw.edu.pl/A3D2/MODB</a>
+                                </td>
+                                <td>Aggregation predictions for model organism proteomes</td>
+                            </tr>
+                            <tr>
+                                <td>ABC-HuMi</td>
+                                <td>
+                                    <a href="https://www.ccb.uni-saarland.de/abc_humi/"
+                                        target="_blank">https://www.ccb.uni-saarland.de/abc_humi/</a>
+                                </td>
+                                <td>Biosynthetic Gene Clusters in the Human Microbiome</td>
+                            </tr>
+                            <tr>
+                                <td>ADC-DB</td>
+                                <td><a href="https://idrblab.org/adcdb/" target="_blank">https://idrblab.org/adcdb/</a>
+                                </td>
+                                <td>Antibody-drug conjugates</td>
+                            </tr>
+                            <tr>
+                                <td>AgeAnnoMO</td>
+                                <td><a href="https://relab.xidian.edu.cn/AgeAnnoMO/#/"
+                                        target="_blank">https://relab.xidian.edu.cn/AgeAnnoMO/#/</a></td>
+                                <td>Multi-omics of animal ageing</td>
+                            </tr>
+                            <tr>
+                                <td>AGIDB</td>
+                                <td><a href="https://agidb.pro/" target="_blank">https://agidb.pro/</a></td>
+                                <td>Animal Genotype Imputation DataBase</td>
+                            </tr>
+                            <tr>
+                                <td>AnimalMetaOmics</td>
+                                <td><a href="https://yanglab.hzau.edu.cn/animalmetaomics#"
+                                        target="_blank">https://yanglab.hzau.edu.cn/animalmetaomics#</a></td>
+                                <td>Multi-omics of animal microbiomes</td>
+                            </tr>
+                            <tr>
+                                <td>ATLAS</td>
+                                <td><a href="https://www.dsimb.inserm.fr/ATLAS"
+                                        target="_blank">https://www.dsimb.inserm.fr/ATLAS</a></td>
+                                <td>ATLAS of protein dynamics</td>
+                            </tr>
+                            <tr>
+                                <td>BioExcel-CV19</td>
+                                <td><a href="https://bioexcel-cv19.bsc.es/#/"
+                                        target="_blank">https://bioexcel-cv19.bsc.es/#/</a></td>
+                                <td>Molecular Dynamics of Covid-19 proteins</td>
+                            </tr>
+                            <tr>
+                                <td>BioKA</td>
+                                <td><a href="https://ngdc.cncb.ac.cn/bioka"
+                                        target="_blank">https://ngdc.cncb.ac.cn/bioka</a></td>
+                                <td>Biomarker Knowledgebase for Animals</td>
+                            </tr>
+                            <tr>
+                                <td>CancerProteome</td>
+                                <td><a href="http://bio-bigdata.hrbmu.edu.cn/CancerProteome"
+                                        target="_blank">http://bio-bigdata.hrbmu.edu.cn/CancerProteome</a></td>
+                                <td>The Cancer Proteome</td>
+                            </tr>
+                            <tr>
+                                <td>CASpedia</td>
+                                <td><a href="http://caspedia.org" target="_blank">http://caspedia.org</a></td>
+                                <td>Class 2 CRISPR associated enzymes,</td>
+                            </tr>
+                            <tr>
+                                <td>CDS-DB</td>
+                                <td><a href="http://cdsdb.cloudna.cn/" target="_blank">http://cdsdb.cloudna.cn/</a></td>
+                                <td>Cancer Drug-induced gene expression Signature DataBase</td>
+                            </tr>
+                            <tr>
+                                <td>CellCommuNet</td>
+                                <td><a href="http://www.inbirg.com/cellcommunet/"
+                                        target="_blank">http://www.inbirg.com/cellcommunet/</a></td>
+                                <td>Cell−cell communication analysis from scRNAseq</td>
+                            </tr>
+                            <tr>
+                                <td>CellSTAR</td>
+                                <td><a href="https://idrblab.org/cellstar"
+                                        target="_blank">https://idrblab.org/cellstar</a></td>
+                                <td>Single-cell Transcriptomic Annotation Resources</td>
+                            </tr>
+                            <tr>
+                                <td>cfOmics</td>
+                                <td><a href="https://cfomics.ncRNAlab.org/"
+                                        target="_blank">https://cfomics.ncRNAlab.org/</a></td>
+                                <td>Cell-free multi-omics</td>
+                            </tr>
+                            <tr>
+                                <td>ClinicalOmicsDB</td>
+                                <td><a href="http://trials.linkedomics.org/"
+                                        target="_blank">http://trials.linkedomics.org/</a></td>
+                                <td>Transcriptomics and cancer clinical trials</td>
+                            </tr>
+                            <tr>
+                                <td>COLOCdb</td>
+                                <td><a href="https://ngdc.cncb.ac.cn/colocdb"
+                                        target="_blank">https://ngdc.cncb.ac.cn/colocdb</a></td>
+                                <td>Cross-model colocalization for traits and phenotypes</td>
+                            </tr>
+                            <tr>
+                                <td>COV2Var</td>
+                                <td><a href="http://biomedbdc.wchscu.cn/COV2Var/"
+                                        target="_blank">http://biomedbdc.wchscu.cn/COV2Var/</a></td>
+                                <td>SARS-CoV-2 genetic variation and consequences</td>
+                            </tr>
+                            <tr>
+                                <td>CropGS-Hub</td>
+                                <td><a href="https://iagr.genomics.cn/CropGS/"
+                                        target="_blank">https://iagr.genomics.cn/CropGS/</a></td>
+                                <td>Crop Genotypes and Phenotypes</td>
+                            </tr>
+                            <tr>
+                                <td>CROST</td>
+                                <td><a href="https://ngdc.cncb.ac.cn/crost"
+                                        target="_blank">https://ngdc.cncb.ac.cn/crost</a></td>
+                                <td>Comprehensive Repository Of Spatial Transcriptomics</td>
+                            </tr>
+                            <tr>
+                                <td>dbAPIS</td>
+                                <td><a href="https://bcb.unl.edu/dbAPIS" target="_blank">https://bcb.unl.edu/dbAPIS</a>
+                                </td>
+                                <td>database of Anti-Prokaryotic Immune System genes</td>
+                            </tr>
+                            <tr>
+                                <td>DDA</td>
+                                <td><a href="http://www.bioinformaticspa.com/DDA/"
+                                        target="_blank">http://www.bioinformaticspa.com/DDA/</a></td>
+                                <td>DNA Damage Atlas</td>
+                            </tr>
+                            <tr>
+                                <td>DiSignAtlas</td>
+                                <td><a href="http://www.inbirg.com/disignatlas/"
+                                        target="_blank">http://www.inbirg.com/disignatlas/</a></td>
+                                <td>Disease signatures based on bulk and single-cell transcriptomics</td>
+                            </tr>
+                            <tr>
+                                <td>DRMref</td>
+                                <td><a href="https://ccsm.uth.edu/DRMref/"
+                                        target="_blank">https://ccsm.uth.edu/DRMref/</a></td>
+                                <td>Cancer drug resistance mechanisms from single cell data</td>
+                            </tr>
+                            <tr>
+                                <td>EndoQuad</td>
+                                <td><a href="https://EndoQuad.chenzxlab.cn/"
+                                        target="_blank">https://EndoQuad.chenzxlab.cn/</a></td>
+                                <td>Experimental and predicted DNA G-quadruplexes</td>
+                            </tr>
+                            <tr>
+                                <td>eRNAbase</td>
+                                <td><a href="http://bio.liclab.net/eRNAbase/index.php"
+                                        target="_blank">http://bio.liclab.net/eRNAbase/index.php</a></td>
+                                <td>Enhancer RNA (eRNA) in human and mouse</td>
+                            </tr>
+                            <tr>
+                                <td>FL-circAS</td>
+                                <td><a href="https://cosbi.ee.ncku.edu.tw/FL-circAS/"
+                                        target="_blank">https://cosbi.ee.ncku.edu.tw/FL-circAS/</a></td>
+                                <td>Full-length sequences and splicing of circular RNAs</td>
+                            </tr>
+                            <tr>
+                                <td>FLIBase</td>
+                                <td><a href="http://www.flibase.org" target="_blank">http://www.flibase.org</a></td>
+                                <td>Full length isoforms in cancers and normal tissues</td>
+                            </tr>
+                            <tr>
+                                <td>FusionNeoAntigen</td>
+                                <td><a href="https://compbio.uth.edu/FusionNeoAntigen"
+                                        target="_blank">https://compbio.uth.edu/FusionNeoAntigen</a></td>
+                                <td>Fusion gene-specific neoantigens</td>
+                            </tr>
+                            <tr>
+                                <td>FusionPDB</td>
+                                <td><a href="https://compbio.uth.edu/FusionPDB"
+                                        target="_blank">https://compbio.uth.edu/FusionPDB</a></td>
+                                <td>Fusion protein annotation database</td>
+                            </tr>
+                            <tr>
+                                <td>gcPathogen</td>
+                                <td><a href="https://nmdc.cn/gcpathogen/"
+                                        target="_blank">https://nmdc.cn/gcpathogen/</a></td>
+                                <td>Global Catalogue of Pathogens</td>
+                            </tr>
+                            <tr>
+                                <td>GDPF</td>
+                                <td><a href="http://bioinfo.qd.sdu.edu.cn/GDPF/"
+                                        target="_blank">http://bioinfo.qd.sdu.edu.cn/GDPF/</a></td>
+                                <td>Global Distribution of Protein Families</td>
+                            </tr>
+                            <tr>
+                                <td>HALL</td>
+                                <td><a href="https://ngdc.cncb.ac.cn/hall/index"
+                                        target="_blank">https://ngdc.cncb.ac.cn/hall/index</a></td>
+                                <td>Human Aging and Longevity Landscape</td>
+                            </tr>
+                            <tr>
+                                <td>HervD Atlas</td>
+                                <td><a href="https://ngdc.cncb.ac.cn/hervd/"
+                                        target="_blank">https://ngdc.cncb.ac.cn/hervd/</a></td>
+                                <td>Human endogenous retroviruses-disease associations</td>
+                            </tr>
+                            <tr>
+                                <td>HHCDB</td>
+                                <td><a href="http://hhcdb.edbc.org/" target="_blank">http://hhcdb.edbc.org/</a></td>
+                                <td>Human heterochromatin regions</td>
+                            </tr>
+                            <tr>
+                                <td>IMG/PR</td>
+                                <td><a href="https://img.jgi.doe.gov/pr" target="_blank">https://img.jgi.doe.gov/pr</a>
+                                </td>
+                                <td>Plasmid sequences</td>
+                            </tr>
+                            <tr>
+                                <td>IMP</td>
+                                <td><a href="https://www.bic.ac.cn/IMP" target="_blank">https://www.bic.ac.cn/IMP</a>
+                                </td>
+                                <td>Integrated Medicinal Plantomics</td>
+                            </tr>
+                            <tr>
+                                <td>iNClusive</td>
+                                <td><a href="https://non-canonical-aas.biologie.uni-freiburg.de/"
+                                        target="_blank">https://non-canonical-aas.biologie.uni-freiburg.de/</a></td>
+                                <td>Non-canonical amino acids</td>
+                            </tr>
+                            <tr>
+                                <td>M2OR</td>
+                                <td><a href="https://m2or.chemsensim.fr/"
+                                        target="_blank">https://m2or.chemsensim.fr/</a></td>
+                                <td>Molecules to Olfactory Receptors</td>
+                            </tr>
+                            <tr>
+                                <td>MACC</td>
+                                <td><a href="http://macc.badd-cao.net/" target="_blank">http://macc.badd-cao.net/</a>
+                                </td>
+                                <td>Metabolite-Associated Cell Communications</td>
+                            </tr>
+                            <tr>
+                                <td>MAJIQlopedia</td>
+                                <td><a href="https://majiq.biociphers.org/majiqlopedia/"
+                                        target="_blank">https://majiq.biociphers.org/majiqlopedia/</a></td>
+                                <td>Human splice junctions</td>
+                            </tr>
+                            <tr>
+                                <td>MAMI</td>
+                                <td><a href="https://bioinfo.biols.ac.cn/mami/"
+                                        target="_blank">https://bioinfo.biols.ac.cn/mami/</a></td>
+                                <td>Microbiome Atlas of Mothers and Infants</td>
+                            </tr>
+                            <tr>
+                                <td>MethMarkerDB</td>
+                                <td><a href="https://methmarkerdb.hzau.edu.cn/"
+                                        target="_blank">https://methmarkerdb.hzau.edu.cn/</a></td>
+                                <td>Cancer DNA Methylation Biomarker</td>
+                            </tr>
+                            <tr>
+                                <td>mHapBrowser</td>
+                                <td><a href="http://mhap.sibcb.ac.cn/" target="_blank">http://mhap.sibcb.ac.cn/</a></td>
+                                <td>DNA Methylation Haplotype Browser</td>
+                            </tr>
+                            <tr>
+                                <td>MINRbase</td>
+                                <td><a href="http://cm.jefferson.edu/MINRbase/"
+                                        target="_blank">http://cm.jefferson.edu/MINRbase/</a></td>
+                                <td>rRNA-derived fragments (rRFs)</td>
+                            </tr>
+                            <tr>
+                                <td>MultifacetedProtDB</td>
+                                <td><a href="https://multifacetedprotdb.biocomp.unibo.it/"
+                                        target="_blank">https://multifacetedprotdb.biocomp.unibo.it/</a></td>
+                                <td>Proteins with multiple functions</td>
+                            </tr>
+                            <tr>
+                                <td>ncRNADrug</td>
+                                <td><a href="http://www.jianglab.cn/ncRNADrug"
+                                        target="_blank">http://www.jianglab.cn/ncRNADrug</a></td>
+                                <td>ncRNAs targeted by drugs or linked to drug resistance</td>
+                            </tr>
+                            <tr>
+                                <td>NMPFamsDB</td>
+                                <td><a href="http://www.nmpfamsdb.org/" target="_blank">http://www.nmpfamsdb.org/</a> or
+                                    <a href="https://bib.fleming.gr/NMPFamsDB"
+                                        target="_blank">https://bib.fleming.gr/NMPFamsDB</a>
+                                </td>
+                                <td>Novel Metagenome Protein Families</td>
+                            </tr>
+                            <tr>
+                                <td>NAKB</td>
+                                <td><a href="https://nakb.org" target="_blank">https://nakb.org</a></td>
+                                <td>Nucleic Acid Knowledgebase</td>
+                            </tr>
+                            <tr>
+                                <td>Open Genes</td>
+                                <td><a href="https://open-genes.org/" target="_blank">https://open-genes.org/</a></td>
+                                <td>Human genes associated with aging and longevity</td>
+                            </tr>
+                            <tr>
+                                <td>OPIA</td>
+                                <td><a href="https://ngdc.cncb.ac.cn/opia/"
+                                        target="_blank">https://ngdc.cncb.ac.cn/opia/</a></td>
+                                <td>Open Plant Image Archive</td>
+                            </tr>
+                            <tr>
+                                <td>P10K</td>
+                                <td><a href="https://ngdc.cncb.ac.cn/p10k/"
+                                        target="_blank">https://ngdc.cncb.ac.cn/p10k/</a></td>
+                                <td>Protist 10000 Genomes Project</td>
+                            </tr>
+                            <tr>
+                                <td>PGS-depot</td>
+                                <td><a href="http://www.pgsdepot.net" target="_blank">http://www.pgsdepot.net</a></td>
+                                <td>Polygenic risk scores</td>
+                            </tr>
+                            <tr>
+                                <td>PhageScope</td>
+                                <td><a href="https://phagescope.deepomics.org"
+                                        target="_blank">https://phagescope.deepomics.org</a></td>
+                                <td>Bacteriophages</td>
+                            </tr>
+                            <tr>
+                                <td>PharmGWAS</td>
+                                <td><a href="https://ngdc.cncb.ac.cn/pharmgwas"
+                                        target="_blank">https://ngdc.cncb.ac.cn/pharmgwas</a></td>
+                                <td>GWAS for drug repurposing</td>
+                            </tr>
+                            <tr>
+                                <td>PigBioBank</td>
+                                <td><a href="http://pigbiobank.farmgtex.org"
+                                        target="_blank">http://pigbiobank.farmgtex.org</a></td>
+                                <td>Pig genotypes and phenotypes</td>
+                            </tr>
+                            <tr>
+                                <td>PLAbDab</td>
+                                <td><a href="https://opig.stats.ox.ac.uk/webapps/plabdab/"
+                                        target="_blank">https://opig.stats.ox.ac.uk/webapps/plabdab/</a></td>
+                                <td>Patent and Literature Antibody Database</td>
+                            </tr>
+                            <tr>
+                                <td>PlantPAD</td>
+                                <td><a href="http://plantpad.samlab.cn" target="_blank">http://plantpad.samlab.cn</a>
+                                </td>
+                                <td>Plant image phenomics and disease</td>
+                            </tr>
+                            <tr>
+                                <td>PMhub</td>
+                                <td><a href="https://pmhub.org.cn" target="_blank">https://pmhub.org.cn</a></td>
+                                <td>Plant Metabolite hub</td>
+                            </tr>
+                            <tr>
+                                <td>PPGR</td>
+                                <td><a href="https://ngdc.cncb.ac.cn/ppgr/"
+                                        target="_blank">https://ngdc.cncb.ac.cn/ppgr/</a></td>
+                                <td>Resource for Perennial Plant Genomes and Regulation</td>
+                            </tr>
+                            <tr>
+                                <td>PRMD</td>
+                                <td><a href="http://bioinformatics.sc.cn/PRMD"
+                                        target="_blank">http://bioinformatics.sc.cn/PRMD</a></td>
+                                <td>Plant RNA Modification Database</td>
+                            </tr>
+                            <tr>
+                                <td>RAVAR</td>
+                                <td><a href="http://www.ravar.bio" target="_blank">http://www.ravar.bio</a></td>
+                                <td>RAre Variant Association Repository</td>
+                            </tr>
+                            <tr>
+                                <td>RefMetaPlant</td>
+                                <td><a href="https://www.biosino.org/RefMetaDB/"
+                                        target="_blank">https://www.biosino.org/RefMetaDB/</a></td>
+                                <td>Reference Metabolome Database for Plants</td>
+                            </tr>
+                            <tr>
+                                <td>Ribocentre-switch</td>
+                                <td><a href="https://riboswitch.ribocentre.org"
+                                        target="_blank">https://riboswitch.ribocentre.org</a></td>
+                                <td>Riboswitches: Sequence, Structure, Function and Applications</td>
+                            </tr>
+                            <tr>
+                                <td>RVdb</td>
+                                <td><a href="http://rvdb.mgc.ac.cn" target="_blank">http://rvdb.mgc.ac.cn</a></td>
+                                <td>Rhinovirus database</td>
+                            </tr>
+                            <tr>
+                                <td>SCAN</td>
+                                <td><a href="http://scanatlas.net" target="_blank">http://scanatlas.net</a></td>
+                                <td>Spatiotemporal Cloud Atlas for Neural cells</td>
+                            </tr>
+                            <tr>
+                                <td>SCAR</td>
+                                <td><a href="http://8.142.154.29/SCAR2023"
+                                        target="_blank">http://8.142.154.29/SCAR2023</a></td>
+                                <td>Single-cell and Spatially-resolved CAncer Resources</td>
+                            </tr>
+                            <tr>
+                                <td>scGRN</td>
+                                <td><a href="https://bio.liclab.net/scGRN/"
+                                        target="_blank">https://bio.liclab.net/scGRN/</a></td>
+                                <td>Single-cell gene regulatory networks in human and mouse</td>
+                            </tr>
+                            <tr>
+                                <td>scPlantDB</td>
+                                <td><a href="https://biobigdata.nju.edu.cn/scplantdb"
+                                        target="_blank">https://biobigdata.nju.edu.cn/scplantdb</a></td>
+                                <td>Plant scRNA-seq datasets</td>
+                            </tr>
+                            <tr>
+                                <td>scQTLbase</td>
+                                <td><a href="http://bioinfo.szbl.ac.cn/scQTLbase"
+                                        target="_blank">http://bioinfo.szbl.ac.cn/scQTLbase</a></td>
+                                <td>Single cell QTLs</td>
+                            </tr>
+                            <tr>
+                                <td>scATAC-Ref</td>
+                                <td><a href="https://bio.liclab.net/scATAC-Ref/"
+                                        target="_blank">https://bio.liclab.net/scATAC-Ref/</a></td>
+                                <td>Single cell ATAC-seq data</td>
+                            </tr>
+                            <tr>
+                                <td>scTEA-db</td>
+                                <td><a href="http://www.scTEA-db.org" target="_blank">http://www.scTEA-db.org</a></td>
+                                <td>single cell-based Terminal Exon Annotation database</td>
+                            </tr>
+                            <tr>
+                                <td>SilkMeta</td>
+                                <td><a href="http://silkmeta.org.cn" target="_blank">http://silkmeta.org.cn</a></td>
+                                <td>Silkworm pan-genome and multi-omic database</td>
+                            </tr>
+                            <tr>
+                                <td>SingPro</td>
+                                <td><a href="http://idrblab.org/singpro/"
+                                        target="_blank">http://idrblab.org/singpro/</a></td>
+                                <td>Single cell proteomics</td>
+                            </tr>
+                            <tr>
+                                <td>SLKB</td>
+                                <td><a href="https://slkb.osubmi.org" target="_blank">https://slkb.osubmi.org</a></td>
+                                <td>Synthetic lethality knowledge base</td>
+                            </tr>
+                            <tr>
+                                <td>SORC</td>
+                                <td><a href="http://bio-bigdata.hrbmu.edu.cn/SORC"
+                                        target="_blank">http://bio-bigdata.hrbmu.edu.cn/SORC</a></td>
+                                <td>Spatial Omics Resource in Cancer</td>
+                            </tr>
+                            <tr>
+                                <td>SoyMD</td>
+                                <td><a href="https://yanglab.hzau.edu.cn/SoyMD/#/"
+                                        target="_blank">https://yanglab.hzau.edu.cn/SoyMD/#/</a></td>
+                                <td>Soybean multi-omics</td>
+                            </tr>
+                            <tr>
+                                <td>SPDB</td>
+                                <td><a href="https://scproteomicsdb.com/"
+                                        target="_blank">https://scproteomicsdb.com/</a></td>
+                                <td>Single cell proteomics</td>
+                            </tr>
+                            <tr>
+                                <td>SPIRE</td>
+                                <td><a href="https://spire.embl.de" target="_blank">https://spire.embl.de</a></td>
+                                <td>Searchable Planetary-scale mIcrobiome REsource</td>
+                            </tr>
+                            <tr>
+                                <td>StemDriver</td>
+                                <td><a href="http://biomedbdc.wchscu.cn/StemDriver/"
+                                        target="_blank">http://biomedbdc.wchscu.cn/StemDriver/</a>
+                                </td>
+                                <td>Hematopoietic stem cell differentiation by scRNAseq</td>
+                            </tr>
+                            <tr>
+                                <td>STOmicsDB</td>
+                                <td><a href="https://db.cngb.org/stomics/"
+                                        target="_blank">https://db.cngb.org/stomics/</a></td>
+                                <td>Spatial transcriptomics</td>
+                            </tr>
+                            <tr>
+                                <td>TargetGene</td>
+                                <td><a href="https://ngdc.cncb.ac.cn/targetgene/"
+                                        target="_blank">https://ngdc.cncb.ac.cn/targetgene/</a></td>
+                                <td>Target genes for human genetic variants</td>
+                            </tr>
+                            <tr>
+                                <td>TCOD</td>
+                                <td><a href="https://ngdc.cncb.ac.cn/tcod"
+                                        target="_blank">https://ngdc.cncb.ac.cn/tcod</a></td>
+                                <td>Tropical Crop omics Database</td>
+                            </tr>
+                            <tr>
+                                <td>Telobase</td>
+                                <td><a href="http://cfb.ceitec.muni.cz/telobase/"
+                                        target="_blank">http://cfb.ceitec.muni.cz/telobase/</a></td>
+                                <td>Telomere sequences</td>
+                            </tr>
+                            <tr>
+                                <td>TETSS</td>
+                                <td><a href="http://xozhanglab.com/TETSS"
+                                        target="_blank">http://xozhanglab.com/TETSS</a></td>
+                                <td>Transposon (TE)-derived transcription start sites</td>
+                            </tr>
+                            <tr>
+                                <td>TheMarker</td>
+                                <td><a href="https://idrblab.org/themarker"
+                                        target="_blank">https://idrblab.org/themarker</a></td>
+                                <td>Therapeutic biomarkers</td>
+                            </tr>
+                            <tr>
+                                <td>UniTmp</td>
+                                <td><a href="http://www.unitmp.org/" target="_blank">http://www.unitmp.org/</a></td>
+                                <td>Transmembrane protein structures and topologies</td>
+                            </tr>
+                            <tr>
+                                <td>UTexas Aptamer Database</td>
+                                <td><a href="https://sites.utexas.edu/aptamerdatabase/"
+                                        target="_blank">https://sites.utexas.edu/aptamerdatabase/</a></td>
+                                <td>Aptamers</td>
+                            </tr>
+                            <tr>
+                                <td>VarEPS-influ</td>
+                                <td><a href="https://nmdc.cn/influvar/" target="_blank">https://nmdc.cn/influvar/</a>
+                                </td>
+                                <td>Influenza virus variation risk evaluation system</td>
+                            </tr>
+                            <tr>
+                                <td>ZEBRA</td>
+                                <td><a href="https://www.ccb.uni-saarland.de/brain_atlas"
+                                        target="_blank">https://www.ccb.uni-saarland.de/brain_atlas</a></td>
+                                <td>Brain gene expression at single cell resolution</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Back Button Link Section -->
+                <div class="download-section" style="text-align: center; margin-top: 20px;">
+                    <a href="./dbtools.html" class="btn">
+                    Back
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+
+	<!-- `Above Footer` Section -->
+	<div class="wrapper row4">
+		<footer id="footer" class="hoc clear">
+			<!-- Combigs -->
+			<div class="one_quarter first">
+				<h1 class="logoname clear"><a href="https://www.sastra.edu/combigs/"><span>COMBIGS</span></a></h1>
+				<p class="btmspace-30" style="text-align:left;">
+					COMBIGS at SASTRA University is a renowned Computational Biology Group, fostering collaboration and
+					innovation in bioinformatics through conferences, workshops, and an e-magazine.
+				</p>
+				<ul class="faico clear">
+					<li><a class="faicon-instagram" href="https://www.instagram.com/combigs_sastra/" target="_blank"><i
+								class="fab fa-instagram"></i></a></li>
+					<li><a class="faicon-spotify"
+							href="https://open.spotify.com/show/0AN2PXlU15ROhDfLxdfb9e?si=b96cc943c5214824"
+							target="_blank"><i class="fab fa-spotify"></i></a></li>
+					<!-- Add or remove social media links as necessary -->
+				</ul>
+			</div>
+			<!-- Contact Information -->
+			<div class="one_quarter">
+				<h6 class="heading">Contact Information</h6>
+				<ul class="nospace linklist contact">
+					<li><i class="fas fa-map-marker-alt"></i>
+						<address>
+							<strong>SCBT</strong>,<br>
+							SASTRA DEEMED UNIVERSITY,<br>
+							Tirumalaisamudram,<br>
+							Thanjavur - 613401,<br>
+							Tamilnadu, India
+						</address>
+					</li>
+				</ul>
+			</div>
+			<!-- Quick Links -->
+			<div class="one_quarter">
+				<h6 class="heading">Quick Links</h6>
+				<ul class="nospace linklist">
+					<li><a href="members.html">Members of COMBIGS</a></li>
+					<li><a href="https://www.sastra.edu/staffprofiles/schools/scbt.php" target="_blank">SCBT Faculties</a></li>
+					<li><a href="https://forms.gle/esHizEVcAW9cZScw8" target="_blank">Feedback Form for Website Improvement</a></li>
+				</ul>
+
+			</div>
+		</footer>
+	</div>
+
+	<!-- Footer -->
+	<div class="wrapper row5">
+		<div id="copyright" class="hoc clear">
+			<p class="fl_left">Copyright &copy; 2023-2024 - All Rights Reserved - <a
+					href="https://www.sastra.edu/combigs/">COMBIGS,
+					SASTRA Deemed to be University</a></p>
+			<p class="fl_right">Template by <a target="_blank" rel="noopener" href="http://www.os-templates.com/"
+					title="Free Website Templates">OS Templates</a></p>
+		</div>
+
+		<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+	</div>
+
+    <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+
+    <script>
+        function toggleNav() {
+            var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];
+            if (nav.style.display === "block") {
+                nav.style.display = "none";
+            } else {
+                nav.style.display = "block";
+            }
+        }
+
+        // Remove inline styles on window resize
+        window.addEventListener('resize', function () {
+            var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];
+            if (window.innerWidth > 768) {
+                nav.removeAttribute('style');
+            }
+        });
+    </script>
+
+</body>
+
+</html>

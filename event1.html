@@ -1,0 +1,311 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+    <title>COMBIGS | Pratyarth'15 :: SASTRA Deemed to be University</title>
+    <link rel="icon" href="images/sastra.png" />
+    <link rel="stylesheet" href="layout/styles/framework.css">
+    <link rel="stylesheet" href="layout/styles/layout.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <style>
+        .image-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .image-grid img {
+            width: 18%; /* Adjust the width as needed */
+            margin-bottom: 10px;
+        }
+
+        body {
+            background-color: #fff;
+            /* Set the default background color for the body */
+        }
+
+        #event-archives-section {
+            padding: 50px 0;
+            background: #BFC9CA;
+            text-align: center;
+        }
+
+        .event-info {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.85);
+            color: #333;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+            /* Removed 'display: none;' */
+        }
+
+        .event-image {
+            width: 150px;
+            /* Set a fixed width for the images */
+            height: auto;
+            /* Let the height adjust automatically */
+            margin-right: 20px;
+            /* Adjust spacing between image and link */
+        }
+
+        /* Adjustments for responsiveness */
+        @media screen and (max-width: 768px) {
+            .event-item {
+                flex-direction: column;
+                /* Stack items vertically on smaller screens */
+            }
+
+            .event-image {
+                margin-right: 0;
+                /* Remove margin between image and link on smaller screens */
+                margin-bottom: 10px;
+                /* Adjust spacing between items on smaller screens */
+                align-self: center;
+                /* Center the image horizontally on smaller screens */
+            }
+
+            .event-link {
+                max-width: none;
+                /* Remove max-width on smaller screens */
+            }
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 18px;
+            user-select: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            #mainav ul {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        .scrollable {
+            overflow-x: auto;
+        }
+
+        @media screen and (max-width: 768px) {
+            .events-table th,
+            .events-table td {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+
+        /* Style for buttons */
+        .toggle-button {
+            background-color: #4CAF50; /* Green background */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        /* Initially hide speaker list */
+        #speaker-list {
+            display: none;
+        }
+		#pdf-object {
+			display: none; /* Initially hide the PDF object */
+		}
+    </style>
+</head>
+
+<body>
+    <div class="wrapper row1">
+        <header id="header" class="hoc clear">
+            <div id="logo" class="fl_left">
+                <a href="index.html"><img src="images/combigs.png" alt="" /></a>
+            </div>
+            <!-- Hamburger Icon -->
+            <div class="hamburger fl_right" onclick="toggleNav()">☰</div>
+            <nav id="mainav" class="fl_right">
+                <ul class="clear">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="magazine.html">Magazine</a></li>
+                    <li class="active"><a href="event.html">Event Archives</a></li>
+                    <li><a href="experiences.html">Experience</a></li>
+                    <li><a href="intern.html">Internships</a></li>
+                    <li><a href="dbtools.html">Databases and Tools</a></li>
+                    <li><a href="members.html">Members</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="wrapper bgded" style="background-image:url('./images/event-archives-banner.png'); background-size:cover; background-position:center center;">
+        <section id="pageintro" class="hoc clear" style="padding: 20px 0;">
+            <div style="background-color: rgba(255, 255, 255, 0.7); display: inline-block; padding: 10px; border-radius: 5px;">
+                <h2 class="heading" style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">Pratyarth'15</h2>
+                <p style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">
+                    Symposium on Modern Biology (2015)
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Section for event information (replace placeholder text with actual details) -->
+    <section id="event-archives-section" style="text-align: center;">
+        <div class="events" style="margin: 0 auto; max-width: 1000px;">
+            <!-- Event details go here -->
+            <div class="event-info" style="text-align: left; margin-bottom: 30px;">
+                <button class="toggle-button" onclick="toggleSpeakers()">Show Speakers List</button>
+                <button class="toggle-button" onclick="toggleImages()">Show Event Pictures</button>
+				
+                <div id="speaker-list">
+				<p style="font-size: 18px;">
+                    <strong>SPEAKERS:</strong><br><br>
+                </p>
+                <!-- Speaker 1 -->
+                <div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+                    <div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+                        <img src="images/speakers/pratyarth'15/s1.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+                    </div>
+                    <div class="speaker-details" style="flex: 2;">
+                        <div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"Diagnostic Role of Exome Sequencing in Immune Deficiency Disorders</u>"</p></b><b><br>Dr. Rajgopal Srinivasan</b></font><br>Principal Scientist and Head, Bio IT R&D, TCS Innovation Labs, Hyderabad
+                        </div>
+                        <p style="text-align: justify; font-size: 14px;">
+                            <font size="3">
+                                The use of exome sequencing for the diagnosis of newborns with severe immune diseases of uncertain underlying causes. Many were identified from population based newborn screening for severe combined immundeficiencies (SCID), that revealed low or absent T cell receptor excision circles (TRECs), a biomarker for T-cell lymphocyte production. However, the low TREC can be observed in several other rare non-SCID immune disorders as well. Genome sequencing can potentially resolve the genetic basis of these disorders through precise characterization of molecular defects in an individual newborn’s DNA. To interpret genomic variant data, we developed an analysis protocol whose distinctive features enabled solving numerous clinical cases. It integrates variant annotation, variant filtering, and gene prioritization to prioritize millions of called variants to a manageable shortlist of possible causative variants.
+                            </font>
+                        </p>
+                    </div>
+                </div>
+				<hr>
+                <!-- Speaker 2 -->
+                <div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+                    <div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+                        <img src="images/speakers/pratyarth'15/s2.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+                    </div>
+                    <div class="speaker-details" style="flex: 2;">
+                        <div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"Computational Approaches to Drug Discovery</u>"</p></b><b><br>Dr. Vellarkad N Viswanadhan</b></font><br>Former Vice President and Partner, SignalChem LifeSciences
+						</div>
+                        <p style="text-align: justify; font-size: 14px;">
+                            <font size="3">
+                                The advent of computational technology in the field of drug design has made modern drug discovery and design possible. The time consumed in the drug design and discovery course has been drastically reduced by the computational technology. Computational advances have provided platform for High Throughput Screening, docking studies and pharmacophore modelling which supplements the drug discovery and design process. This talk will cover the usage of computational tools in drug design with the use of two case studies from pharmaceutical industry.
+                            </font>
+                        </p>
+                    </div>
+                </div>
+				<hr>
+				<!-- Speaker 3 -->
+                <div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+					<div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+						<img src="images/speakers/pratyarth'15/s3.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+					</div>
+                    <div class="speaker-details" style="flex: 2;">
+						<div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"Human Corneal microRNA Expression Profile in Fungal Keratitis</u>"</p></b><b><br>Dr. D Bharanidharan</b></font><br>Scientist, Aravind Medical Research Foundation (AMRF)
+						</div>
+						<p style="text-align: justify; font-size: 14px;">
+                        <font size="3">
+                            Keratitis is an inflammatory disease, which can progress rapidly with corneal ulceration through pathological wound healing within 24-48 hours. The predominant cause of corneal ulceration in India is fungi, may be responsible for 60-70% of infectious keratitis cases. Many of the fungal keratitis cases are refractory to medical treatment and will require corneal transplantation. MicroRNAs are small non-coding RNAs (~22 nucleotides) which regulate gene expression by complementary binding to the 3’UTR region of target mRNAs. MicroRNAs are expressed in various ocular tissues with a distinct tissue-specific and developmental stage-specific expression pattern, which suggests potential unique functions. Recent studies have highlighted the regulatory role of miRNAs on inflammation, immune cell differentiation and host immune responses to infection. With the advent of carrier based small RNA delivery into ocular tissues, miRNAs may emerge as valuable therapeutic targets for fungal keratitis in the near future. However, this requires precise information on the dysregulated miRNAs, their tissue specific targets and the pathways regulated by them during disease, which has still not been addressed in fungal keratitis. Here, I will present the human miRNA expression profile in fungal keratitis, by genome-wide deep sequencing of the small RNA transcriptome in infected and normal human donor corneas, and highlight the regulatory role of miRNAs with focus on corneal wound healing and inflammatory responses.
+                        </font>
+                    </p>
+					</div>
+                </div>
+				<hr>
+				<!-- Speaker 4 -->
+				<div class="speaker" style="display: flex; align-items: center; margin-bottom: 15px;">
+					<div class="speaker-image" style="flex: 1; margin-right: 20px; margin-top: 45px;">
+						<img src="images/speakers/pratyarth'15/s4.png" alt="" style="width:250px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+					</div>
+                    <div class="speaker-details" style="flex: 2;">
+						<div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><b><p>"Genomic Approaches to Bacterial Ecology: An insight into Metagenomics</u>"</p></b><b><br>Mr. R Vijayaraghavan</b></font><br>Project Scientist, National Institute of Ocean Technology
+                    </div>
+                    <p style="text-align: justify; font-size: 14px;">
+                        <font size="3">
+                            The community structure of the microorganisms and their associated species define the nature of a particular environment. Changes that occur in any one environment can potentially have a tremendous impact on the other and hence, it becomes indispensable to understand the nature of species and their interactions that surrounds us. Bacteria, the omnipresent microorganism has immense capability to colonise themselves in extreme physiological conditions viz. high pressure, low temperature, low nutrient, etc. Bacterial species play a vital role in maintaining the biogeochemical pathways of a particular niche. Understanding bacterial ecology in various environments can help us to know about the native species, provide resistance to bio-invasions and unravel sources for bioactive compounds. With the advent of state-of-the-art genomic techniques viz. metagenomics, elucidation of bacterial community patterns at a particular geographic location has been extremely simplified. High-throughput sequencing has exhaustively facilitated the profiling of microbial communities at a very high resolution. The application of modern genomic techniques in studying community ecology have made things a reality, which were once seemed tantalizing.
+                        </font>
+                    </p>
+					</div>
+                </div>
+				<hr>
+            </div>
+			<div id="speaker-images" style="display: none;">
+			<p style="font-size: 18px;">
+				<strong>Images:</strong><br><br>
+            </p>
+			<div class="image-grid">
+        <!-- Replace the image URLs with your actual image URLs -->
+        <img src="images/Gallery/pratyarth'15/p1.jpg" alt="Image 1">
+        <img src="images/Gallery/pratyarth'15/p2.jpg" alt="Image 2">
+        <img src="images/Gallery/pratyarth'15/p3.jpg" alt="Image 3">
+        <img src="images/Gallery/pratyarth'15/p4.jpg" alt="Image 4">
+        <img src="images/Gallery/pratyarth'15/p5.jpg" alt="Image 5">
+        <img src="images/Gallery/pratyarth'15/p6.jpg" alt="Image 6">
+        <img src="images/Gallery/pratyarth'15/p7.jpg" alt="Image 7">
+        <img src="images/Gallery/pratyarth'15/p8.jpg" alt="Image 8">
+        <img src="images/Gallery/pratyarth'15/p9.jpg" alt="Image 9">
+        <img src="images/Gallery/pratyarth'15/p10.jpg" alt="Image 10">
+        <img src="images/Gallery/pratyarth'15/p11.jpg" alt="Image 11">
+        <img src="images/Gallery/pratyarth'15/p12.jpg" alt="Image 12">
+        <!-- Add more images as needed -->
+    </div>
+	</div>
+	
+        </div>
+		</div>
+    </section>
+
+    <div class="wrapper row5">
+        <footer id="footer" class="hoc clear">
+            <p class="fl_left">COMBIGS, SASTRA Deemed to be University, All rights Reserved. 2023</p>
+            <p class="fl_right">Developed by <a target="_blank" href="https://www.sastra.edu/">SASTRA Web Team</a></p>
+        </footer>
+    </div>
+
+    <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+
+    <script>
+        function toggleNav() {
+            var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];
+            if (nav.style.display === "block") {
+                nav.style.display = "none";
+            } else {
+                nav.style.display = "block";
+            }
+        }
+
+        window.addEventListener('resize', function () {
+            var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];
+            if (window.innerWidth > 768) {
+                nav.removeAttribute('style');
+            }
+        });
+		
+		// Function to toggle visibility of speaker list
+		function toggleSpeakers() {
+			var speakers = document.getElementById("speaker-list");
+			speakers.style.display = (speakers.style.display === "none" || speakers.style.display === "") ? "block" : "none";
+		}
+
+		// Function to toggle visibility of speaker images
+		function toggleImages() {
+			var images = document.getElementById("speaker-images");
+			images.style.display = (images.style.display === "none" || images.style.display === "") ? "block" : "none";
+		}
+    </script>
+</body>
+
+</html>

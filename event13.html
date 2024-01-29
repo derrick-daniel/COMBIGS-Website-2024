@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+    <title>COMBIGS | Pratyarth'22:: SASTRA Deemed to be University</title>
+    <link rel="icon" href="images/sastra.png" />
+    <link rel="stylesheet" href="layout/styles/framework.css">
+    <link rel="stylesheet" href="layout/styles/layout.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <style>
+        body {
+            background-color: #fff;
+            /* Set the default background color for the body */
+        }
+
+        #event-archives-section {
+            padding: 50px 0;
+            background: #BFC9CA;
+            text-align: center;
+        }
+
+        .event-info {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.85);
+    color: #333;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+	}
+
+        .event-image {
+            width: 150px;
+            /* Set a fixed width for the images */
+            height: auto;
+            /* Let the height adjust automatically */
+            margin-right: 20px;
+            /* Adjust spacing between image and link */
+        }
+        /* Adjustments for responsiveness */
+        @media screen and (max-width: 768px) {
+            .event-item {
+                flex-direction: column;
+                /* Stack items vertically on smaller screens */
+            }
+
+            .event-image {
+                margin-right: 0;
+                /* Remove margin between image and link on smaller screens */
+                margin-bottom: 10px;
+                /* Adjust spacing between items on smaller screens */
+                align-self: center;
+                /* Center the image horizontally on smaller screens */
+            }
+
+            .event-link {
+                max-width: none;
+                /* Remove max-width on smaller screens */
+            }
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 18px;
+            user-select: none;
+        }
+
+        @media screen and (max-width: 768px) {
+            #mainav ul {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+            }
+        }
+
+        .scrollable {
+            overflow-x: auto;
+        }
+
+        @media screen and (max-width: 768px) {
+            .events-table th,
+            .events-table td {
+                padding: 8px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper row1">
+        <header id="header" class="hoc clear">
+            <div id="logo" class="fl_left">
+                <a href="index.html"><img src="images/combigs.png" alt="" /></a>
+            </div>
+            <!-- Hamburger Icon -->
+            <div class="hamburger fl_right" onclick="toggleNav()">☰</div>
+            <nav id="mainav" class="fl_right">
+                <ul class="clear">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="magazine.html">Magazine</a></li>
+                    <li class="active"><a href="event.html">Event Archives</a></li>
+                    <li><a href="experiences.html">Experience</a></li>
+                    <li><a href="intern.html">Internships</a></li>
+                    <li><a href="dbtools.html">Databases and Tools</a></li>
+                    <li><a href="members.html">Members</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="wrapper bgded" style="background-image:url('./images/event-archives-banner.png'); background-size:cover; background-position:center center;">
+        <section id="pageintro" class="hoc clear" style="padding: 20px 0;">
+            <div style="background-color: rgba(255, 255, 255, 0.7); display: inline-block; padding: 10px; border-radius: 5px;">
+                <h2 class="heading" style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">Pratyarth'22</h2>
+                <p style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">
+                    A National Symposium on Bioinformatics: A holistic search engine and a problem solver, 11 March, 2022
+                </p>
+            </div>
+        </section>
+    </div><br><br>
+
+    <!-- Section for event information (replace placeholder text with actual details) -->
+    <section id="event-archives-section" style="text-align: center;">
+        <div class="events" style="margin: 0 auto; max-width: 1000px;">
+            <!-- Event details go here -->
+            <div class="event-info" style="text-align: left; margin-bottom: 30px;">
+                <h3><u>Event Details</u>:</h3>
+                <p style="text-align: justify">
+                    Pratyarth is the annual symposium on seminal research in bioinformatics organized by COMBIGS, the Computational Biology Group at SASTRA Deemed to be University. Pratyarth 2022 is titled "BIOINFORMATICS: A HOLISTIC SEARCH ENGINE AND A PROBLEM SOLVER", with the notion to bring a comprehensive experience from research through industry to entrepreneurship. We focus on covering the upshift in the scope of bioinformatics after the tides of the COVID pandemic. The Pratyarth was conducted in online mode. We bring you personalities with specific field experience and inclusive topics to gather as much wisdom as possible.
+                </p>
+
+                <p style="font-size: 16px;">
+                    <strong>SPEAKERS:</strong><br><br>
+                </p>
+
+                <!-- Speaker 1 -->
+                <div class="speaker" style="text-align: center; margin-bottom: 30px;">
+                    <img src="images/speakers/anusom.jpeg" alt="" style="width:200px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+                    <div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><u><br>"Scope and Opportunities of Bioinformatics: A Global Perspective"</u></font><br><br>Dr. Anup Som - Assistant Professor at the University of Allahabad
+                    </div>
+                    <p style="text-align: justify; font-size: 14px;">
+                        <font size="3">
+                            &ensp;&ensp;&ensp;&ensp;The last talk of the day was given by Dr. Anup Som, an Assistant Professor in the Centre of Bioinformatics Institute of Interdisciplinary Studies at the University of Allahabad. He talked in detail about the scope and opportunities in the field of Bioinformatics. He explained in detail about the Bioinformatics programs available in India. He shared his own experience of working in different countries, shedding light upon the bright future of Bioinformatics in the upcoming years. He patiently answered the students' queries regarding the skills development to work in the field of life sciences. He further spoke in detail about the course curriculum of Bioinformatics in foreign universities.
+                        </font>
+                    </p>
+                </div>
+
+                <!-- Speaker 2 -->
+                <div class="speaker" style="text-align: center; margin-bottom: 30px;">
+                    <img src="images/speakers/preethi.jpeg" alt="" style="width:200px; height:250px; border-radius: 10px; margin-bottom: 10px;">
+                    <div class="p" style="text-align: left; font-size: 16px;">
+                        <font color="black" size="4"><u><br>"Unraveling a distinct mechanism of sigma factor-cin promoter interaction in group A streptococcus using in silico approach"</u></font><br><br>Dr. R. Preethi - Department of Biotechnology, Indian Institute of Technology Madras, India
+                    </div>
+                    <p style="text-align: justify; font-size: 14px;">
+                        <font size="3">
+                            &ensp;&ensp;&ensp;&ensp;The first speaker of the event was Dr. R. Preethi. She is an Assistant Professor in the Department of Crystallography and Biophysics at IIT, Madras. Her lecture was themed around the mechanism of Sigma factor-cin promoter interaction in Group A Streptococcus using In Silico approach. She spoke in detail about Group A Streptococcus infections and its ability to establish as a successful human pathogen. Her innovative lecture enlightened the attendees with a novel methodology adopted for studying the mechanism, which revolves around the mechanism by which the Bacteria alter gene expression in response to environmental changes. Her talk shed light on the importance of studying Group A Streptococcus and its ability to cause a wide spectrum of diseases.
+                        </font>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="wrapper row5">
+        <footer id="footer" class="hoc clear">
+            <p class="fl_left">COMBIGS, SASTRA Deemed to be University, All rights Reserved. 2023</p>
+            <p class="fl_right">Developed by <a target="_blank" href="https://www.sastra.edu/">SASTRA Web Team</a></p>
+        </footer>
+    </div>
+
+    <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+
+    <script>
+        function toggleNav() {
+            var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];
+            if (nav.style.display === "block") {
+                nav.style.display = "none";
+            } else {
+                nav.style.display = "block";
+            }
+        }
+
+        window.addEventListener('resize', function () {
+            var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];
+            if (window.innerWidth > 768) {
+                nav.removeAttribute('style');
+            }
+        });
+    </script>
+</body>
+
+</html>

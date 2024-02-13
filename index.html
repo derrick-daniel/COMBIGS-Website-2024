@@ -86,15 +86,16 @@
 		}
 
 		.one_quarter {
-			width: calc(33.33% - 100px);
-			/* Subtracting the total horizontal margin from one-third of the container */
-			margin: 0px 50px;
-			/* 50px margin on each side */
+			width: calc(25% - 20px);
+			/* Subtracting the total horizontal margin from one-fourth of the container */
+			margin: 0px 10px;
+			/* Adjusting margin to 10px on each side to ensure all four divs fit */
 			box-sizing: border-box;
 			/* To include padding and borders in the width calculation */
 			float: left;
 			/* To align the boxes side by side */
 		}
+
 
 
 		@media (max-width: 768px) {
@@ -145,7 +146,7 @@
 
 			/* Adjust the individual Twitter feed elements */
 			.twitter-timeline {
-				width: 100%;
+				/* width: 100%; */
 				/* Full width of the screen */
 				height: auto;
 				/* Smaller height for mobile */
@@ -179,15 +180,18 @@
 
 		.twitter-feed-container {
 			display: flex;
-			justify-content: space-around;
+			flex-wrap: wrap;
+			justify-content: space-between;
+			/* justify-content: space-around; */
 		}
 
 		.twitter-placeholder {
-			width: 300px;
-			/* Same as your data-width */
-			height: 500px;
-			/* Same as your data-height */
-			position: relative;
+			flex: 1;
+			border: 1px solid #ddd;
+			margin: 10px;
+			padding: 10px;
+			height: 400px; /* Example fixed height */
+			overflow: auto; /* Allows content to scroll if it's taller than the container */
 		}
 
 		.loader {
@@ -380,25 +384,68 @@
 					<!-- Twitter Feed Container -->
 					<div class="twitter-feed-container">
 						<div class="twitter-placeholder">
-							<a class="twitter-timeline" href="https://twitter.com/BiotechSASTRA1?ref_src=twsrc%5Etfw"
-								data-width="300" data-height="500">
-								Tweets by BiotechSASTRA1 (Official)
-								<div class="loader"></div>
-							</a>
+							<blockquote class="twitter-tweet">
+								<p lang="en" dir="ltr">Congratulations for the repeat performance by <a
+										href="https://twitter.com/SastraUniv?ref_src=twsrc%5Etfw">@SastraUniv</a> faculty who figure in the <a
+										href="https://twitter.com/Stanford?ref_src=twsrc%5Etfw">@Stanford</a> world&#39;s Top 2% Influential
+									Researchers as published by <a
+										href="https://twitter.com/ElsevierConnect?ref_src=twsrc%5Etfw">@ElsevierConnect</a> for 2023 <a
+										href="https://twitter.com/SVaidhyasubrama?ref_src=twsrc%5Etfw">@SVaidhyasubrama</a> <a
+										href="https://t.co/k59hxoNu1j">pic.twitter.com/k59hxoNu1j</a></p>&mdash; SASTRA Deemed University
+								(@SastraUniv) <a href="https://twitter.com/SastraUniv/status/1710160533763318231?ref_src=twsrc%5Etfw">October 6,
+									2023</a>
+							</blockquote>
 						</div>
 						<div class="twitter-placeholder">
-							<a class="twitter-timeline" href="https://twitter.com/NIAIDBioIT?ref_src=twsrc%5Etfw"
-								data-width="300" data-height="500">
-								Tweets by NIAIDBioIT
-								<div class="loader"></div>
-							</a>
+							<blockquote class="twitter-tweet">
+								<p lang="en" dir="ltr">Our February 2024 issue is now live: <a
+										href="https://t.co/X27kYBboVm">https://t.co/X27kYBboVm</a> <br>Topics include: ancient DNA insights into
+									Denisovans; RNA modifications in health and disease; computational tools for the 3D genome; genomics in
+									antimicrobial resistance surveillance <a href="https://t.co/FCfO2efX5e">pic.twitter.com/FCfO2efX5e</a></p>
+								&mdash; Nature Reviews Genetics (@NatureRevGenet) <a
+									href="https://twitter.com/NatureRevGenet/status/1749357780840952023?ref_src=twsrc%5Etfw">January 22, 2024</a>
+							</blockquote>
 						</div>
 						<div class="twitter-placeholder">
-							<a class="twitter-timeline" href="https://twitter.com/NatureRevGenet?ref_src=twsrc%5Etfw"
-								data-width="300" data-height="500">
-								Tweets by Nature Reviews Genetics
-								<div class="loader"></div>
-							</a>
+							<blockquote class="twitter-tweet">
+								<p lang="en" dir="ltr">🔎 Time-resolved, integrated analysis of clonally evolving genomes: <a
+										href="https://t.co/0AeLOdF3Rv">https://t.co/0AeLOdF3Rv</a> <a
+										href="https://t.co/IFvker2jHU">pic.twitter.com/IFvker2jHU</a></p>&mdash; PLOS Genetics (@PLOSGenetics) <a
+									href="https://twitter.com/PLOSGenetics/status/1743402015059812852?ref_src=twsrc%5Etfw">January 5, 2024</a>
+							</blockquote>
+						</div>
+					</div>
+					<div class="twitter-feed-container">
+						<div class="twitter-placeholder">
+							<blockquote class="twitter-tweet">
+								<p lang="en" dir="ltr">Detailed work from <a href="https://twitter.com/EvoMRI?ref_src=twsrc%5Etfw">@EvoMRI</a>
+									looking at common problems and practices, quantifying trends, and suggesting improvements to <a
+										href="https://twitter.com/ProjectJupyter?ref_src=twsrc%5Etfw">@ProjectJupyter</a> -related published
+									workflows.<br><br>Computational reproducibility of Jupyter notebooks from biomedical publications <a
+										href="https://t.co/jxsVb8jrs4">https://t.co/jxsVb8jrs4</a></p>&mdash; GigaScience (@GigaScience) <a
+									href="https://twitter.com/GigaScience/status/1757077802288074832?ref_src=twsrc%5Etfw">February 12, 2024</a>
+							</blockquote>
+						</div>
+						<div class="twitter-placeholder">
+							<blockquote class="twitter-tweet">
+								<p lang="en" dir="ltr">In this recent study, researchers from <a
+										href="https://twitter.com/Columbia?ref_src=twsrc%5Etfw">@Columbia</a> and <a
+										href="https://twitter.com/UW?ref_src=twsrc%5Etfw">@UW</a> discuss tracking calcium dynamics from individual
+									neurons in behaving animals: <a href="https://t.co/253J8k4EUr">https://t.co/253J8k4EUr</a> <a
+										href="https://t.co/azMCLRuiSd">pic.twitter.com/azMCLRuiSd</a></p>&mdash; PLOS Comp Biol (@PLOSCompBiol) <a
+									href="https://twitter.com/PLOSCompBiol/status/1735340654480285958?ref_src=twsrc%5Etfw">December 14, 2023</a>
+							</blockquote>
+						</div>
+						<div class="twitter-placeholder">
+							<blockquote class="twitter-tweet">
+								<p lang="en" dir="ltr">NAR Molecular Medicine’s first issue is now open online! Check out the editorial by EIC <a
+										href="https://twitter.com/maria_spies?ref_src=twsrc%5Etfw">@maria_spies</a> to learn about the journal’s
+									vision and scope. Join us in making this new journal a success! <a
+										href="https://twitter.com/hashtag/NARMolecularMedicine?src=hash&amp;ref_src=twsrc%5Etfw">#NARMolecularMedicine</a><br>Read
+									the editorial: <a href="https://t.co/u4QCmLp3ti">https://t.co/u4QCmLp3ti</a> <a
+										href="https://t.co/Ejtn2UdFz0">pic.twitter.com/Ejtn2UdFz0</a></p>&mdash; Oxford Journals (@OxfordJournals)
+								<a href="https://twitter.com/OxfordJournals/status/1750669890527039608?ref_src=twsrc%5Etfw">January 26, 2024</a>
+							</blockquote>
 						</div>
 					</div>
 				</div>
@@ -448,8 +495,25 @@
 					<li><a href="https://www.sastra.edu/staffprofiles/schools/scbt.php" target="_blank">SCBT Faculties</a></li>
 					<li><a href="https://forms.gle/esHizEVcAW9cZScw8" target="_blank">Feedback Form for Website Improvement</a></li>
 				</ul>
-
 			</div>
+			 <!-- Team Members -->
+			<div class="one_quarter">
+				<h6 class="heading">Our Team</h6>
+				<p><strong>Fourth Year Members</strong></p>
+				<!-- <ul class="nospace linklist"> -->
+					<li>Derrick Daniel P</li>
+					<li>Guruguguhan</li>
+					<li>Puli Bharath</li>
+				</ul>
+				<p><strong>Third Year Members</strong></p>
+				<!-- <ul class="nospace linklist"> -->
+					<li>Gokulnath</li>
+					<li>Sheerin</li>
+					<li>Priyanka</li>
+					<li>Dharani</li>
+				</ul>
+			</div>
+
 		</footer>
 	</div>
 

@@ -10,16 +10,20 @@
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
   <style>
-
     .row3 {
-			background-color: #fcfcfc;
-		}
+      background-color: #fcfcfc;
+    }
 
     .hamburger {
       display: none;
       font-size: 24px;
       user-select: none;
     }
+
+    .container {
+      padding-bottom: 0px;
+    }
+
 
     .image-container {
       display: flex;
@@ -41,6 +45,103 @@
       /* removes extra space below the image */
     }
 
+    #alumni-section {
+      background-color: #fcfcfc;
+      /* Set the background color for the alumni section */
+      color: #000;
+      /* Set the text color to black */
+      padding: 50px 0;
+      /* Add some padding to the section */
+    }
+
+    .alumni-item {
+      display: flex;
+      align-items: center;
+      /* Center the items vertically */
+      margin: 0 auto 20px;
+      /* Auto margin on left and right to center the items */
+      justify-content: center;
+      background-color: #fff;
+      /* Set the background color for each alumni item */
+      padding: 20px;
+      /* Add padding to each alumni item */
+      border-radius: 10px;
+      /* Add border-radius for a rounded appearance */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      /* Add a subtle box shadow for depth */
+      max-width: 950px;
+      /* Set a maximum width for the box */
+    }
+
+    .alumni-image {
+      height: 200px;
+      /* Set a fixed height for the images */
+      width: auto;
+      /* Let the width adjust automatically to maintain aspect ratio */
+      max-width: 100%;
+      /* Set a maximum width to ensure the images don't exceed a certain width */
+      margin-right: 20px;
+      /* Adjust spacing between image and text */
+    }
+
+    .alumni-text {
+      flex: 1;
+      /* Take up the remaining space in the flex container */
+      max-width: 600px;
+      /* Limit the width of the text */
+      margin-left: 60px;
+      /* Adjust the margin to add more space between image and text */
+    }
+
+    .alumni-name {
+      font-size: 18px;
+      /* Set a smaller font size for the alumni name */
+    }
+
+    .alumni-experience {
+      text-align: justify;
+    }
+
+    .dropdown-container {
+      max-width: 90%;
+      /* Adjust the width as needed */
+      margin: 0 auto;
+      /* This will center your dropdown */
+      padding: 20px;
+    }
+
+    .dropdown-btn {
+      background-color: #007bff;
+      color: white;
+      padding: 15px;
+      font-size: 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      /* Full width */
+      text-align: left;
+      border-left: 5px solid #0056b3;
+      /* For visual cue */
+    }
+
+    .dropdown-btn:after {
+      content: '\25BC';
+      float: right;
+      color: white;
+    }
+
+    .dropdown-content {
+      display: none;
+      padding: 10px;
+      background-color: #f1f1f1;
+      border-left: 5px solid #007bff;
+    }
+
+    .dropdown-btn:hover,
+    .dropdown-btn:focus {
+      background-color: #0056b3;
+    }
+
     .one_quarter[data-type="footer"] {
       width: calc(33.33% - 100px);
       /* Subtracting the total horizontal margin from one-third of the container */
@@ -50,6 +151,23 @@
       /* To include padding and borders in the width calculation */
       float: left;
       /* To align the boxes side by side */
+    }
+
+    .center-flex {
+      display: flex;
+      justify-content: center;
+      /* Centers the items horizontally */
+      flex-wrap: wrap;
+      /* Allows items to wrap in smaller screens */
+      list-style: none;
+      padding: 0;
+    }
+
+    .center-flex li {
+      flex: 1 1 auto;
+      /* Allows flex items to grow and shrink but not beyond their content size */
+      max-width: 25%;
+      /* Max width for each item, adjust as necessary */
     }
 
     @media (max-width: 768px) {
@@ -66,6 +184,23 @@
         float: none;
         /* Clear float for mobile layout */
       }
+
+      .center-flex li {
+        flex: 1 1 100%;
+        /* Each item takes full width on smaller screens */
+        max-width: 100%;
+        /* Ensures the items do not exceed the container's width */
+        /* Additional styles for margin, padding, etc., can be added here if needed */
+      }
+
+      .hover-text {
+        font-size: 12px;
+        /* Smaller font size for small screens */
+        bottom: 120%;
+        /* Adjusts the position to fit better on small screens */
+        white-space: normal;
+        /* Allows the text to wrap */
+      }
     }
 
     @media screen and (max-width: 768px) {
@@ -77,6 +212,61 @@
         display: block;
         cursor: pointer;
       }
+
+      .alumni-item {
+        flex-direction: column;
+        /* Stack items vertically on smaller screens */
+      }
+
+      .alumni-image {
+        margin-right: 0;
+        /* Remove margin between image and text on smaller screens */
+        margin-bottom: 10px;
+        /* Adjust spacing between items on smaller screens */
+        align-self: center;
+        /* Center the image horizontally on smaller screens */
+      }
+
+      .alumni-text {
+        max-width: none;
+        /* Remove max-width on smaller screens */
+        margin-left: 0px;
+      }
+
+      .dropdown-container {
+        max-width: 100%;
+        /* Full width on smaller screens */
+      }
+    }
+
+    .image-hover-container {
+      position: relative;
+      display: inline-block;
+    }
+
+    .hover-text {
+      position: absolute;
+      bottom: 100%;
+      /* Adjust based on your needs */
+      left: 50%;
+      transform: translateX(-50%);
+      visibility: hidden;
+      white-space: nowrap;
+      background-color: #fff;
+      color: #000;
+      text-align: center;
+      border-radius: 5px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      /* Adds a light border around the box */
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      /* Adds a subtle shadow for depth */
+      /* Ensure there's enough space for the box to appear */
+      margin-bottom: 10px;
+    }
+
+    .image-hover-container:hover .hover-text {
+      visibility: visible;
     }
   </style>
 </head>
@@ -136,7 +326,8 @@
         <!-- Krithika -->
         <li class="one_quarter first">
           <article>
-            <figure><a class="imgover" href="https://www.linkedin.com/in/krithika-ck-11n02/" target="_blank"><img src="images/Krithika.jpg" alt=""></a>
+            <figure><a class="imgover" href="https://www.linkedin.com/in/krithika-ck-11n02/" target="_blank"><img
+                  src="images/Krithika.jpg" alt=""></a>
               <figcaption class="heading">Krithika C K</figcaption>
             </figure>
             <em>Chairperson</em>
@@ -151,7 +342,8 @@
         <!-- Abzar -->
         <li class="one_quarter">
           <article>
-            <figure><a class="imgover" href="https://www.linkedin.com/in/mohamedabzar" target="_blank"><img src="images/Abzar.jpg" alt=""></a>
+            <figure><a class="imgover" href="https://www.linkedin.com/in/mohamedabzar" target="_blank"><img
+                  src="images/Abzar.jpg" alt=""></a>
               <figcaption class="heading">Mohamed Abzar A R</figcaption>
             </figure>
             <em>Treasurer</em>
@@ -166,14 +358,15 @@
         <!-- Gayathri -->
         <li class="one_quarter">
           <article>
-            <figure><a class="imgover" href="https://www.linkedin.com/in/gayathri-srinivasan-a75836249" target="_blank"><img src="images/Gayathri.jpg" alt=""></a>
+            <figure><a class="imgover" href="https://www.linkedin.com/in/gayathri-srinivasan-a75836249"
+                target="_blank"><img src="images/Gayathri.jpg" alt=""></a>
               <figcaption class="heading">Srinivasan Gayathri</figcaption>
             </figure>
             <em>Vice Chairperson</em>
             <footer>
               <ul class="faico clear">
-                <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/gayathri-srinivasan-a75836249" target="_blank"><i
-                      class="fab fa-linkedin"></i></a></li>
+                <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/gayathri-srinivasan-a75836249"
+                    target="_blank"><i class="fab fa-linkedin"></i></a></li>
               </ul>
             </footer>
           </article>
@@ -181,7 +374,8 @@
         <!-- Indhuja -->
         <li class="one_quarter">
           <article>
-            <figure><a class="imgover" href="https://www.linkedin.com/in/indhuja-b-01950a291" target="_blank"><img src="images/Indhuja.jpg" alt=""></a>
+            <figure><a class="imgover" href="https://www.linkedin.com/in/indhuja-b-01950a291" target="_blank"><img
+                  src="images/Indhuja.jpg" alt=""></a>
               <figcaption class="heading">Indhuja B</figcaption>
             </figure>
             <em>Joint Secretary</em>
@@ -197,82 +391,272 @@
     </section>
   </div>
 
-    <!-- `Cluster heads` Section -->
-    <div class="wrapper row3">
-      <section id="team" class="hoc container clear">
-        <div class="center btmspace-80">
-          <h6 class="heading underline font-x2">Cluster Heads</h6>
+  <!-- `Cluster heads` Section -->
+  <div class="wrapper row3">
+    <section id="team" class="hoc container clear">
+      <div class="center btmspace-80">
+        <h6 class="heading underline font-x2">Cluster Heads</h6>
+      </div>
+      <ul class="nospace group">
+        <!-- Kaushik -->
+        <li class="one_quarter first">
+          <article>
+            <figure><a class="imgover" href="https://www.linkedin.com/in/kaushik-p-28a0b5285/" target="_blank"><img
+                  src="images/kausi.jpg" alt=""></a>
+              <figcaption class="heading">Kaushik P</figcaption>
+            </figure>
+            <em>Hospitality</em>
+            <footer>
+              <ul class="faico clear">
+                <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/kaushik-p-28a0b5285/"
+                    target="_blank"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </footer>
+          </article>
+        </li>
+        <!-- Derrick -->
+        <li class="one_quarter">
+          <article>
+            <figure><a class="imgover" href="https://www.linkedin.com/in/derrick-daniel/" target="_blank"><img
+                  src="images/derrick-2.JPG" alt=""></a>
+              <figcaption class="heading">Derrick Daniel P</figcaption>
+            </figure>
+            <em>Web Development</em>
+            <footer>
+              <ul class="faico clear">
+                <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/derrick-daniel/" target="_blank"><i
+                      class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </footer>
+          </article>
+        </li>
+        <!-- Deepak -->
+        <li class="one_quarter">
+          <article>
+            <figure><a class="imgover" href="https://www.linkedin.com/in/deepak-k-ab3136247/" target="_blank"><img
+                  src="images/deepak.jpg" alt=""></a>
+              <figcaption class="heading">Deepak K</figcaption>
+            </figure>
+            <em>Photography</em>
+            <footer>
+              <ul class="faico clear">
+                <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/deepak-k-ab3136247/" target="_blank"><i
+                      class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </footer>
+          </article>
+        </li>
+        <!-- Vishnu Priya -->
+        <li class="one_quarter">
+          <article>
+            <figure><a class="imgover" href="https://www.linkedin.com/in/vishnupriya-b-499513260/" target="_blank"><img
+                  src="images/vishnupriya.jpeg" alt=""></a>
+              <figcaption class="heading">Vishnu Priya B</figcaption>
+            </figure>
+            <em>Arts</em>
+            <footer>
+              <ul class="faico clear">
+                <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/vishnupriya-b-499513260/"
+                    target="_blank"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </footer>
+          </article>
+        </li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- LovelyWebDevsSection -->
+  <!-- 
+      To the Lovely Team of Web Developers and Future Talents Who Will Join Us,
+      As you navigate through the code of our project, you'll come across a section named "LovelyWebDevsSection". This is more than just a marker; it's a tribute to the incredible team that has poured their heart, soul, and technical prowess into building and enhancing our digital presence. Each line of code within this section carries the imprint of our collective efforts, creativity, and dedication to excellence.
+      To our current team: thank you for your passion, your commitment, and for every problem you've solved with grace and ingenuity. Your work has set a high standard and has significantly contributed to our success.
+      To the future developers who will take the torch: you are stepping into a legacy of innovation and teamwork. We hope you'll carry forward this spirit, building upon the foundations laid with the same zeal and dedication. May this section serve as a reminder of the collaboration and love for development that defines our team.
+      Here's to continued growth, learning, and creating amazing experiences together. Your contributions are not just valued; they are essential. Welcome to the journey, and thank you for being an integral part of this lovely team of web developers. 
+    -->
+  <div class="wrapper row3">
+    <section id="LovelyWebDevsSection"></section>
+    <section id="team" class="hoc container clear">
+      <div class="center btmspace-80">
+        <h6 class="heading underline font-x2">COMBIGS Web Development Team</h6>
+      </div>
+      <ul class="nospace group center-flex">
+        <!-- Guruguhan S-->
+        <li class="one_quarter first">
+          <article>
+            <figure><a class="imgover"><img src="images/guruguhan.jpg" alt="#TooCoolForLinkedIn"></a>
+              <figcaption class="heading">Guruguhan S</figcaption>
+            </figure>
+            <footer>
+              <div class="image-hover-container">
+                <img src="images/guruguhan-ninja-placeholder.png" style="width: 24px; height: 24px; object-fit: cover;">
+                <div class="hover-text">
+                  Legend has it that `Guruguhan S` is too mysterious for LinkedIn.<br> 😎🥷 #TooCoolForLinkedIn
+                </div>
+              </div>
+            </footer>
+          </article>
+        </li>
+        <!-- Bharath Koushik Puli -->
+        <li class="one_quarter">
+          <article>
+            <figure><a class="imgover" href="https://www.linkedin.com/in/bharath-koushik-puli-a47523256/"
+                target="_blank"><img src="images/Bharath_Koushik_Puli_Photo.jpg" alt=""></a>
+              <figcaption class="heading">Bharath Koushik Puli</figcaption>
+            </figure>
+            <footer>
+              <ul class="faico clear">
+                <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/bharath-koushik-puli-a47523256/"
+                    target="_blank"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </footer>
+          </article>
+        </li>
+        <!-- Gokulnathan S -->
+        <li class="one_quarter">
+          <article>
+            <figure><a class="imgover" href="https://www.linkedin.com/in/gokulnathan-s-688843249/" target="_blank"><img
+                  src="images/gokulnathan.jpg" alt=""></a>
+              <figcaption class="heading">Gokulnathan S</figcaption>
+            </figure>
+            <footer>
+              <ul class="faico clear">
+                <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/gokulnathan-s-688843249/"
+                    target="_blank"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </footer>
+          </article>
+        </li>
+      </ul>
+      <br>
+      <ul class="nospace group center-flex">
+        <!-- Sheerin Irfaanaa -->
+        <li class="one_quarter first">
+          <article>
+            <figure><a class="imgover" href="https://www.linkedin.com/in/sheerin-irfaanaa-m-900683275/"
+                target="_blank"><img src="images/sheerin.jpg" alt=""></a>
+              <figcaption class="heading">Sheerin Irfaanaa M</figcaption>
+            </figure>
+            <footer>
+              <ul class="faico clear">
+                <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/sheerin-irfaanaa-m-900683275/"
+                    target="_blank"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </footer>
+          </article>
+        </li>
+        <!-- Dharani Guru -->
+        <li class="one_quarter">
+          <article>
+            <figure><a class="imgover" href="https://www.linkedin.com/in/dharani-guru-3349b3248/" target="_blank"><img
+                  src="images/dharani-guru.jpg" alt=""></a>
+              <figcaption class="heading">Dharani Guru</figcaption>
+            </figure>
+            <footer>
+              <ul class="faico clear">
+                <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/dharani-guru-3349b3248/"
+                    target="_blank"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </footer>
+          </article>
+        </li>
+        <!-- Priyanka Ramesh -->
+        <li class="one_quarter">
+          <article>
+            <figure><a class="imgover" href="https://www.linkedin.com/in/priyanka-ramesh-228246269/"
+                target="_blank"><img src="images/priyanka-ramesh.jpg" alt=""></a>
+              <figcaption class="heading">Priyanka Ramesh</figcaption>
+            </figure>
+            <footer>
+              <ul class="faico clear">
+                <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/priyanka-ramesh-228246269/"
+                    target="_blank"><i class="fab fa-linkedin"></i></a></li>
+              </ul>
+            </footer>
+          </article>
+        </li>
+      </ul>
+      <br>
+    </section>
+  </div>
+
+  <!-- Old Committee Members -->
+  <section id="alumni-section" class="scrollable">
+    <div class="alumni">
+      <div class="dropdown-container">
+        <button class="dropdown-btn">
+          Explore the distinguished alumni of COMBIGS, who have truly set benchmarks of excellence
+        </button>
+        <div class="dropdown-content">
+          <!-- 1: Akshaya -->
+          <div class="alumni-item">
+            <img src="images/exp/exp2.jpg" alt="" style="width:200px;" class="alumni-image">
+            <div class="alumni-text">
+              <p><b>Chairman:</b> Akshaya R <i>(Class of '23)</i></p>
+              <p class="alumni-experience">
+                Akshaya is highly enthusiastic about her goals and interests. Her main focus is on protein mutations and
+                medication development. She enjoys drawing, painting, and other extracurricular activities. She feels
+                she is capable of realizing her ambitions. She is now researching virulence factors under the
+                supervision of Dr. Thamotharan. She firmly believes that hard effort is what allows us to achieve our
+                goals in life. "Success is not a destination, failure is not deadly; it is the guts to keep going that
+                matters," she says.
+              </p>
+            </div>
+          </div>
+          <!-- 2: Yogesh -->
+          <div class="alumni-item">
+            <img src="images/yogeshwaran.jpg" alt="" style="width:200px;" class="alumni-image">
+            <div class="alumni-text">
+              <p><b>Vice-Chairman:</b> Yogeshwaran S <i>(Class of '24)</i></p>
+              <p class="alumni-experience">
+                Yogeshwaran S is a person who is upbeat, honest, responsible, and sociable. He is a self-assured
+                individual with keen analytical abilities. Yogeshwaran's key strength is his ability to reach out to
+                people and persuade them of any argument. He is a self-sufficient, well-behaved, and strong-willed
+                individual. He is, above all, a techie who is particularly interested in computer programming. He is
+                fascinated by the intersection between biology and computer science.
+              </p>
+            </div>
+          </div>
+          <!-- 3: Brintha -->
+          <div class="alumni-item">
+            <img src="images/brintha.jpg" alt="" style="width:200px;" class="alumni-image">
+            <div class="alumni-text">
+              <p><b>Treasurer:</b> Brintha S <i>(Class of '23)</i></p>
+              <p class="alumni-experience">
+                Brintha is passionate about comparative genomics and holds a certificate in Bharathanatyam. She enjoys
+                sketching, acting, and creative work.She is a pleasant, energetic, and effective communicator who is
+                also an extrovert with multitasking skills. She is a firm believer in the following quotations:"A goal
+                without a strategy is simply a desire." She is now working on cancer genomics under Arunachalam sir's
+                supervision and examining the genome of several types of the Deinococcus bacteria under Ragothaman sir's
+                supervision. "Small, consistent improvements over time will yield big results," the quote concludes.
+              </p>
+            </div>
+          </div>
+          <!-- 4 -->
+          <div class="alumni-item">
+            <img src="images/Gayathri.jpg" alt="" style="width:200px;" class="alumni-image">
+            <div class="alumni-text">
+              <p><b>Joint Secretary:</b> Gayathri <i>(Class of '25)</i></p>
+              <p class="alumni-experience">
+                Gayathri enjoys dancing and participates in a variety of extracurricular activities. She is a very
+                passionate learner and upbeat student. She enjoys working with others and believes that everyone should
+                take some time to discover their natural talents and areas of passion. She claims that she was thrilled
+                to understand biology and computer science concepts in order to solve real-world challenges. She is
+                extremely passionate about fusing programming and biology. Particularly, she is eager to learn more
+                about computational genomics.
+              </p>
+            </div>
+          </div>
         </div>
-        <ul class="nospace group">
-          <!-- Kaushik -->
-          <li class="one_quarter first">
-            <article>
-              <figure><a class="imgover" href="https://www.linkedin.com/in/kaushik-p-28a0b5285/" target="_blank"><img src="images/kausi.jpg" alt=""></a>
-                <figcaption class="heading">Kaushik P</figcaption>
-              </figure>
-              <em>Hospitality</em>
-              <footer>
-                <ul class="faico clear">
-                  <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/kaushik-p-28a0b5285/" target="_blank"><i
-                        class="fab fa-linkedin"></i></a></li>
-                </ul>
-              </footer>
-            </article>
-          </li>
-          <!-- Derrick -->
-          <li class="one_quarter">
-            <article>
-              <figure><a class="imgover" href="https://www.linkedin.com/in/derrick-daniel/" target="_blank"><img src="images/derrick-2.JPG" alt=""></a>
-                <figcaption class="heading">Derrick Daniel P</figcaption>
-              </figure>
-              <em>Web Development</em>
-              <footer>
-                <ul class="faico clear">
-                  <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/derrick-daniel/" target="_blank"><i
-                        class="fab fa-linkedin"></i></a></li>
-                </ul>
-              </footer>
-            </article>
-          </li>
-          <!-- Deepak -->
-          <li class="one_quarter">
-            <article>
-              <figure><a class="imgover" href="https://www.linkedin.com/in/deepak-k-ab3136247/" target="_blank"><img src="images/deepak.jpg" alt=""></a>
-                <figcaption class="heading">Deepak K</figcaption>
-              </figure>
-              <em>Photography</em>
-              <footer>
-                <ul class="faico clear">
-                  <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/deepak-k-ab3136247/" target="_blank"><i
-                        class="fab fa-linkedin"></i></a></li>
-                </ul>
-              </footer>
-            </article>
-          </li>
-          <!-- Vishnu Priya -->
-          <li class="one_quarter">
-            <article>
-              <figure><a class="imgover" href="https://www.linkedin.com/in/vishnupriya-b-499513260/" target="_blank"><img src="images/vishnupriya.jpeg" alt=""></a>
-                <figcaption class="heading">Vishnu Priya B</figcaption>
-              </figure>
-              <em>Arts</em>
-              <footer>
-                <ul class="faico clear">
-                  <li><a class="faicon-linkedin" href="https://www.linkedin.com/in/vishnupriya-b-499513260/" target="_blank"><i
-                        class="fab fa-linkedin"></i></a></li>
-                </ul>
-              </footer>
-            </article>
-          </li>
-        </ul>
-      </section>
+      </div>
     </div>
+  </section>
 
   <!-- `Above Footer` Section -->
   <div class="wrapper row4">
     <footer id="footer" class="hoc clear">
       <!-- Combigs -->
-      <div class="one_quarter first" data-type="footer">
+      <div class="one_quarter first">
         <h1 class="logoname clear"><a href="https://www.sastra.edu/combigs/"><span>COMBIGS</span></a></h1>
         <p class="btmspace-30" style="text-align:left;">
           COMBIGS at SASTRA University is a renowned Computational Biology Group, fostering collaboration and
@@ -287,7 +671,7 @@
         </ul>
       </div>
       <!-- Contact Information -->
-      <div class="one_quarter" data-type="footer">
+      <div class="one_quarter">
         <h6 class="heading">Contact Information</h6>
         <ul class="nospace linklist contact">
           <li><i class="fas fa-map-marker-alt"></i>
@@ -302,16 +686,34 @@
         </ul>
       </div>
       <!-- Quick Links -->
-      <div class="one_quarter" data-type="footer">
+      <div class="one_quarter">
         <h6 class="heading">Quick Links</h6>
         <ul class="nospace linklist">
-          <li><a href="members.html">Members of COMBIGS</a></li>
+          <li><a href="members.html#LovelyWebDevsSection">Meet the COMBIGS Web Development Team</a>
+          </li>
           <li><a href="https://www.sastra.edu/staffprofiles/schools/scbt.php" target="_blank">SCBT Faculties</a></li>
           <li><a href="https://forms.gle/esHizEVcAW9cZScw8" target="_blank">Feedback Form for Website Improvement</a>
           </li>
         </ul>
-
       </div>
+      <!-- Team Members -->
+      <div class="one_quarter">
+        <h6 class="heading">Our Team</h6>
+        <p><strong>Fourth Year Members</strong></p>
+        <!-- <ul class="nospace linklist"> -->
+        <li>Derrick Daniel P</li>
+        <li>Guruguguhan</li>
+        <li>Puli Bharath</li>
+        </ul>
+        <p><strong>Third Year Members</strong></p>
+        <!-- <ul class="nospace linklist"> -->
+        <li>Gokulnath</li>
+        <li>Sheerin</li>
+        <li>Priyanka</li>
+        <li>Dharani</li>
+        </ul>
+      </div>
+
     </footer>
   </div>
 
@@ -347,6 +749,32 @@
         nav.removeAttribute('style');
       }
     });
+
+    /* For Alumni Dropdown Section */
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var dropdowns = document.querySelectorAll('.dropdown-btn');
+      dropdowns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          this.nextElementSibling.classList.toggle('show');
+        });
+      });
+    });
+
+
+    for (i = 0; i < dropdown.length; i++) {
+      dropdown[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+        } else {
+          dropdownContent.style.display = "block";
+        }
+      });
+    }
   </script>
 
 </body>

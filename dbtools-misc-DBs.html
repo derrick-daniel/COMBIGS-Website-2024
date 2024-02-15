@@ -11,8 +11,8 @@
     <!-- <script src="path/to/js/disable.js"></script> -->
     <style>
         .row3 {
-			background-color: #fcfcfc;
-		}
+            background-color: #fcfcfc;
+        }
 
         .hamburger {
             display: none;
@@ -21,57 +21,57 @@
         }
 
         .image-container {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-		}
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
 
-		.image-container a {
-			flex: 1 1 50%;
-			/* makes each link take up 50% of the width */
-			max-width: 100%;
-			/* ensures images don't exceed their container */
-		}
+        .image-container a {
+            flex: 1 1 50%;
+            /* makes each link take up 50% of the width */
+            max-width: 100%;
+            /* ensures images don't exceed their container */
+        }
 
-		.image-container img {
-			width: 100%;
-			height: auto;
-			display: block;
-			/* removes extra space below the image */
-		}
+        .image-container img {
+            width: 100%;
+            height: auto;
+            display: block;
+            /* removes extra space below the image */
+        }
 
         .one_quarter {
-			width: calc(33.33% - 100px);
-			/* Subtracting the total horizontal margin from one-third of the container */
-			margin: 0px 50px;
-			/* 50px margin on each side */
-			box-sizing: border-box;
-			/* To include padding and borders in the width calculation */
-			float: left;
-			/* To align the boxes side by side */
-		}
+            width: calc(25% - 20px);
+            /* Subtracting the total horizontal margin from one-fourth of the container */
+            margin: 0px 10px;
+            /* Adjusting margin to 10px on each side to ensure all four divs fit */
+            box-sizing: border-box;
+            /* To include padding and borders in the width calculation */
+            float: left;
+            /* To align the boxes side by side */
+        }
 
-		@media (max-width: 768px) {
-			.image-container a {
-				flex: 1 1 100%;
-				/* each link takes full width on smaller screens */
-			}
-			
-			.one_quarter {
-				width: 100%;
-				/* Full width on smaller screens */
-				margin: 30px 0;
-				/* Adjusted margin for mobile devices */
-				float: none;
-				/* Clear float for mobile layout */
-			}
-		}
+        @media (max-width: 768px) {
+            .image-container a {
+                flex: 1 1 100%;
+                /* each link takes full width on smaller screens */
+            }
+
+            .one_quarter {
+                width: 100%;
+                /* Full width on smaller screens */
+                margin: 30px 0;
+                /* Adjusted margin for mobile devices */
+                float: none;
+                /* Clear float for mobile layout */
+            }
+        }
 
         @media screen and (max-width: 768px) {
             #mainav {
-				padding: 10px 0;
-			}
-            
+                padding: 10px 0;
+            }
+
             .hamburger {
                 display: block;
                 cursor: pointer;
@@ -135,35 +135,35 @@
 
 <body id="top">
 
-	<!-- SASTRA & COMBIGS Logo -->
-	<div class="wrapper row0">
-		<header id="header" class="hoc clear">
-			<div class="image-container">
-				<!-- Image Links -->
-				<a href="index.html"><img src="images/combigs-part-1.png" alt="" /></a>
-				<a href="index.html"><img src="images/combigs-part-2.png" alt="" /></a>
-			</div>
-		</header>
-	</div>
+    <!-- SASTRA & COMBIGS Logo -->
+    <div class="wrapper row0">
+        <header id="header" class="hoc clear">
+            <div class="image-container">
+                <!-- Image Links -->
+                <a href="index.html"><img src="images/combigs-part-1.png" alt="" /></a>
+                <a href="index.html"><img src="images/combigs-part-2.png" alt="" /></a>
+            </div>
+        </header>
+    </div>
 
-	<!-- Main Navbar / Hamburger Menu -->
-	<div class="wrapper row1">
-		<div class="hoc clear">
-			<!-- Hamburger Icon -->
-			<div class="hamburger fl_right" onclick="toggleNav()">☰</div>
-			<nav id="mainav" class="fl_right">
-				<ul class="clear">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="magazine.html">Magazine</a></li>
-					<li><a href="event.html">Event Archives</a></li>
-					<li><a href="experiences.html">Experience</a></li>
-					<li><a href="intern.html">Internships</a></li>
-					<li class="active"><a href="dbtools.html">Databases and Tools</a></li>
-					<li><a href="members.html">Members</a></li>
-				</ul>
-			</nav>
-		</div>
-	</div>
+    <!-- Main Navbar / Hamburger Menu -->
+    <div class="wrapper row1">
+        <div class="hoc clear">
+            <!-- Hamburger Icon -->
+            <div class="hamburger fl_right" onclick="toggleNav()">☰</div>
+            <nav id="mainav" class="fl_right">
+                <ul class="clear">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="magazine.html">Magazine</a></li>
+                    <li><a href="event.html">Event Archives</a></li>
+                    <li><a href="experiences.html">Experience</a></li>
+                    <li><a href="intern.html">Internships</a></li>
+                    <li class="active"><a href="dbtools.html">Databases and Tools</a></li>
+                    <li><a href="members.html">Members</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
 
     <div class="wrapper bgded"
         style="background-image:url('./images/dbtools-web-banner.png'); background-size:cover; background-position:center center;">
@@ -178,12 +178,14 @@
             </div>
         </section>
     </div>
-    
+
     <div class="wrapper row3">
         <main class="hoc container clear">
             <div class="content">
                 <h1>2023 NAR Database Issue: New Databases Overview</h1>
-                <p>Explore the latest additions to the NAR Database collection in 2023. This table provides a quick overview of each new database, including names, URLs, and brief descriptions. Discover new resources for model organism proteomes, and other scientific data.</p>
+                <p>Explore the latest additions to the NAR Database collection in 2023. This table provides a quick
+                    overview of each new database, including names, URLs, and brief descriptions. Discover new resources
+                    for model organism proteomes, and other scientific data.</p>
                 <div class="scrollable">
                     <table class="database-tools-table">
                         <thead>
@@ -730,72 +732,93 @@
                 <!-- Back Button Link Section -->
                 <div class="download-section" style="text-align: center; margin-top: 20px;">
                     <a href="./dbtools.html" class="btn">
-                    Back
+                        Back
                     </a>
                 </div>
             </div>
         </main>
     </div>
 
-	<!-- `Above Footer` Section -->
-	<div class="wrapper row4">
-		<footer id="footer" class="hoc clear">
-			<!-- Combigs -->
-			<div class="one_quarter first">
-				<h1 class="logoname clear"><a href="https://www.sastra.edu/combigs/"><span>COMBIGS</span></a></h1>
-				<p class="btmspace-30" style="text-align:left;">
-					COMBIGS at SASTRA University is a renowned Computational Biology Group, fostering collaboration and
-					innovation in bioinformatics through conferences, workshops, and an e-magazine.
-				</p>
-				<ul class="faico clear">
-					<li><a class="faicon-instagram" href="https://www.instagram.com/combigs_sastra/" target="_blank"><i
-								class="fab fa-instagram"></i></a></li>
-					<li><a class="faicon-spotify"
-							href="https://open.spotify.com/show/0AN2PXlU15ROhDfLxdfb9e?si=b96cc943c5214824"
-							target="_blank"><i class="fab fa-spotify"></i></a></li>
-					<!-- Add or remove social media links as necessary -->
-				</ul>
-			</div>
-			<!-- Contact Information -->
-			<div class="one_quarter">
-				<h6 class="heading">Contact Information</h6>
-				<ul class="nospace linklist contact">
-					<li><i class="fas fa-map-marker-alt"></i>
-						<address>
-							<strong>SCBT</strong>,<br>
-							SASTRA DEEMED UNIVERSITY,<br>
-							Tirumalaisamudram,<br>
-							Thanjavur - 613401,<br>
-							Tamilnadu, India
-						</address>
-					</li>
-				</ul>
-			</div>
-			<!-- Quick Links -->
-			<div class="one_quarter">
-				<h6 class="heading">Quick Links</h6>
-				<ul class="nospace linklist">
-					<li><a href="members.html">Members of COMBIGS</a></li>
-					<li><a href="https://www.sastra.edu/staffprofiles/schools/scbt.php" target="_blank">SCBT Faculties</a></li>
-					<li><a href="https://forms.gle/esHizEVcAW9cZScw8" target="_blank">Feedback Form for Website Improvement</a></li>
-				</ul>
+    <!-- `Above Footer` Section -->
+    <div class="wrapper row4">
+        <footer id="footer" class="hoc clear">
+            <!-- Combigs -->
+            <div class="one_quarter first">
+                <h1 class="logoname clear"><a href="https://www.sastra.edu/combigs/"><span>COMBIGS</span></a></h1>
+                <p class="btmspace-30" style="text-align:left;">
+                    COMBIGS at SASTRA University is a renowned Computational Biology Group, fostering collaboration and
+                    innovation in bioinformatics through conferences, workshops, and an e-magazine.
+                </p>
+                <ul class="faico clear">
+                    <li><a class="faicon-instagram" href="https://www.instagram.com/combigs_sastra/" target="_blank"><i
+                                class="fab fa-instagram"></i></a></li>
+                    <li><a class="faicon-spotify"
+                            href="https://open.spotify.com/show/0AN2PXlU15ROhDfLxdfb9e?si=b96cc943c5214824"
+                            target="_blank"><i class="fab fa-spotify"></i></a></li>
+                    <!-- Add or remove social media links as necessary -->
+                </ul>
+            </div>
+            <!-- Contact Information -->
+            <div class="one_quarter">
+                <h6 class="heading">Contact Information</h6>
+                <ul class="nospace linklist contact">
+                    <li><i class="fas fa-map-marker-alt"></i>
+                        <address>
+                            <strong>SCBT</strong>,<br>
+                            SASTRA DEEMED UNIVERSITY,<br>
+                            Tirumalaisamudram,<br>
+                            Thanjavur - 613401,<br>
+                            Tamilnadu, India
+                        </address>
+                    </li>
+                </ul>
+            </div>
+            <!-- Quick Links -->
+            <div class="one_quarter">
+                <h6 class="heading">Quick Links</h6>
+                <ul class="nospace linklist">
+                    <li><a href="members.html#LovelyWebDevsSection">Meet the COMBIGS Web Development Team</a>
+                    </li>
+                    <li><a href="https://www.sastra.edu/staffprofiles/schools/scbt.php" target="_blank">SCBT
+                            Faculties</a></li>
+                    <li><a href="https://forms.gle/esHizEVcAW9cZScw8" target="_blank">Feedback Form for Website
+                            Improvement</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- Team Members -->
+            <div class="one_quarter">
+                <h6 class="heading">Our Team</h6>
+                <p><strong>Fourth Year Members</strong></p>
+                <!-- <ul class="nospace linklist"> -->
+                <li>Derrick Daniel P</li>
+                <li>Guruguguhan</li>
+                <li>Puli Bharath</li>
+                </ul>
+                <p><strong>Third Year Members</strong></p>
+                <!-- <ul class="nospace linklist"> -->
+                <li>Gokulnath</li>
+                <li>Sheerin</li>
+                <li>Priyanka</li>
+                <li>Dharani</li>
+                </ul>
+            </div>
 
-			</div>
-		</footer>
-	</div>
+        </footer>
+    </div>
 
-	<!-- Footer -->
-	<div class="wrapper row5">
-		<div id="copyright" class="hoc clear">
-			<p class="fl_left">Copyright &copy; 2023-2024 - All Rights Reserved - <a
-					href="https://www.sastra.edu/combigs/">COMBIGS,
-					SASTRA Deemed to be University</a></p>
-			<p class="fl_right">Template by <a target="_blank" rel="noopener" href="http://www.os-templates.com/"
-					title="Free Website Templates">OS Templates</a></p>
-		</div>
+    <!-- Footer -->
+    <div class="wrapper row5">
+        <div id="copyright" class="hoc clear">
+            <p class="fl_left">Copyright &copy; 2023-2024 - All Rights Reserved - <a
+                    href="https://www.sastra.edu/combigs/">COMBIGS,
+                    SASTRA Deemed to be University</a></p>
+            <p class="fl_right">Template by <a target="_blank" rel="noopener" href="http://www.os-templates.com/"
+                    title="Free Website Templates">OS Templates</a></p>
+        </div>
 
-		<a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
-	</div>
+        <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
+    </div>
 
     <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
 

@@ -1,12 +1,12 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
   <title>COMBIGS | Internships</title>
   <link rel="icon" href="images/sastra.png" />
-  <link rel="stylesheet" href="layout/styles/framework.css">
-  <link rel="stylesheet" href="layout/styles/layout.css">
+  <link rel="stylesheet" href="layout/styles/framework.css" />
+  <link rel="stylesheet" href="layout/styles/layout.css" />
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <!-- <script src="path/to/js/disable.js"></script>  -->
   <style>
@@ -22,6 +22,10 @@
 
     a {
       color: rgb(6, 81, 243);
+    }
+
+    a:hover {
+      color: rgb(13, 94, 216);
     }
 
     .image-container {
@@ -45,10 +49,10 @@
     }
 
     .one_quarter {
-      width: calc(33.33% - 100px);
-      /* Subtracting the total horizontal margin from one-third of the container */
-      margin: 0px 50px;
-      /* 50px margin on each side */
+      width: calc(25% - 20px);
+      /* Subtracting the total horizontal margin from one-fourth of the container */
+      margin: 0px 10px;
+      /* Adjusting margin to 10px on each side to ensure all four divs fit */
       box-sizing: border-box;
       /* To include padding and borders in the width calculation */
       float: left;
@@ -136,16 +140,59 @@
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     }
 
+    .hover-table {
+      width: 100%;
+      /* Adjust as needed */
+      border-collapse: collapse;
+    }
+
     .btn:focus {
       outline: none;
       /* Removes the default focus outline */
       box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.5);
     }
+
+    .quicklink a {
+      color: rgb(151, 189, 239);
+    }
+
+    .wrapper:hover .innerText {
+      display: inline-block;
+    }
+
+    .innerText {
+      position: relative;
+      display: inline-block;
+      /*for the text to be hidden*/
+    }
+
+    .information {
+      display: none;
+      position: absolute;
+      padding: 1px;
+      border: 1px solid #ccc;
+      background-color: #f8f4ec;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+      /*for bringing the box to the front*/
+      border-radius: 15px;
+      margin-right: 10px;
+      line-height: 1;
+      text-align: center;
+    }
+
+    .table-container:hover .information {
+      display: block;
+    }
+
+    /* Display information when hovering over each text */
+    .innerText:hover+.information {
+      display: block;
+    }
   </style>
 </head>
 
 <body id="top">
-
   <!-- SASTRA & COMBIGS Logo -->
   <div class="wrapper row0">
     <header id="header" class="hoc clear">
@@ -157,7 +204,7 @@
     </header>
   </div>
 
-  <!-- Main Navbar / Hamburger Menu -->
+  <!-- Main Navbar -->
   <div class="wrapper row1">
     <div class="hoc clear">
       <!-- Hamburger Icon -->
@@ -176,20 +223,34 @@
     </div>
   </div>
 
-  <div class="wrapper bgded"
-    style="background-image:url('./images/intern-web-banner.png'); background-size:cover; background-position:center center;">
-    <section id="pageintro" class="hoc clear" style="padding: 20px 0;">
-      <div
-        style="background-color: rgba(255, 255, 255, 0.7); display: inline-block; padding: 10px; border-radius: 5px;">
-        <h2 class="heading" style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">Internship
-          Opportunities</h2>
-        <p style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">
-          Explore hands-on experiences in the field of Bioinformatics and build a strong foundation for your career.
+  <div class="wrapper bgded" style="
+        background-image: url('./images/intern-web-banner.png');
+        background-size: cover;
+        background-position: center center;
+      ">
+    <section id="pageintro" class="hoc clear" style="padding: 20px 0">
+      <div style="
+            background-color: rgba(255, 255, 255, 0.7);
+            display: inline-block;
+            padding: 10px;
+            border-radius: 5px;
+          ">
+        <h2 class="heading" style="
+              color: #000;
+              text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+            ">
+          Internship Opportunities
+        </h2>
+        <p style="
+              color: #000;
+              text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+            ">
+          Explore hands-on experiences in the field of Bioinformatics and
+          build a strong foundation for your career.
         </p>
       </div>
     </section>
   </div>
-
 
   <div class="wrapper row3">
     <main class="hoc container clear">
@@ -210,23 +271,37 @@
               <tr>
                 <td>1</td>
                 <td>BIODIVERSITY LAB</td>
-                <td>
-                  <a href='https://www.ncbs.res.in/' target="_blank">
+                <td class="wrapper">
+                  <a href="https://www.ncbs.res.in/" target="_blank" class="innerText">
                     The National Centre for Biological Sciences (NCBS)
                   </a>
+                  <div class="information" id="info-container">
+                    <p>
+                      The Bhalla lab is recruiting an intern for summer 2024
+                      (Please check the deadline). For summer internship in
+                      NCBS, apply through IAS.
+                    </p>
+                  </div>
                 </td>
                 <td>
-                  <a href='https://www.ncbs.res.in/' target="_blank">Announcement Info</a>
+                  <a href="https://www.ncbs.res.in/" target="_blank">Announcement Info</a>
                 </td>
               </tr>
               <!-- Row 2 -->
               <tr>
                 <td>2</td>
                 <td>IISER Kolkata</td>
-                <td>
-                  <a href="http://www.iiserkol.ac.in/" target="_blank">
+                <td class="wrapper">
+                  <a href="http://www.iiserkol.ac.in/" target="_blank" class="innerText">
                     IISER Kolkata Summer Internship
                   </a>
+                  <div class="information" id="info-container">
+                    <p>
+                      IISER is one of the leading institutes in India for
+                      research output. Usually summer internship applications
+                      start from march and internship starts from may.
+                    </p>
+                  </div>
                 </td>
                 <td>
                   <a href="https://www.iiserkol.ac.in/web/en/announcements/" target="_blank">Announcement Info</a>
@@ -236,20 +311,39 @@
               <tr>
                 <td>3</td>
                 <td>IIT-Delhi</td>
-                <td>
-                  <a href="https://academics.iitd.ac.in/srf/" target="_blank">IIT Delhi Summer Internship</a>
+                <td class="wrapper">
+                  <a href="https://academics.iitd.ac.in/srf/" target="_blank" class="innerText">IIT Delhi Summer
+                    Internship</a>
+                  <div class="information" id="info-container">
+                    <p>
+                      Unique multidisciplinary in IIT for biotechnology
+                      provides internship opportunities for which the deadline
+                      ends by April. The internship starts by May every year.
+                    </p>
+                  </div>
                 </td>
+
                 <td>
                   <a href="https://academics.iitd.ac.in/srf/" target="_blank">Announcement Info</a>
+                  <div class="information" id="info-container">
+                    <p>blah blah blah blah</p>
+                  </div>
                 </td>
               </tr>
               <!-- Row 4 -->
               <tr>
                 <td>4</td>
                 <td>IAS</td>
-                <td>
-                  <a href="https://webjapps.ias.ac.in/fellowship2023/application_instructions.jsp"
-                    target="_blank">Indian Academy of Sciences</a>
+                <td class="wrapper">
+                  <a href="https://webjapps.ias.ac.in/fellowship2023/application_instructions.jsp" target="_blank"
+                    class="innerText">Indian Academy of Sciences</a>
+                  <div class="information" id="info-container">
+                    <p>
+                      Summer Research internship programs for students and
+                      teachers happen every summer and the deadline ends by
+                      December.
+                    </p>
+                  </div>
                 </td>
                 <td>
                   <a href="https://webjapps.ias.ac.in/fellowship2023/index.html" target="_blank">Announcement Info</a>
@@ -259,9 +353,16 @@
               <tr>
                 <td>5</td>
                 <td>IBAB</td>
-                <td>
-                  <a href="https://www.ibab.ac.in/research/internship/" target="_blank">Institute of Bioinformatics and
-                    Applied Biotechnology</a>
+                <td class="wrapper">
+                  <a href="https://www.ibab.ac.in/research/internship/" target="_blank" class="innerText">Institute of
+                    Bioinformatics and Applied Biotechnology</a>
+                  <div class="information" id="info-container">
+                    <p>
+                      Internships are short-term research training programmes,
+                      which are highly beneficial for undergraduate and
+                      postgraduate students. These lasts for 2-6 months.
+                    </p>
+                  </div>
                 </td>
                 <td>
                   <a href="https://www.ibab.ac.in/research/internship/" target="_blank">Announcement Info</a>
@@ -271,9 +372,16 @@
               <tr>
                 <td>6</td>
                 <td>MITACS</td>
-                <td>
-                  <a href="https://globalink.mitacs.ca/globalink/index.html" target="_blank">Global Research Internship
-                    by MITACS</a>
+                <td class="wrapper">
+                  <a href="https://globalink.mitacs.ca/globalink/index.html" target="_blank" class="innerText">Global
+                    Research Internship by MITACS</a>
+                  <div class="information" id="info-container">
+                    <p>
+                      MITACS provide internships according to the country you
+                      reside and whose internship end by September usually for
+                      which the internship prolongs between may to october.
+                    </p>
+                  </div>
                 </td>
                 <td>
                   <a href="https://globalink.mitacs.ca/#/student/application/welcome" target="_blank">Announcement
@@ -284,9 +392,16 @@
               <tr>
                 <td>7</td>
                 <td>Biotecnika</td>
-                <td>
+                <td class="wrapper">
                   <a href="https://stores.biotecnika.org/products/bioinformatics-advanced-online-internship-program"
-                    target="_blank">Bioinformatics Advanced Internship Program</a>
+                    target="_blank" class="innerText">Bioinformatics Advanced Internship Program</a>
+                  <div class="information" id="info-container">
+                    <p>
+                      Biotecnika provides internship for biotechnology and
+                      interdisciplinary departments of it. You can explore
+                      abroad internships provided for international students.
+                    </p>
+                  </div>
                 </td>
                 <td>
                   <a href="https://stores.biotecnika.org/products/bioinformatics-advanced-online-internship-program"
@@ -296,10 +411,16 @@
               <!-- Row 8 -->
               <tr>
                 <td>8</td>
-                <td>Institute Name</td>
-                <td>
-                  <a href="https://www.rasalsi.com/training-details/bioinformatics-training-courses/"
-                    target="_blank">Bioinformatics Training Courses</a>
+                <td>Rasalsi</td>
+                <td class="wrapper">
+                  <a href="https://www.rasalsi.com/training-details/bioinformatics-training-courses/" target="_blank"
+                    class="innerText">Bioinformatics Training Courses</a>
+                  <div class="information" id="info-container">
+                    <p>
+                      Provide training and certifications in Bioinformatics
+                      and its interdisciplinary fields.
+                    </p>
+                  </div>
                 </td>
                 <td>
                   <a href="https://www.rasalsi.com/training-details/bioinformatics-training-courses/"
@@ -310,9 +431,16 @@
               <tr>
                 <td>9</td>
                 <td>IMSC</td>
-                <td>
-                  <a href="https://www.imsc.res.in/visiting_summer_student_program_tcs" target="_blank">IMSC Summer
-                    Student Program</a>
+                <td class="wrapper">
+                  <a href="https://www.imsc.res.in/visiting_summer_student_program_tcs" target="_blank"
+                    class="innerText">IMSC Summer Student Program</a>
+                  <div class="information" id="info-container">
+                    <p>
+                      IMSC provides internships in the field of computational
+                      biology, theoretical physics and mathematics for which
+                      the internship fall between may and july.
+                    </p>
+                  </div>
                 </td>
                 <td>
                   <a href="https://www.imsc.res.in/visiting_summer_student_program_tcs" target="_blank">Announcement
@@ -323,9 +451,17 @@
               <tr>
                 <td>10</td>
                 <td>Biolim</td>
-                <td>
-                  <a href="https://www.biolim.org/programmes/internship-programmes/regular/" target="_blank">
+                <td class="wrapper">
+                  <a href="https://www.biolim.org/programmes/internship-programmes/regular/" target="_blank"
+                    class="innerText">
                     Bioinformatics Internship Program by Biolim</a>
+                  <div class="information" id="info-container">
+                    <p>
+                      Biolim provide skill training, training programmes and
+                      certificate courses related to the field of
+                      bioinformatics.
+                    </p>
+                  </div>
                 </td>
                 <td>
                   <a href="https://www.biolim.org/programmes/internship-programmes/regular/"
@@ -336,9 +472,16 @@
               <tr>
                 <td>11</td>
                 <td>ArrayGen</td>
-                <td>
-                  <a href="https://www.arraygen.com/Bioinformatics_Internship.php" target="_blank">Bioinformatics
-                    Internship by ArrayGen</a>
+                <td class="wrapper">
+                  <a href="https://www.arraygen.com/Bioinformatics_Internship.php" target="_blank"
+                    class="innerText">Bioinformatics Internship by ArrayGen</a>
+                  <div class="information" id="info-container">
+                    <p>
+                      Arraygen is a Genomics service provider company with
+                      wide array of expertise in Genomics, NGS. Internships
+                      are provided related to those fields.
+                    </p>
+                  </div>
                 </td>
                 <td>
                   <a href="https://www.arraygen.com/Bioinformatics_Internship.php" target="_blank">Announcement Info</a>
@@ -348,9 +491,15 @@
               <tr>
                 <td>12</td>
                 <td>Genomiki</td>
-                <td>
+                <td class="wrapper">
                   <a href="https://www.linkedin.com/posts/genomiki_beginners-analysis-tools-activity-6939047414121009152-OFYx?utm_source=linkedin_share&utm_medium=android_app"
-                    target="_blank">Bioinformatics for Beginners Online Internship</a>
+                    target="_blank" class="innerText">Bioinformatics for Beginners Online Internship</a>
+                  <div class="information" id="info-container">
+                    <p>
+                      Genomiki is a Bioinformatics service and solutions which
+                      provide training in bioinformatics.
+                    </p>
+                  </div>
                 </td>
                 <td>
                   <a href="https://www.linkedin.com/posts/genomiki_beginners-analysis-tools-activity-6939047414121009152-OFYx?utm_source=linkedin_share&utm_medium=android_app"
@@ -361,8 +510,16 @@
               <tr>
                 <td>13</td>
                 <td>Omicslogic</td>
-                <td>
-                  <a href="https://learn.omicslogic.com/programs" target="_blank">Research Fellowship Programs</a>
+                <td class="wrapper">
+                  <a href="https://learn.omicslogic.com/programs" target="_blank" class="innerText">Research Fellowship
+                    Programs</a>
+                  <div class="information" id="info-container">
+                    <p>
+                      OmicsLogic is a program that embeds data-driven concepts
+                      into biological projects, spanning the student learning
+                      journey from observer to participant in research.
+                    </p>
+                  </div>
                 </td>
                 <td>
                   <a href="https://learn.omicslogic.com/programs" target="_blank">Announcement Info</a>
@@ -372,19 +529,47 @@
               <tr>
                 <td>14</td>
                 <td>Biocode</td>
-                <td>
-                  <a href="https://www.biocode.ltd/internship" target="_blank">Bioinformatics Internship</a>
+                <td class="wrapper">
+                  <a href="https://www.biocode.ltd/internship" target="_blank" class="innerText">Bioinformatics
+                    Internship</a>
+                  <div class="information" id="info-container">
+                    <p>
+                      Biocode provides internship course about functional
+                      genomics, proteomics, NGS and cancer-related researches.
+                    </p>
+                  </div>
                 </td>
                 <td>
                   <a href="https://www.biocode.ltd/internship" target="_blank">Announcement Info</a>
                 </td>
+              </tr>
+              <!-- Row 15 -->
+              <tr>
+                <td>15</td>
+                <td>BioNome</td>
+                <td class="wrapper">
+                  <a href="https://bionome.in/genomics" target="_blank" class="innerText">Bioinformatics Internship by
+                    BioNome</a>
+                  <div class="information" id="info-container">
+                    <p>
+                      Bionome is a bioinformatics solution which provides
+                      internship in NGS.
+                    </p>
+                  </div>
+                </td>
+                <td>
+                  <a href="https://bionome.in/internship-programs" target="_blank">Announcement Info</a>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="15" style="background-color: #fff"></td>
               </tr>
             </tbody>
           </table>
         </div>
 
         <!-- New Tab Link Section -->
-        <div class="download-section" style="text-align: center; margin-top: 20px;">
+        <div class="download-section" style="text-align: center; margin-top: 20px">
           <a href="https://www.linkedin.com/jobs/search/?currentJobId=3811723481&f_E=1&geoId=102713980&keywords=biotechnology&location=India&origin=JOB_SEARCH_PAGE_KEYWORD_AUTOCOMPLETE&refresh=true"
             target="_blank" class="btn">
             Search on Linkedin
@@ -393,7 +578,6 @@
       </div>
     </main>
   </div>
-
 
   <!-- `Above Footer` Section -->
   <div class="wrapper row4">
@@ -432,24 +616,48 @@
       <div class="one_quarter">
         <h6 class="heading">Quick Links</h6>
         <ul class="nospace linklist">
-          <li><a href="members.html">Members of COMBIGS</a></li>
-          <li><a href="https://www.sastra.edu/staffprofiles/schools/scbt.php" target="_blank">SCBT Faculties</a></li>
-          <li><a href="https://forms.gle/esHizEVcAW9cZScw8" target="_blank">Feedback Form for Website Improvement</a>
+          <li><a href="members.html#LovelyWebDevsSection" style="color: #82B7DF">Meet the COMBIGS Web Development
+              Team</a>
           </li>
+          <li><a href="https://www.sastra.edu/staffprofiles/schools/scbt.php" target="_blank"
+              style="color: #82B7DF">SCBT Faculties</a></li>
+          <li><a href="https://forms.gle/esHizEVcAW9cZScw8" target="_blank" style="color: #82B7DF">Feedback Form for
+              Website Improvement</a></li>
         </ul>
-
       </div>
+      <!-- Team Members -->
+      <div class="one_quarter">
+        <h6 class="heading">Our Team</h6>
+        <p><strong>Fourth Year Members</strong></p>
+        <!-- <ul class="nospace linklist"> -->
+        <li>Derrick Daniel P</li>
+        <li>Guruguguhan</li>
+        <li>Puli Bharath</li>
+        </ul>
+        <p><strong>Third Year Members</strong></p>
+        <!-- <ul class="nospace linklist"> -->
+        <li>Gokulnath</li>
+        <li>Sheerin</li>
+        <li>Priyanka</li>
+        <li>Dharani</li>
+        </ul>
+      </div>
+
     </footer>
   </div>
 
   <!-- Footer -->
   <div class="wrapper row5">
     <div id="copyright" class="hoc clear">
-      <p class="fl_left">Copyright &copy; 2023-2024 - All Rights Reserved - <a
-          href="https://www.sastra.edu/combigs/">COMBIGS,
-          SASTRA Deemed to be University</a></p>
-      <p class="fl_right">Template by <a target="_blank" rel="noopener" href="http://www.os-templates.com/"
-          title="Free Website Templates">OS Templates</a></p>
+      <p class="fl_left">
+        Copyright &copy; 2023-2024 - All Rights Reserved -
+        <a href="https://www.sastra.edu/combigs/">COMBIGS, SASTRA Deemed to be University</a>
+      </p>
+      <p class="fl_right">
+        Template by
+        <a target="_blank" rel="noopener" href="http://www.os-templates.com/" title="Free Website Templates">OS
+          Templates</a>
+      </p>
     </div>
 
     <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
@@ -459,7 +667,9 @@
 
   <script>
     function toggleNav() {
-      var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];
+      var nav = document
+        .getElementById("mainav")
+        .getElementsByTagName("ul")[0];
       if (nav.style.display === "block") {
         nav.style.display = "none";
       } else {
@@ -467,14 +677,15 @@
       }
     }
 
-    window.addEventListener('resize', function () {
-      var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];
+    window.addEventListener("resize", function () {
+      var nav = document
+        .getElementById("mainav")
+        .getElementsByTagName("ul")[0];
       if (window.innerWidth > 768) {
-        nav.removeAttribute('style');
+        nav.removeAttribute("style");
       }
     });
   </script>
-
 </body>
 
 </html>

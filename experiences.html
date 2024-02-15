@@ -93,11 +93,61 @@
       text-align: justify;
     }
 
+    .quote-container h2 {
+      font-size: 24px;
+      /* Adjust font size as needed */
+      color: #333;
+      /* Choose a color that fits the theme */
+      margin-bottom: 20px;
+      /* Space below the quote */
+    }
+
+
+    .dropdown-container {
+      max-width: 90%;
+      /* Adjust the width as needed */
+      margin: 0 auto;
+      /* This will center your dropdown */
+      padding: 20px;
+    }
+
+    .dropdown-btn {
+      background-color: #007bff;
+      color: white;
+      padding: 15px;
+      font-size: 20px;
+      border: none;
+      cursor: pointer;
+      width: 100%;
+      /* Full width */
+      text-align: left;
+      border-left: 5px solid #0056b3;
+      /* For visual cue */
+    }
+
+    .dropdown-btn:after {
+      content: '\25BC';
+      float: right;
+      color: white;
+    }
+
+    .dropdown-content {
+      display: none;
+      padding: 10px;
+      background-color: #f1f1f1;
+      border-left: 5px solid #007bff;
+    }
+
+    .dropdown-btn:hover,
+    .dropdown-btn:focus {
+      background-color: #0056b3;
+    }
+
     .one_quarter {
-      width: calc(33.33% - 100px);
-      /* Subtracting the total horizontal margin from one-third of the container */
-      margin: 0px 50px;
-      /* 50px margin on each side */
+      width: calc(25% - 20px);
+      /* Subtracting the total horizontal margin from one-fourth of the container */
+      margin: 0px 10px;
+      /* Adjusting margin to 10px on each side to ensure all four divs fit */
       box-sizing: border-box;
       /* To include padding and borders in the width calculation */
       float: left;
@@ -124,9 +174,9 @@
     /* Adjustments for responsiveness */
     @media screen and (max-width: 768px) {
       #mainav {
-				padding: 10px 0;
-			}
-      
+        padding: 10px 0;
+      }
+
       .alumni-item {
         flex-direction: column;
         /* Stack items vertically on smaller screens */
@@ -145,6 +195,11 @@
         max-width: none;
         /* Remove max-width on smaller screens */
         margin-left: 0px;
+      }
+
+      .dropdown-container {
+        max-width: 100%;
+        /* Full width on smaller screens */
       }
     }
 
@@ -225,94 +280,260 @@
     </section>
   </div><br><br>
 
+  <div class="quote-container" style="text-align: center;">
+    <h2>"Life is about creating and living EXPERIENCES that are worth SHARING"</h2>
+    <footer>— Steve Jobs</footer>
+  </div>
+
   <section id="alumni-section" class="scrollable">
     <div class="alumni">
-      <!-- Alumni 1 -->
-      <div class="alumni-item">
-        <img src="images/exp/exp1.jpg" alt="Alumni 1" class="alumni-image">
-        <div class="alumni-text">
-          <p class="alumni-name">Sai Rohith Kavuru</p>
-          <p class="alumni-experience">
-            Sai Rohith, B.Tech Bioinformatics Grad from SASTRA deemed University. I'm interested in full stack web
-            development and Statistics. I am good with Origami and paper arts, and acted as the Head of university and
-            department arts teams. I am currently working at Zifo technologies, Chennai as Associate analyst with 1 year
-            experience. My job description includes development and configuration of the tools to assist the small
-            molecule research of clients. I have been experienced in SQL and python as part of my job to develop
-            automated assay data storage and analysis, and visualization workflows.
-          </p>
+      <div class="dropdown-container">
+        <button class="dropdown-btn">Class of '23</button>
+        <div class="dropdown-content">
+          <!-- Alumni 1 -->
+          <div class="alumni-item">
+            <img src="images/exp/exp1.jpg" alt="Alumni 1" class="alumni-image">
+            <div class="alumni-text">
+              <p class="alumni-name">Sai Rohith Kavuru</p>
+              <p class="alumni-experience">
+                Sai Rohith, B.Tech Bioinformatics Grad from SASTRA deemed University. I'm interested in full stack web
+                development and Statistics. I am good with Origami and paper arts, and acted as the Head of university
+                and
+                department arts teams. I am currently working at Zifo technologies, Chennai as Associate analyst with 1
+                year
+                experience. My job description includes development and configuration of the tools to assist the small
+                molecule research of clients. I have been experienced in SQL and python as part of my job to develop
+                automated assay data storage and analysis, and visualization workflows.
+              </p>
+            </div>
+          </div>
+
+          <!-- Alumni 2 -->
+          <div class="alumni-item">
+            <img src="images/exp/exp2.jpg" alt="Alumni 2" class="alumni-image">
+            <div class="alumni-text">
+              <p class="alumni-name">Akshaya R</p>
+              <p class="alumni-experience">
+                Present designation: SAP Analytics Cloud Developer in Tata Consultancy Services, Bangalore. It was an
+                incredible experience as being a Chairperson of COMBIGS and learnt many valuable ethics and values. Now
+                as a
+                bioinformatics graduate I have learnt many computational studies that help me in core IT knowledge and
+                now
+                I’m SAP Analytics Cloud Developer in Tata Consultancy Services and currently working for my respective
+                client (Pharma company) (confidential info). Really happy and feeling great for the knowledge that I
+                gained
+                during my undergrad. Thank you COMBIGS!
+              </p>
+            </div>
+          </div>
+        </div>
+        <br>
+        <button class="dropdown-btn">Class of '22</button>
+        <div class="dropdown-content">
+          <!-- Alumni 1 -->
+          <div class="alumni-item">
+            <img src="images/sethu.jpg" alt="Alumni 1" class="alumni-image">
+            <div class="alumni-text">
+              <p class="alumni-name">Sethuraman N</p>
+              <p class="alumni-experience">
+                I was lucky enough to get this Semester
+                Abroad program (SAP) opportunity by Sastra University and the Department of
+                Bioinformatics to do my final semester project as a research internship at
+                Universidad Tecnológica de Panama. My area of interest was machine learning,
+                and that's the reason for choosing UTP; it has a variety of research
+                opportunities across all the engineering fields. My project title is "Smart
+                City (Smart local Grid and identification of anomalies with Data Analytics),
+                Traceability of perishables with RFID, and Knowledge Transfer in DDDM" and
+                thanks to my guide, Dr. Juan Marcos Castillo, PhD research and development
+                associate at UTP, for accepting me to work on his smart city project. I was
+                provided with all the facilities and materials that I needed for my
+                research. For the first few weeks, I was given exploratory research papers
+                and articles to peruse. And afterward, leisurely, my work advanced towards
+                synchronising the traffic lights in smart cities with the help of IoT and
+                machine learning tools.
+              </p>
+            </div>
+          </div>
+
+          <!-- Alumni 2 -->
+          <div class="alumni-item">
+            <img src="images/gautham.jpg" alt="Alumni 2" class="alumni-image">
+            <div class="alumni-text">
+              <p class="alumni-name">Gautham Krishna S.R.</p>
+              <p class="alumni-experience">
+                Things started to turn better for everyone
+                when the 3rd wave of covid started to subside and on a personal front for me
+                too as I was humbled with the opportunity to do a Student Abroad Program
+                (SAP) at the Technological University of Panama (UTP). However, UTP had a
+                wide range of projects to offer and I chose Smart City (Smart local Grid and
+                identification of anomalies with Data Analytics), Traceability of
+                perishables with RFID, and Knowledge Transfer in DDDM. This was an area that
+                explored the workings of machine learning and data analytics in a platform
+                that was unknown to me ‘Smart City’ and this is the same reason that excited
+                me too as I was gearing up to learn something new with this as my final
+                semester project under the guidance of Dr. Juan Marcos Castillo, who is a
+                Ph.D. research associate at UTP. This was a fun and exciting experience as
+                Dr. Juan understood that we weren’t from the same area of excellence and he
+                ensured that we find a common ground where both of us could benefit from
+                this project mutually. I had the opportunity to also connect with other
+                students in Panama who were proficient in the same field and who could guide
+                me to finish my project successfully. This opportunity gave me an exposure
+                to the international labs and projects on going in Panama and their workflow
+                and processes were explicit which can be imbibed and modified to our current
+                Indian trends, thereby making it a wholesome learning experience. I would
+                definitely suggest you all to pursue an SAP if you get a chance to!
+              </p>
+            </div>
+          </div>
+
+          <!-- Alumni 3 -->
+          <div class="alumni-item">
+            <img src="images/exp/exp3.jpeg" alt="Alumni 3" class="alumni-image">
+            <div class="alumni-text">
+              <p class="alumni-name">Vijayalakshmi A. B.</p>
+              <p class="alumni-experience">
+                I had the privilege of a remarkable learning opportunity during my final semester project as an intern
+                at
+                "qBiome Research Private Limited, Chennai." The co-founders and research scientists of the organization
+                provided invaluable support, sharing their knowledge and ideas in developing the project. My work
+                involved
+                analyzing waste from prominent industrial sectors, studying microbes, pathways, and various factors in
+                the
+                microbial degradation of industrial waste. With a focus on integrating different disciplines of
+                bioinformatics, including Biological Sciences, Database Management Systems, and Website Development,
+                this
+                internship enhanced my skills and provided extensive exposure to industrial research.
+              </p>
+            </div>
+          </div>
+
+
+          <!-- Alumni 4 -->
+          <div class="alumni-item">
+            <img src="images/exp/exp4.jpg" alt="Alumni 4" class="alumni-image">
+            <div class="alumni-text">
+              <p class="alumni-name">Shashank R</p>
+              <p class="alumni-experience">
+                I had the opportunity to present my work titled "Generating a Fungal Knowledge-Base and Ontology Terms
+                by
+                Integrating Multi-omics data and Natural Language Processing for LPMO-specific Lignocellulosic
+                Deconstruction" as a poster at the Indian Biophysical Society's national conference (IBS 2022) under the
+                guidance of Dr. Ragothaman Yennamalli. Despite initial nervousness, the event was successful, receiving
+                appreciation for the work. Furthermore, I am scheduled to present progress and results as a poster at
+                ISMB2022 (July 10 - 14, 2022). This experience taught me that presenting and receiving reviews from
+                experienced professionals at conferences opens new perspectives on problem-solving. I encourage everyone
+                to
+                attend and present their work at national and international conferences.
+              </p>
+            </div>
+          </div>
+
+
+          <!-- Alumni 5 -->
+          <div class="alumni-item">
+            <img src="images/exp/exp5.jpeg" alt="Alumni 5" class="alumni-image">
+            <div class="alumni-text">
+              <p class="alumni-name">Aparna V</p>
+              <p class="alumni-experience">
+                My internship provided a comprehensive learning experience in sarcoma (cancer). I explored
+                Next-Generation
+                Sequencing (NGS) and its applications, focusing on "Finding the link between sarcomas and human genes
+                and
+                validating it using bioinformatics tools." It was a challenging task to connect human genes with
+                sarcomas,
+                involving research on the causes and writing a blog. I also worked on 3D printing implants for
+                orthopedic
+                surgery, gaining insights into the work of architects and doctors researching sarcomas and implant
+                technologies. The experience culminated in publishing a journal.
+              </p>
+            </div>
+          </div>
+        </div>
+        <br>
+        <button class="dropdown-btn">Class of '21</button>
+        <div class="dropdown-content">
+          <!-- Alumni 1 -->
+          <div class="alumni-item">
+            <img src="images/exp/exp1.jpg" alt="Alumni 1" class="alumni-image">
+            <div class="alumni-text">
+              <p class="alumni-name">Sai Rohith Kavuru</p>
+              <p class="alumni-experience">
+                Sai Rohith, B.Tech Bioinformatics Grad from SASTRA deemed University. I'm interested in full stack web
+                development and Statistics. I am good with Origami and paper arts, and acted as the Head of university
+                and
+                department arts teams. I am currently working at Zifo technologies, Chennai as Associate analyst with 1
+                year
+                experience. My job description includes development and configuration of the tools to assist the small
+                molecule research of clients. I have been experienced in SQL and python as part of my job to develop
+                automated assay data storage and analysis, and visualization workflows.
+              </p>
+            </div>
+          </div>
+        </div>
+        <br>
+        <button class="dropdown-btn">Class of '20</button>
+        <div class="dropdown-content">
+          <!-- Alumni 1 -->
+          <div class="alumni-item">
+            <img src="images/exp/exp1.jpg" alt="Alumni 1" class="alumni-image">
+            <div class="alumni-text">
+              <p class="alumni-name">Sai Rohith Kavuru</p>
+              <p class="alumni-experience">
+                Sai Rohith, B.Tech Bioinformatics Grad from SASTRA deemed University. I'm interested in full stack web
+                development and Statistics. I am good with Origami and paper arts, and acted as the Head of university
+                and
+                department arts teams. I am currently working at Zifo technologies, Chennai as Associate analyst with 1
+                year
+                experience. My job description includes development and configuration of the tools to assist the small
+                molecule research of clients. I have been experienced in SQL and python as part of my job to develop
+                automated assay data storage and analysis, and visualization workflows.
+              </p>
+            </div>
+          </div>
+        </div>
+        <br>
+        <button class="dropdown-btn">Class of '19</button>
+        <div class="dropdown-content">
+          <!-- Alumni 1 -->
+          <div class="alumni-item">
+            <img src="images/exp/exp1.jpg" alt="Alumni 1" class="alumni-image">
+            <div class="alumni-text">
+              <p class="alumni-name">Sai Rohith Kavuru</p>
+              <p class="alumni-experience">
+                Sai Rohith, B.Tech Bioinformatics Grad from SASTRA deemed University. I'm interested in full stack web
+                development and Statistics. I am good with Origami and paper arts, and acted as the Head of university
+                and
+                department arts teams. I am currently working at Zifo technologies, Chennai as Associate analyst with 1
+                year
+                experience. My job description includes development and configuration of the tools to assist the small
+                molecule research of clients. I have been experienced in SQL and python as part of my job to develop
+                automated assay data storage and analysis, and visualization workflows.
+              </p>
+            </div>
+          </div>
+        </div>
+        <br>
+        <button class="dropdown-btn">Class of '18</button>
+        <div class="dropdown-content">
+          <!-- Alumni 1 -->
+          <div class="alumni-item">
+            <img src="images/exp/exp1.jpg" alt="Alumni 1" class="alumni-image">
+            <div class="alumni-text">
+              <p class="alumni-name">Sai Rohith Kavuru</p>
+              <p class="alumni-experience">
+                Sai Rohith, B.Tech Bioinformatics Grad from SASTRA deemed University. I'm interested in full stack web
+                development and Statistics. I am good with Origami and paper arts, and acted as the Head of university
+                and
+                department arts teams. I am currently working at Zifo technologies, Chennai as Associate analyst with 1
+                year
+                experience. My job description includes development and configuration of the tools to assist the small
+                molecule research of clients. I have been experienced in SQL and python as part of my job to develop
+                automated assay data storage and analysis, and visualization workflows.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-
-      <!-- Alumni 2 -->
-      <div class="alumni-item">
-        <img src="images/exp/exp2.jpg" alt="Alumni 2" class="alumni-image">
-        <div class="alumni-text">
-          <p class="alumni-name">Akshaya R</p>
-          <p class="alumni-experience">
-            Present designation: SAP Analytics Cloud Developer in Tata Consultancy Services, Bangalore. It was an
-            incredible experience as being a Chairperson of COMBIGS and learnt many valuable ethics and values. Now as a
-            bioinformatics graduate I have learnt many computational studies that help me in core IT knowledge and now
-            I’m SAP Analytics Cloud Developer in Tata Consultancy Services and currently working for my respective
-            client (Pharma company) (confidential info). Really happy and feeling great for the knowledge that I gained
-            during my undergrad. Thank you COMBIGS!
-          </p>
-        </div>
-      </div>
-
-      <!-- Alumni 3 -->
-      <div class="alumni-item">
-        <img src="images/exp/exp3.jpeg" alt="Alumni 3" class="alumni-image">
-        <div class="alumni-text">
-          <p class="alumni-name">Vijayalakshmi A. B.</p>
-          <p class="alumni-experience">
-            I had the privilege of a remarkable learning opportunity during my final semester project as an intern at
-            "qBiome Research Private Limited, Chennai." The co-founders and research scientists of the organization
-            provided invaluable support, sharing their knowledge and ideas in developing the project. My work involved
-            analyzing waste from prominent industrial sectors, studying microbes, pathways, and various factors in the
-            microbial degradation of industrial waste. With a focus on integrating different disciplines of
-            bioinformatics, including Biological Sciences, Database Management Systems, and Website Development, this
-            internship enhanced my skills and provided extensive exposure to industrial research.
-          </p>
-        </div>
-      </div>
-
-
-      <!-- Alumni 4 -->
-      <div class="alumni-item">
-        <img src="images/exp/exp4.jpg" alt="Alumni 4" class="alumni-image">
-        <div class="alumni-text">
-          <p class="alumni-name">Shashank R</p>
-          <p class="alumni-experience">
-            I had the opportunity to present my work titled "Generating a Fungal Knowledge-Base and Ontology Terms by
-            Integrating Multi-omics data and Natural Language Processing for LPMO-specific Lignocellulosic
-            Deconstruction" as a poster at the Indian Biophysical Society's national conference (IBS 2022) under the
-            guidance of Dr. Ragothaman Yennamalli. Despite initial nervousness, the event was successful, receiving
-            appreciation for the work. Furthermore, I am scheduled to present progress and results as a poster at
-            ISMB2022 (July 10 - 14, 2022). This experience taught me that presenting and receiving reviews from
-            experienced professionals at conferences opens new perspectives on problem-solving. I encourage everyone to
-            attend and present their work at national and international conferences.
-          </p>
-        </div>
-      </div>
-
-
-      <!-- Alumni 5 -->
-      <div class="alumni-item">
-        <img src="images/exp/exp5.jpeg" alt="Alumni 5" class="alumni-image">
-        <div class="alumni-text">
-          <p class="alumni-name">Aparna V</p>
-          <p class="alumni-experience">
-            My internship provided a comprehensive learning experience in sarcoma (cancer). I explored Next-Generation
-            Sequencing (NGS) and its applications, focusing on "Finding the link between sarcomas and human genes and
-            validating it using bioinformatics tools." It was a challenging task to connect human genes with sarcomas,
-            involving research on the causes and writing a blog. I also worked on 3D printing implants for orthopedic
-            surgery, gaining insights into the work of architects and doctors researching sarcomas and implant
-            technologies. The experience culminated in publishing a journal.
-          </p>
-        </div>
-      </div>
-
-    </div>
     </div>
   </section>
 
@@ -353,13 +574,31 @@
       <div class="one_quarter">
         <h6 class="heading">Quick Links</h6>
         <ul class="nospace linklist">
-          <li><a href="members.html">Members of COMBIGS</a></li>
+          <li><a href="members.html#LovelyWebDevsSection">Meet the COMBIGS Web Development Team</a>
+          </li>
           <li><a href="https://www.sastra.edu/staffprofiles/schools/scbt.php" target="_blank">SCBT Faculties</a></li>
           <li><a href="https://forms.gle/esHizEVcAW9cZScw8" target="_blank">Feedback Form for Website Improvement</a>
           </li>
         </ul>
-
       </div>
+      <!-- Team Members -->
+      <div class="one_quarter">
+        <h6 class="heading">Our Team</h6>
+        <p><strong>Fourth Year Members</strong></p>
+        <!-- <ul class="nospace linklist"> -->
+        <li>Derrick Daniel P</li>
+        <li>Guruguguhan</li>
+        <li>Puli Bharath</li>
+        </ul>
+        <p><strong>Third Year Members</strong></p>
+        <!-- <ul class="nospace linklist"> -->
+        <li>Gokulnath</li>
+        <li>Sheerin</li>
+        <li>Priyanka</li>
+        <li>Dharani</li>
+        </ul>
+      </div>
+
     </footer>
   </div>
 
@@ -394,6 +633,32 @@
         nav.removeAttribute('style');
       }
     });
+
+    /* For Alumni Dropdown Section */
+    var dropdown = document.getElementsByClassName("dropdown-btn");
+    var i;
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var dropdowns = document.querySelectorAll('.dropdown-btn');
+      dropdowns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          this.nextElementSibling.classList.toggle('show');
+        });
+      });
+    });
+
+
+    for (i = 0; i < dropdown.length; i++) {
+      dropdown[i].addEventListener("click", function () {
+        this.classList.toggle("active");
+        var dropdownContent = this.nextElementSibling;
+        if (dropdownContent.style.display === "block") {
+          dropdownContent.style.display = "none";
+        } else {
+          dropdownContent.style.display = "block";
+        }
+      });
+    }
   </script>
 </body>
 

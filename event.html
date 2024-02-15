@@ -77,10 +77,10 @@
         }
 
         .one_quarter {
-            width: calc(33.33% - 100px);
-            /* Subtracting the total horizontal margin from one-third of the container */
-            margin: 0px 50px;
-            /* 50px margin on each side */
+            width: calc(25% - 20px);
+            /* Subtracting the total horizontal margin from one-fourth of the container */
+            margin: 0px 10px;
+            /* Adjusting margin to 10px on each side to ensure all four divs fit */
             box-sizing: border-box;
             /* To include padding and borders in the width calculation */
             float: left;
@@ -106,13 +106,16 @@
         @media screen and (max-width: 768px) {
             .event-item {
                 flex-direction: column;
-                padding: 20px; /* Increased padding for touch targets */
+                padding: 20px;
+                /* Increased padding for touch targets */
             }
 
             .event-item .event-image {
-                width: 80%; /* Adjust the width as necessary */
+                width: 80%;
+                /* Adjust the width as necessary */
                 height: auto;
-                margin: 0 auto 20px; /* Center the image and add margin below */
+                margin: 0 auto 20px;
+                /* Center the image and add margin below */
             }
 
             .event-image,
@@ -125,13 +128,17 @@
 
             .event-link {
                 margin-left: 0;
-                margin-bottom: 20px; /* Add some space below the text */
+                margin-bottom: 20px;
+                /* Add some space below the text */
             }
 
             .event-image {
-                max-width: 50%; /* ensures images are no wider than their container */
-                height: auto; /* maintain aspect ratio */
-                margin-bottom: 20px; /* add space below the image */
+                max-width: 50%;
+                /* ensures images are no wider than their container */
+                height: auto;
+                /* maintain aspect ratio */
+                margin-bottom: 20px;
+                /* add space below the image */
             }
         }
 
@@ -144,8 +151,8 @@
         @media screen and (max-width: 768px) {
 
             #mainav {
-				padding: 10px 0;
-			}
+                padding: 10px 0;
+            }
 
             #mainav ul {
                 display: none;
@@ -435,14 +442,32 @@
             <div class="one_quarter">
                 <h6 class="heading">Quick Links</h6>
                 <ul class="nospace linklist">
-                    <li><a href="members.html">Members of COMBIGS</a></li>
+                    <li><a href="members.html#LovelyWebDevsSection">Meet the COMBIGS Web Development Team</a>
+                    </li>
                     <li><a href="https://www.sastra.edu/staffprofiles/schools/scbt.php" target="_blank">SCBT
                             Faculties</a></li>
                     <li><a href="https://forms.gle/esHizEVcAW9cZScw8" target="_blank">Feedback Form for Website
                             Improvement</a></li>
                 </ul>
-
             </div>
+            <!-- Team Members -->
+            <div class="one_quarter">
+                <h6 class="heading">Our Team</h6>
+                <p><strong>Fourth Year Members</strong></p>
+                <!-- <ul class="nospace linklist"> -->
+                <li>Derrick Daniel P</li>
+                <li>Guruguguhan</li>
+                <li>Puli Bharath</li>
+                </ul>
+                <p><strong>Third Year Members</strong></p>
+                <!-- <ul class="nospace linklist"> -->
+                <li>Gokulnath</li>
+                <li>Sheerin</li>
+                <li>Priyanka</li>
+                <li>Dharani</li>
+                </ul>
+            </div>
+
         </footer>
     </div>
 

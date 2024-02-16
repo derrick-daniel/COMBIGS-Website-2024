@@ -132,13 +132,13 @@
     <div class="wrapper row1">
         <header id="header" class="hoc clear">
             <div id="logo" class="fl_left">
-                <a href="index.html"><img src="images/combigs.png" alt="" /></a>
+                <a href="home.html"><img src="images/combigs.png" alt="" /></a>
             </div>
             <!-- Hamburger Icon -->
             <div class="hamburger fl_right" onclick="toggleNav()">☰</div>
             <nav id="mainav" class="fl_right">
                 <ul class="clear">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="home.html">Home</a></li>
                     <li><a href="magazine.html">Magazine</a></li>
                     <li class="active"><a href="event.html">Event Archives</a></li>
                     <li><a href="experiences.html">Experience</a></li>
@@ -197,17 +197,77 @@
         <!-- Add more images as needed -->
     </div>
 	</div>
-	<br><br><br><center><object id=pdf-object  width="850" height="600" data="pdf/Articles-23.pdf"></center></object>
+	<br><br><br><center><object id=pdf-object  width="850" height="600" data="pdf/GEN(E)IUS Edition V.pdf"></center></object>
         </div>
 		</div>
     </section>
 
-    <div class="wrapper row5">
-        <footer id="footer" class="hoc clear">
-            <p class="fl_left">COMBIGS, SASTRA Deemed to be University, All rights Reserved. 2023</p>
-            <p class="fl_right">Developed by <a target="_blank" href="https://www.sastra.edu/">SASTRA Web Team</a></p>
-        </footer>
-    </div>
+    <!-- Above Footer Section -->
+	<div class="wrapper row4">
+		<footer id="footer" class="hoc clear">
+			<!-- Combigs -->
+			<div class="one_quarter first">
+				<h1 class="logoname clear"><a href="https://www.sastra.edu/combigs/"><span>COMBIGS</span></a></h1>
+				<p class="btmspace-30" style="text-align:left;">
+					COMBIGS at SASTRA University is a renowned Computational Biology Group, fostering collaboration and
+					innovation in bioinformatics through conferences, workshops, and an e-magazine.
+				</p>
+				<ul class="faico clear">
+					<li><a class="faicon-instagram" href="https://www.instagram.com/combigs_sastra/" target="_blank"><i
+								class="fab fa-instagram"></i></a></li>
+					<li><a class="faicon-spotify"
+							href="https://open.spotify.com/show/0AN2PXlU15ROhDfLxdfb9e?si=b96cc943c5214824"
+							target="_blank"><i class="fab fa-spotify"></i></a></li>
+					<!-- Add or remove social media links as necessary -->
+				</ul>
+			</div>
+			<!-- Contact Information -->
+			<div class="one_quarter">
+				<h6 class="heading">Contact Information</h6>
+				<ul class="nospace linklist contact">
+					<li><i class="fas fa-map-marker-alt"></i>
+						<address>
+							<strong>SCBT</strong>,<br>
+							SASTRA DEEMED UNIVERSITY,<br>
+							Tirumalaisamudram,<br>
+							Thanjavur - 613401,<br>
+							Tamilnadu, India
+						</address>
+					</li>
+				</ul>
+			</div>
+			<!-- Quick Links -->
+			<div class="one_quarter">
+				<h6 class="heading">Quick Links</h6>
+				<ul class="nospace linklist">
+					<li><a href="members.html#LovelyWebDevsSection">Meet the COMBIGS Web Development Team</a>
+					</li>
+					<li><a href="https://www.sastra.edu/staffprofiles/schools/scbt.php" target="_blank">SCBT
+							Faculties</a></li>
+					<li><a href="https://forms.gle/esHizEVcAW9cZScw8" target="_blank">Feedback Form for Website
+							Improvement</a></li>
+				</ul>
+			</div>
+			<!-- Team Members -->
+			<div class="one_quarter">
+				<h6 class="heading">Our Team</h6>
+				<p><strong>Fourth Year Members</strong></p>
+				<!-- <ul class="nospace linklist"> -->
+				<li>Derrick Daniel P</li>
+				<li>Guruguguhan</li>
+				<li>Puli Bharath</li>
+				</ul>
+				<p><strong>Third Year Members</strong></p>
+				<!-- <ul class="nospace linklist"> -->
+				<li>Gokulnath</li>
+				<li>Sheerin</li>
+				<li>Priyanka</li>
+				<li>Dharani</li>
+				</ul>
+			</div>
+
+		</footer>
+	</div>
 
     <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
 
@@ -236,7 +296,7 @@
 		
 		// Function to toggle visibility of PDF
 		function togglePDF() {
-			var pdf = document.querySelector("object[data='pdf/Articles-23.pdf']");
+			var pdf = document.querySelector("object[data='pdf/GEN(E)IUS Edition V.pdf']");
 			pdf.style.display = (pdf.style.display === "none" || pdf.style.display === "") ? "block" : "none";
 		}
     </script>

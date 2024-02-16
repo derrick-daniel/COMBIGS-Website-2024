@@ -76,16 +76,16 @@
             /* Enhanced shadow on hover */
         }
 
-        .one_quarter {
-            width: calc(25% - 20px);
-            /* Subtracting the total horizontal margin from one-fourth of the container */
-            margin: 0px 10px;
-            /* Adjusting margin to 10px on each side to ensure all four divs fit */
-            box-sizing: border-box;
-            /* To include padding and borders in the width calculation */
-            float: left;
-            /* To align the boxes side by side */
-        }
+        one_quarter {
+			width: calc(25% - 20px);
+			/* Subtracting the total horizontal margin from one-fourth of the container */
+			margin: 0px 10px;
+			/* Adjusting margin to 10px on each side to ensure all four divs fit */
+			box-sizing: border-box;
+			/* To include padding and borders in the width calculation */
+			float: left;
+			/* To align the boxes side by side */
+		}
 
         @media (max-width: 768px) {
             .image-container a {
@@ -106,16 +106,13 @@
         @media screen and (max-width: 768px) {
             .event-item {
                 flex-direction: column;
-                padding: 20px;
-                /* Increased padding for touch targets */
+                padding: 20px; /* Increased padding for touch targets */
             }
 
             .event-item .event-image {
-                width: 80%;
-                /* Adjust the width as necessary */
+                width: 80%; /* Adjust the width as necessary */
                 height: auto;
-                margin: 0 auto 20px;
-                /* Center the image and add margin below */
+                margin: 0 auto 20px; /* Center the image and add margin below */
             }
 
             .event-image,
@@ -128,17 +125,13 @@
 
             .event-link {
                 margin-left: 0;
-                margin-bottom: 20px;
-                /* Add some space below the text */
+                margin-bottom: 20px; /* Add some space below the text */
             }
 
             .event-image {
-                max-width: 50%;
-                /* ensures images are no wider than their container */
-                height: auto;
-                /* maintain aspect ratio */
-                margin-bottom: 20px;
-                /* add space below the image */
+                max-width: 50%; /* ensures images are no wider than their container */
+                height: auto; /* maintain aspect ratio */
+                margin-bottom: 20px; /* add space below the image */
             }
         }
 
@@ -151,8 +144,8 @@
         @media screen and (max-width: 768px) {
 
             #mainav {
-                padding: 10px 0;
-            }
+				padding: 10px 0;
+			}
 
             #mainav ul {
                 display: none;
@@ -186,8 +179,8 @@
         <header id="header" class="hoc clear">
             <div class="image-container">
                 <!-- Image Links -->
-                <a href="index.html"><img src="images/combigs-part-1.png" alt="" /></a>
-                <a href="index.html"><img src="images/combigs-part-2.png" alt="" /></a>
+                <a href="home.html"><img src="images/combigs-part-1.png" alt="" /></a>
+                <a href="home.html"><img src="images/combigs-part-2.png" alt="" /></a>
             </div>
         </header>
     </div>
@@ -199,7 +192,7 @@
             <div class="hamburger fl_right" onclick="toggleNav()">☰</div>
             <nav id="mainav" class="fl_right">
                 <ul class="clear">
-                    <li><a href="index.html">Home</a></li>
+                    <li><a href="home.html">Home</a></li>
                     <li><a href="magazine.html">Magazine</a></li>
                     <li class="active"><a href="event.html">Event Archives</a></li>
                     <li><a href="experiences.html">Experience</a></li>
@@ -404,88 +397,72 @@
         </div>
     </section>
 
-    <!-- `Above Footer` Section -->
-    <div class="wrapper row4">
-        <footer id="footer" class="hoc clear">
-            <!-- Combigs -->
-            <div class="one_quarter first">
-                <h1 class="logoname clear"><a href="https://www.sastra.edu/combigs/"><span>COMBIGS</span></a></h1>
-                <p class="btmspace-30" style="text-align:left;">
-                    COMBIGS at SASTRA University is a renowned Computational Biology Group, fostering collaboration and
-                    innovation in bioinformatics through conferences, workshops, and an e-magazine.
-                </p>
-                <ul class="faico clear">
-                    <li><a class="faicon-instagram" href="https://www.instagram.com/combigs_sastra/" target="_blank"><i
-                                class="fab fa-instagram"></i></a></li>
-                    <li><a class="faicon-spotify"
-                            href="https://open.spotify.com/show/0AN2PXlU15ROhDfLxdfb9e?si=b96cc943c5214824"
-                            target="_blank"><i class="fab fa-spotify"></i></a></li>
-                    <!-- Add or remove social media links as necessary -->
-                </ul>
-            </div>
-            <!-- Contact Information -->
-            <div class="one_quarter">
-                <h6 class="heading">Contact Information</h6>
-                <ul class="nospace linklist contact">
-                    <li><i class="fas fa-map-marker-alt"></i>
-                        <address>
-                            <strong>SCBT</strong>,<br>
-                            SASTRA DEEMED UNIVERSITY,<br>
-                            Tirumalaisamudram,<br>
-                            Thanjavur - 613401,<br>
-                            Tamilnadu, India
-                        </address>
-                    </li>
-                </ul>
-            </div>
-            <!-- Quick Links -->
-            <div class="one_quarter">
-                <h6 class="heading">Quick Links</h6>
-                <ul class="nospace linklist">
-                    <li><a href="members.html#LovelyWebDevsSection">Meet the COMBIGS Web Development Team</a>
-                    </li>
-                    <li><a href="https://www.sastra.edu/staffprofiles/schools/scbt.php" target="_blank">SCBT
-                            Faculties</a></li>
-                    <li><a href="https://forms.gle/esHizEVcAW9cZScw8" target="_blank">Feedback Form for Website
-                            Improvement</a></li>
-                </ul>
-            </div>
-            <!-- Team Members -->
-            <div class="one_quarter">
-                <h6 class="heading">Our Team</h6>
-                <p><strong>Fourth Year Members</strong></p>
-                <!-- <ul class="nospace linklist"> -->
-                <li>Derrick Daniel P</li>
-                <li>Guruguguhan</li>
-                <li>Puli Bharath</li>
-                </ul>
-                <p><strong>Third Year Members</strong></p>
-                <!-- <ul class="nospace linklist"> -->
-                <li>Gokulnath</li>
-                <li>Sheerin</li>
-                <li>Priyanka</li>
-                <li>Dharani</li>
-                </ul>
-            </div>
+    <!-- Above Footer Section -->
+	<div class="wrapper row4">
+		<footer id="footer" class="hoc clear">
+			<!-- Combigs -->
+			<div class="one_quarter first">
+				<h1 class="logoname clear"><a href="https://www.sastra.edu/combigs/"><span>COMBIGS</span></a></h1>
+				<p class="btmspace-30" style="text-align:left;">
+					COMBIGS at SASTRA University is a renowned Computational Biology Group, fostering collaboration and
+					innovation in bioinformatics through conferences, workshops, and an e-magazine.
+				</p>
+				<ul class="faico clear">
+					<li><a class="faicon-instagram" href="https://www.instagram.com/combigs_sastra/" target="_blank"><i
+								class="fab fa-instagram"></i></a></li>
+					<li><a class="faicon-spotify"
+							href="https://open.spotify.com/show/0AN2PXlU15ROhDfLxdfb9e?si=b96cc943c5214824"
+							target="_blank"><i class="fab fa-spotify"></i></a></li>
+					<!-- Add or remove social media links as necessary -->
+				</ul>
+			</div>
+			<!-- Contact Information -->
+			<div class="one_quarter">
+				<h6 class="heading">Contact Information</h6>
+				<ul class="nospace linklist contact">
+					<li><i class="fas fa-map-marker-alt"></i>
+						<address>
+							<strong>SCBT</strong>,<br>
+							SASTRA DEEMED UNIVERSITY,<br>
+							Tirumalaisamudram,<br>
+							Thanjavur - 613401,<br>
+							Tamilnadu, India
+						</address>
+					</li>
+				</ul>
+			</div>
+			<!-- Quick Links -->
+			<div class="one_quarter">
+				<h6 class="heading">Quick Links</h6>
+				<ul class="nospace linklist">
+					<li><a href="members.html#LovelyWebDevsSection">Meet the COMBIGS Web Development Team</a>
+					</li>
+					<li><a href="https://www.sastra.edu/staffprofiles/schools/scbt.php" target="_blank">SCBT
+							Faculties</a></li>
+					<li><a href="https://forms.gle/esHizEVcAW9cZScw8" target="_blank">Feedback Form for Website
+							Improvement</a></li>
+				</ul>
+			</div>
+			<!-- Team Members -->
+			<div class="one_quarter">
+				<h6 class="heading">Our Team</h6>
+				<p><strong>Fourth Year Members</strong></p>
+				<!-- <ul class="nospace linklist"> -->
+				<li>Derrick Daniel P</li>
+				<li>Guruguguhan</li>
+				<li>Puli Bharath</li>
+				</ul>
+				<p><strong>Third Year Members</strong></p>
+				<!-- <ul class="nospace linklist"> -->
+				<li>Gokulnath</li>
+				<li>Sheerin</li>
+				<li>Priyanka</li>
+				<li>Dharani</li>
+				</ul>
+			</div>
 
-        </footer>
-    </div>
-
-    <!-- Footer -->
-    <div class="wrapper row5">
-        <div id="copyright" class="hoc clear">
-            <p class="fl_left">Copyright &copy; 2023-2024 - All Rights Reserved - <a
-                    href="https://www.sastra.edu/combigs/">COMBIGS,
-                    SASTRA Deemed to be University</a></p>
-            <p class="fl_right">Template by <a target="_blank" rel="noopener" href="http://www.os-templates.com/"
-                    title="Free Website Templates">OS Templates</a></p>
-        </div>
-
-        <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
-    </div>
-
-    <a id="backtotop" href="#top"><i class="fas fa-chevron-up"></i></a>
-
+		</footer>
+	</div>
     <script>
         function toggleNav() {
             var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];

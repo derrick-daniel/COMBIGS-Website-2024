@@ -10,6 +10,87 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<!-- NOTE: Last minute edit (Copied directly from magazine.html -->
 	<style>
+		.change-cursor {
+			cursor: pointer;
+			/* Change cursor when hover over the element */
+			padding: 10px;
+			/* Initial padding */
+			font-size: 16px;
+			/* Initial font size */
+			transition: all 0.2s ease-in-out;
+			/* Smooth transition for size changes */
+		}
+
+		.congrats-message {
+			display: none;
+			/* Hide initially */
+			color: #4CAF50;
+			/* Green text */
+			font-size: 20px;
+			/* Larger font size */
+			margin-top: 20px;
+			/* Space from the button */
+			font-style: italic;
+			/* Italic text for a quirky style */
+		}
+
+		/* Basic reset for list elements */
+		ul.sitemap,
+		ul.sitemap ul {
+			list-style-type: none;
+			padding: 0;
+		}
+
+		/* Style for all list items */
+		ul.sitemap li,
+		ul.sitemap ul li {
+			margin: 10px 0;
+			/* Add some space between the button-like list items */
+		}
+
+		/* Style for the button-like links */
+		ul.sitemap li a {
+			display: inline-block;
+			/* Allows applying padding and margin */
+			padding: 10px 20px;
+			/* Button padding */
+			background-color: #f2f2f2;
+			/* Light grey background */
+			color: #000;
+			/* Black text color */
+			text-decoration: none;
+			/* No underline */
+			border-radius: 5px;
+			/* Rounded corners */
+			box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2);
+			/* Slight shadow for depth */
+			transition: background-color 0.3s, transform 0.3s;
+			/* Smooth background color and transform transition */
+		}
+
+		/* Hover effect for links */
+		ul.sitemap li a:hover {
+			background-color: #ddd;
+			/* Darker background on hover */
+			transform: translateY(-2px);
+			/* Slight lift effect on hover */
+			box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
+			/* Increase shadow for lifted effect */
+		}
+
+		/* Submenu specific styling for nested lists */
+		ul.sitemap ul {
+			margin-left: 20px;
+			/* Indent submenus for hierarchy */
+			border-left: 2px solid #ccc;
+			/* Visual separator for nested lists */
+		}
+
+		ul.sitemap ul li {
+			margin-top: 5px;
+			margin-bottom: 5px;
+		}
+
 		.row3 {
 			background-color: #fcfcfc;
 		}
@@ -193,50 +274,57 @@
 		}
 
 		/* Site Map Styling */
-	ul.sitemap {
-		list-style-type: none;
-		padding: 0;
-	}
-	
-	ul.sitemap li {
-		padding: 10px 0;
-	}
-	
-	ul.sitemap li a {
-		color: #0056b3; /* Change the color to fit your site's theme */
-		text-decoration: none;
-		font-size: 18px; /* Larger font size for better readability */
-		transition: color 0.3s ease-in-out;
-	}
-	
-	ul.sitemap li a:hover,
-	ul.sitemap li a:focus {
-		color: #d9534f; /* Highlight color on hover/focus */
-	}
-	
-	/* Submenu Styling */
-	ul.sitemap ul {
-		padding-left: 20px; /* Indent submenus for better hierarchy visualization */
-		border-left: 2px dashed #ccc; /* Visual separator for nested lists */
-		margin-top: 5px;
-	}
-	
-	ul.sitemap ul li {
-		padding-top: 5px;
-		padding-bottom: 5px;
-	}
-	
-	/* Adjustments for better spacing and hierarchy */
-	ul.sitemap > li > a {
-		font-weight: bold; /* Make top-level links more prominent */
-	}
-	
-	/* Responsive adjustments */
-	@media (max-width: 768px) {
-		ul.sitemap li a {
-			font-size: 16px; /* Slightly smaller font size on smaller screens */
+		ul.sitemap {
+			list-style-type: none;
+			padding: 0;
 		}
-	}
+
+		ul.sitemap li {
+			padding: 10px 0;
+		}
+
+		ul.sitemap li a {
+			color: #0056b3;
+			/* Change the color to fit your site's theme */
+			text-decoration: none;
+			font-size: 18px;
+			/* Larger font size for better readability */
+			transition: color 0.3s ease-in-out;
+		}
+
+		ul.sitemap li a:hover,
+		ul.sitemap li a:focus {
+			color: #d9534f;
+			/* Highlight color on hover/focus */
+		}
+
+		/* Submenu Styling */
+		ul.sitemap ul {
+			padding-left: 20px;
+			/* Indent submenus for better hierarchy visualization */
+			border-left: 2px dashed #ccc;
+			/* Visual separator for nested lists */
+			margin-top: 5px;
+		}
+
+		ul.sitemap ul li {
+			padding-top: 5px;
+			padding-bottom: 5px;
+		}
+
+		/* Adjustments for better spacing and hierarchy */
+		ul.sitemap>li>a {
+			font-weight: bold;
+			/* Make top-level links more prominent */
+		}
+
+		/* Responsive adjustments */
+		@media (max-width: 768px) {
+			ul.sitemap li a {
+				font-size: 16px;
+				/* Slightly smaller font size on smaller screens */
+			}
+		}
 	</style>
 </head>
 
@@ -281,7 +369,8 @@
 					Sitemap
 				</h2>
 				<p style="color: #000; text-shadow: 2px 2px 4px rgba(255,255,255,0.5);">
-					A sitemap provides an organized overview of a website's content, offering quick navigation to its various sections and pages.
+					A sitemap provides an organized overview of a website's content, offering quick navigation to its
+					various sections and pages.
 				</p>
 			</div>
 		</section>
@@ -290,53 +379,63 @@
 	<!-- Site Map Section -->
 	<div class="wrapper row3">
 		<main class="hoc container clear">
-			<div class="content">
-				<h1>Site Map</h1>
-				<ul>
+			<div class="content sitemap-container">
+				<h1
+					style="font-size: 48px; color: #333; font-family: 'Arial', sans-serif; margin-bottom: 30px; font-weight: bold; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);">
+					Website Navigation</h1>
+				<ul class="sitemap">
 					<li><a href="index.html">Home</a></li>
-					<li><a href="magazine.html">Magazine</a></li>
-					<li><a href="event.html">Main Event Page</a></li>
-					<li>Event Pages
-						<ul>
-							<li><a href="event1.html">Event 1</a></li>
-							<li><a href="event2.html">Event 2</a></li>
-							<li><a href="event3.html">Event 3</a></li>
-							<li><a href="event4.html">Event 4</a></li>
-							<li><a href="event5.html">Event 5</a></li>
-							<li><a href="event6.html">Event 6</a></li>
-							<li><a href="event7.html">Event 7</a></li>
-							<li><a href="event8.html">Event 8</a></li>
-							<li><a href="event9.html">Event 9</a></li>
-							<li><a href="event10.html">Event 10</a></li>
-							<li><a href="event11.html">Event 11</a></li>
-							<li><a href="event12.html">Event 12</a></li>
-							<li><a href="event13.html">Event 13</a></li>
-							<li><a href="event14.html">Event 14</a></li>
-							<li><a href="event15.html">Event 15</a></li>
-							<li><a href="event16.html">Event 16</a></li>
-							<li><a href="event17.html">Event 17</a></li>
-							<li><a href="event18.html">Event 18</a></li>
-						</ul>
-					</li>
+					<li><a href="magazine.html">Magazines</a></li>
+					<ul>
+						<li><a href="pdf/GEN(E)IUS%20Edition%20V.pdf">GEN(E)IUS Edition V</a></li>
+						<li><a href="pdf/GEN(E)IUS%20Edition%20IV.pdf">GEN(E)IUS Edition IV</a></li>
+						<li><a href="pdf/GEN(E)IUS%20Edition%20III.pdf">GEN(E)IUS Edition III</a></li>
+						<li><a href="pdf/GEN(E)IUS%20Edition%20II.pdf">GEN(E)IUS Edition II</a></li>
+						<li><a href="pdf/GEN(E)IUS%20Edition%20I.pdf">GEN(E)IUS Edition I</a></li>
+					</ul>
+					<li><a href="event.html">Events</a></li>
+					<ul>
+						<li><a href="event1.html">Event 1</a></li>
+						<li><a href="event2.html">Event 2</a></li>
+						<li><a href="event3.html">Event 3</a></li>
+						<li><a href="event4.html">Event 4</a></li>
+						<li><a href="event5.html">Event 5</a></li>
+						<li><a href="event6.html">Event 6</a></li>
+						<li><a href="event7.html">Event 7</a></li>
+						<li><a href="event8.html">Event 8</a></li>
+						<li><a href="event9.html">Event 9</a></li>
+						<li><a href="event10.html">Event 10</a></li>
+						<li><a href="event11.html">Event 11</a></li>
+						<li><a href="event12.html">Event 12</a></li>
+						<li><a href="event13.html">Event 13</a></li>
+						<li><a href="event14.html">Event 14</a></li>
+						<li><a href="event15.html">Event 15</a></li>
+						<li><a href="event16.html">Event 16</a></li>
+						<li><a href="event17.html">Event 17</a></li>
+						<li><a href="event18.html">Event 18</a></li>
+					</ul>
 					<li><a href="experiences.html">Experiences</a></li>
-					<li><a href="intern.html">Intern</a></li>
-					<li><a href="dbtools.html">DB Tools</a></li>
+					<li><a href="intern.html">Internships</a></li>
+					<li><a href="dbtools.html">Databases & Tools</a></li>
+					<ul>
+						<li><a href="dbtools-misc-DBs.html">Miscellaneous Databases</a></li>
+						<li><a href="Additional-dbtools.pdf">Additional DB Tools</a></li>
+					</ul>
 					<li><a href="members.html">Members</a></li>
-					<li>PDF Resources
-						<ul>
-							<li><a href="pdf/GEN(E)IUS%20Edition%20V.pdf">GEN(E)IUS Edition V</a></li>
-							<li><a href="pdf/GEN(E)IUS%20Edition%20IV.pdf">GEN(E)IUS Edition IV</a></li>
-							<li><a href="pdf/GEN(E)IUS%20Edition%20III.pdf">GEN(E)IUS Edition III</a></li>
-							<li><a href="pdf/GEN(E)IUS%20Edition%20II.pdf">GEN(E)IUS Edition II</a></li>
-							<li><a href="pdf/GEN(E)IUS%20Edition%20I.pdf">GEN(E)IUS Edition I</a></li>
-							<li><a href="Additional-dbtools.pdf">Additional DB Tools</a></li>
-						</ul>
-					</li>
-					<li><a href="dbtools-misc-DBs.html">DB Tools - Misc DBs</a></li>
+
 				</ul>
 			</div>
+			<button class="change-cursor" onclick="changeCursor()"
+				style="background-color: #4CAF50; color: white; font-size: 18px; padding: 15px 32px; border: none; border-radius: 10px; cursor: pointer; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); transition: all 0.3s ease 0s;">Click
+				me!</button>
+			<div id="clicks">Clicks: 0</div>
+			<div id="congrats" class="congrats-message">Congratulations! You've unlocked the PogChamp cursor!</div>
+			<!-- Display the congrats message -->
 		</main>
+
 	</div>
+
+
 
 	<!-- `Above Footer` Section -->
 	<div class="wrapper row4">
@@ -378,7 +477,11 @@
 				<ul class="nospace linklist">
 					<li><a href="members.html#LovelyWebDevsSection">Meet the COMBIGS Web Development Team</a>
 					</li>
-					<li><a href="/sitemap.html" target="_blank">Sitemap</a></li>
+					<li>
+						<a href="https://github.com/derrick-daniel" target="_blank"
+							style="color: rgb(138, 220, 138);">🍪 Contact the Lead Developer</a>
+					</li>
+
 					<li><a href="https://forms.gle/esHizEVcAW9cZScw8" target="_blank">Feedback Form for Website
 							Improvement</a></li>
 				</ul>
@@ -421,6 +524,31 @@
 
 	<!-- `Hamburger Menu` Scripts -->
 	<script>
+		let clickCount = 0; // Variable to keep track of clicks
+		let initialSize = 16; // Initial font size
+		let paddingSize = 10; // Initial padding size
+		let cursorChanged = false; // Track if the cursor has been changed
+
+		function changeCursor() {
+			if (!cursorChanged) { // Only count and enlarge button if cursor hasn't changed
+				clickCount++; // Increment click count
+				document.getElementById('clicks').innerText = 'Clicks: ' + clickCount; // Display click count
+
+				// Increase button size
+				const btn = document.querySelector('.change-cursor');
+				btn.style.fontSize = `${initialSize + clickCount}px`; // Increase font size
+				btn.style.padding = `${paddingSize + clickCount * 2}px`; // Increase padding
+			}
+
+			if (clickCount >= 5 && !cursorChanged) { // Change cursor after 5 clicks, only if it hasn't been changed yet
+				document.documentElement.style.cursor = 'url(images/image.png), auto'; // Change the cursor for the entire page
+				cursorChanged = true; // Set cursor changed flag
+				// Display the congratulations message
+				document.getElementById('congrats').style.display = 'block';
+				// Hide click count
+				document.getElementById('clicks').style.display = 'none';
+			}
+		}
 		function toggleNav() {
 			var nav = document.getElementById("mainav").getElementsByTagName('ul')[0];
 			if (nav.style.display === "block") {

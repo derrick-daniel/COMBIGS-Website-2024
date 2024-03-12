@@ -9,6 +9,7 @@
 	<link rel="stylesheet" href="layout/styles/framework.css">
 	<link rel="stylesheet" href="layout/styles/layout.css">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="google-site-verification" content="W4tv8pneSfP8_A1xLUsEUAYoJmDQM35K2_vqfx5bGDg" />
 	<!-- Updated Style -->
 	<style>
 		.row3 {
@@ -597,6 +598,17 @@
 				nav.removeAttribute('style');
 			}
 		});
+
+		// Twitter card layout issue
+		// This script adds a temporary class to the body when the page is fully loaded, 
+		// which can trigger a reflow of the layout.
+		window.addEventListener('load', function() {
+			document.body.classList.add('layout-loaded');
+			setTimeout(function() {
+				document.body.classList.remove('layout-loaded');
+			}, 10);
+		});
+
 	</script>
 </body>
 

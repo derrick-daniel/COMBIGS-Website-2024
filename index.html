@@ -142,6 +142,8 @@
 				flex-direction: column;
 				align-items: center;
 				gap: 20px;
+				max-width: 100%; /* Adjust based on your layout */
+    			overflow: hidden;
 				/* This adds space between the tweet containers */
 			}
 
@@ -599,7 +601,7 @@
 			}
 		});
 
-		// Twitter card layout issue
+		// Twitter card layout issue:
 		// This script adds a temporary class to the body when the page is fully loaded, 
 		// which can trigger a reflow of the layout.
 		window.addEventListener('load', function() {

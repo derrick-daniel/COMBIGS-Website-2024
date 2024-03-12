@@ -2,15 +2,29 @@
 <html lang="en">
 
 <head>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+    <script type="module" src="https://esm.sh/emfed@1"></script> <!-- Source: https://sampsyo.github.io/emfed/ -->
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
     <title>COMBIGS | Current Events</title>
     <link rel="icon" href="images/sastra.png" />
     <link rel="stylesheet" href="layout/styles/framework.css">
     <link rel="stylesheet" href="layout/styles/layout.css">
+    <link rel="stylesheet" type="text/css" href="https://esm.sh/emfed@1/toots.css"> <!-- Source: https://sampsyo.github.io/emfed/ -->
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
     <style>
+        img.avatar {
+            width: 10%;
+        }
+
+        .toots {
+            max-width: 750px;
+            margin: 0 auto; /* This will center the element if it has a max-width */
+            list-style: none;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif;
+        }
+
+
         .image-grid {
             display: flex;
             flex-wrap: wrap;
@@ -168,10 +182,12 @@
             <!-- Event details go here -->
             <div class="event-info" style="text-align: left; margin-bottom: 30px;">
                 <h2 style="font-size: 30px; text-align: center; max-width: 80%; margin: 20px auto;">
-                    Live Updates on Events from COMBIGS' Twitter
+                    Live Updates on Events from COMBIGS' Mastodon <!-- Twitter sucks -->
                 </h2>                
-                <a class="twitter-timeline" href="https://twitter.com/COMBIGS_Demo?ref_src=twsrc%5Etfw">Live Updates on Events from COMBIGS' Twitter</a>
-                
+                <a class="mastodon-feed"
+                href="https://mastodon.social/@COMBIGS"
+                data-toot-limit="4"
+                >follow me into the Fediverse</a>
             </div>
 		</div>
     </section>

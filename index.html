@@ -2,7 +2,8 @@
 <html lang="en">
 
 <head>
-	<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+	<!-- <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
+	<script src="https://platform.twitter.com/widgets.js" charset="utf-8" defer></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>COMBIGS | Home</title>
 	<link rel="icon" href="images/sastra.png" />
@@ -183,7 +184,7 @@
 
 		.twitter-feed-container {
 			display: flex;
-			flex-wrap: wrap;
+			/* flex-wrap: wrap; */
 			justify-content: space-between;
 			/* justify-content: space-around; */
 		}
@@ -599,16 +600,6 @@
 			if (window.innerWidth > 768) {
 				nav.removeAttribute('style');
 			}
-		});
-
-		// Twitter card layout issue:
-		// This script adds a temporary class to the body when the page is fully loaded, 
-		// which can trigger a reflow of the layout.
-		window.addEventListener('load', function() {
-			document.body.classList.add('layout-loaded');
-			setTimeout(function() {
-				document.body.classList.remove('layout-loaded');
-			}, 10);
 		});
 
 	</script>

@@ -8,7 +8,7 @@ The website is currently live and can be accessed [here](https://sastra.edu/comb
 ## 🤝 Team
 This project was brought to life thanks to the collaborative efforts of a talented group of individuals:
 - **Derrick Daniel** (Team Lead)
-- Guruguguhan
+- Guruguhan
 - Puli Bharath
 - Gokulnath
 - Sheerin
